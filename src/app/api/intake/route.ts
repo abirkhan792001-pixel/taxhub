@@ -1,6 +1,6 @@
 import { generateText, Output } from "ai";
 import { z } from "zod";
-import { ANSWER_MODEL, LAWS, PLANNER_MODEL, formatSources, planNorms, toSourceCards, todayDe } from "@/lib/ai";
+import { ANSWER_MODEL, ANSWER_OPTIONS, LAWS, PLANNER_MODEL, PLANNER_OPTIONS, formatSources, planNorms, toSourceCards, todayDe } from "@/lib/ai";
 import { einspruchsfrist } from "@/lib/deadlines";
 import { retrieve } from "@/lib/search";
 
@@ -45,6 +45,7 @@ export async function POST(req: Request) {
   try {
     const { output: ex } = await generateText({
       model: PLANNER_MODEL,
+      providerOptions: PLANNER_OPTIONS,
       output: Output.object({ schema: extractionSchema }),
       instructions: `Du bist das digitale Sekretariat einer Steuerberatungskanzlei. Extrahiere aus einer eingehenden Mandantenanfrage (${channel}) die strukturierten Angaben. Heute ist der ${todayDe()}. Erfinde nichts: unbekannte Felder sind null.`,
       prompt: text,
@@ -66,6 +67,7 @@ export async function POST(req: Request) {
 
     const { output: draft } = await generateText({
       model: ANSWER_MODEL,
+      providerOptions: ANSWER_OPTIONS,
       output: Output.object({ schema: draftSchema }),
       instructions: `Du bereitest eine Mandantenanfrage für die Sachbearbeitung einer Steuerberatungskanzlei vor. Heute ist der ${todayDe()}.
 Regeln:

@@ -5,7 +5,7 @@ import {
   streamText,
   toUIMessageStream,
 } from "ai";
-import { ANSWER_MODEL, answerInstructions, formatSources, planNorms, planSearch, sessionChunks, toSourceCards } from "@/lib/ai";
+import { ANSWER_MODEL, ANSWER_OPTIONS, answerInstructions, formatSources, planNorms, planSearch, sessionChunks, toSourceCards } from "@/lib/ai";
 import { retrieve } from "@/lib/search";
 import type { TaxHubMessage } from "@/lib/types";
 
@@ -48,6 +48,7 @@ export async function POST(req: Request) {
       const history = await convertToModelMessages(recent.slice(0, -1).map((m) => ({ ...m, parts: m.parts.filter((p) => p.type === "text") })));
       const result = streamText({
         model: ANSWER_MODEL,
+        providerOptions: ANSWER_OPTIONS,
         instructions: answerInstructions(plan.language),
         messages: [
           ...history,

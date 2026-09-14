@@ -11,12 +11,16 @@ const google = createGoogleGenerativeAI({ apiKey: googleKey });
 const viaGoogle = Boolean(googleKey);
 
 export const PLANNER_MODEL: LanguageModel = viaGoogle
-  ? google(process.env.PLANNER_MODEL ?? "gemini-2.5-flash-lite")
+  ? google(process.env.PLANNER_MODEL ?? "gemini-3.5-flash-lite")
   : (process.env.PLANNER_MODEL ?? "anthropic/claude-haiku-4.5");
 
 export const ANSWER_MODEL: LanguageModel = viaGoogle
-  ? google(process.env.ANSWER_MODEL ?? "gemini-2.5-flash")
+  ? google(process.env.ANSWER_MODEL ?? "gemini-3.6-flash")
   : (process.env.ANSWER_MODEL ?? "anthropic/claude-sonnet-5");
+
+// Gemini 3 models think by default; keep planning near-instant and answers snappy enough for a live demo
+export const PLANNER_OPTIONS = viaGoogle ? { google: { thinkingConfig: { thinkingLevel: "minimal" as const } } } : undefined;
+export const ANSWER_OPTIONS = viaGoogle ? { google: { thinkingConfig: { thinkingLevel: "low" as const } } } : undefined;
 
 export const LAWS = ["AO", "EGAO", "EStG", "UStG", "KStG", "GewStG", "GrStG", "StBerG", "StBVV"] as const;
 
@@ -42,6 +46,7 @@ export async function planSearch(conversation: string, question: string): Promis
   try {
     const { output } = await generateText({
       model: PLANNER_MODEL,
+      providerOptions: PLANNER_OPTIONS,
       output: Output.object({ schema: planSchema }),
       instructions: `You turn questions from staff of a German tax advisory firm (Steuerberatungskanzlei) into search queries over German tax statutes (AO, EGAO, EStG, UStG, KStG, GewStG, GrStG, StBerG, StBVV) and the firm's internal handbook (Fristenmanagement, Mandanten-FAQ, Honorarrichtlinie, Telefonleitfaden). Today is ${todayDe()}. Resolve follow-up questions using the earlier turns.`,
       prompt: conversation,
