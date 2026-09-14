@@ -58,6 +58,7 @@ export default function Home() {
               ["02-mandanten-faq-belege", "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung"],
               ["03-honorar-und-auftrag", "Honorarrichtlinie und Auftragsannahme"],
               ["04-telefonleitfaden-sekretariat", "Telefonleitfaden Sekretariat"],
+              ["05-merkblatt-kleinunternehmer", "Merkblatt Kleinunternehmerregelung und Existenzgründer"],
             ].map(([slug, title]) => (
               <li key={slug} className="flex items-baseline justify-between gap-4 py-2.5 text-[0.9rem]">
                 <a href={`/kanzlei/${slug}`} className="underline decoration-rule underline-offset-2 hover:decoration-ink">

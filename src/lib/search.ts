@@ -179,7 +179,7 @@ export type RetrieveOptions = {
   extraChunks?: Chunk[]; // e.g. a document the user pasted for this session
 };
 
-export function retrieve({ queries, norms = [], maxLaw = 7, maxFirm = 3, extraChunks = [], rawQuestion }: RetrieveOptions & { rawQuestion?: string }): RetrievedChunk[] {
+export function retrieve({ queries, norms = [], maxLaw = 7, maxFirm = 4, extraChunks = [], rawQuestion }: RetrieveOptions & { rawQuestion?: string }): RetrievedChunk[] {
   const ix = getIndex();
   const fused = new Map<number, number>();
   const K = 60; // reciprocal rank fusion constant

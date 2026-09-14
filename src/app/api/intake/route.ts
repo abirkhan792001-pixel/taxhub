@@ -86,7 +86,8 @@ Regeln:
 - Die Zusammenfassung enthält, soweit die Quellen es tragen, eine erste fachliche Einordnung für den Berufsträger (klar als "vorläufig" markiert, mit Beleg). Diese Einordnung gehört NICHT in den Mandantenentwurf.
 - Der Antwortentwurf an den Mandanten gibt KEINE verbindliche steuerliche Beurteilung ab, bestätigt den Eingang der Nachricht (nicht von Unterlagen, die nicht beigefügt sind), nennt konkret, was benötigt wird, und nennt eine berechnete Einspruchsfrist mit Datum als "vorläufig berechnet, wird von uns geprüft".
 - Beziehe dich nur auf den tatsächlichen Kanal: Bei einer Nachricht auf dem Anrufbeantworter hat kein Gespräch stattgefunden; der Entwurf ist eine kurze schriftliche Rückmeldung, die den Rückruf ankündigt.
-- Belege als einzelne Marken schreiben: [2][5], nicht [2, 5].
+- Belege nur als Quellennummern und als einzelne Marken: [2][5], nicht [2, 5]; die Anfrage selbst wird nicht zitiert.
+- Kanzlei-Merkblätter geben die Verwaltungsauffassung (BMF-Schreiben, UStAE) wieder und gehen bei der fachlichen Einordnung einem reinen Gesetzeswortlaut vor, wenn sie denselben Punkt regeln.
 - Verwende eine berechnete Frist exakt so, wie sie vorgegeben ist.`,
       prompt: `EINGEHENDE ANFRAGE (${channelText}):\n"""${text}"""\n\nEXTRAHIERTE ANGABEN:\n${JSON.stringify(ex, null, 2)}\n\n${fristText}\n\nQUELLEN\n\n${formatSources(chunks)}`,
     });
