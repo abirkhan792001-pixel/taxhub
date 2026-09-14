@@ -1,5 +1,5 @@
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
-import { generateText, Output, type LanguageModel } from "ai";
+import { generateText, Output, wrapLanguageModel, type LanguageModel, type LanguageModelMiddleware } from "ai";
 import { z } from "zod";
 import type { Chunk } from "./corpus";
 import type { NormRef, RetrievedChunk } from "./search";
@@ -10,12 +10,47 @@ const googleKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GEMINI
 const google = createGoogleGenerativeAI({ apiKey: googleKey });
 const viaGoogle = Boolean(googleKey);
 
+// Free-tier Gemini models answer "high demand" at peak times. Instead of failing a live demo,
+// the request moves down a chain of models (only request errors; a started stream is kept).
+function geminiChain(ids: string[]): LanguageModel {
+  const [primary, ...fallbacks] = [...new Set(ids)].map((id) => google(id));
+  const middleware: LanguageModelMiddleware = {
+    wrapGenerate: async ({ doGenerate, params }) => {
+      try {
+        return await doGenerate();
+      } catch (err) {
+        for (const model of fallbacks) {
+          try {
+            console.warn(`falling back to ${model.modelId}:`, String(err).slice(0, 160));
+            return await model.doGenerate(params);
+          } catch {}
+        }
+        throw err;
+      }
+    },
+    wrapStream: async ({ doStream, params }) => {
+      try {
+        return await doStream();
+      } catch (err) {
+        for (const model of fallbacks) {
+          try {
+            console.warn(`falling back to ${model.modelId}:`, String(err).slice(0, 160));
+            return await model.doStream(params);
+          } catch {}
+        }
+        throw err;
+      }
+    },
+  };
+  return wrapLanguageModel({ model: primary, middleware });
+}
+
 export const PLANNER_MODEL: LanguageModel = viaGoogle
-  ? google(process.env.PLANNER_MODEL ?? "gemini-3.5-flash-lite")
+  ? geminiChain([process.env.PLANNER_MODEL ?? "gemini-3.5-flash-lite", "gemini-3.5-flash", "gemini-3.6-flash"])
   : (process.env.PLANNER_MODEL ?? "anthropic/claude-haiku-4.5");
 
 export const ANSWER_MODEL: LanguageModel = viaGoogle
-  ? google(process.env.ANSWER_MODEL ?? "gemini-3.6-flash")
+  ? geminiChain([process.env.ANSWER_MODEL ?? "gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite"])
   : (process.env.ANSWER_MODEL ?? "anthropic/claude-sonnet-5");
 
 // Gemini 3 models think by default; keep planning near-instant and answers snappy enough for a live demo
