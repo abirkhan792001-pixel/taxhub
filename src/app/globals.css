@@ -1,18 +1,21 @@
 @import "tailwindcss";
 
-/* TaxHub tokens: Finanzamt recycled paper, blue-black ink, reviewer's green, stamp red */
+/* TaxHub tokens: quiet lavender-grey canvas, near-black ink, muted violet accent;
+   stamp red stays reserved for deadlines */
 :root {
-  --paper: #eceee8;
-  --sheet: #fbfbf9;
-  --ink: #1b2430;
-  --ink-soft: #4d5864;
-  --muted: #7a838c;
-  --rule: #d3d6ce;
-  --pruef: #17714a;
-  --pruef-wash: #e2efe6;
+  --paper: #f7f6fa;
+  --sheet: #ffffff;
+  --ink: #1c1a24;
+  --ink-soft: #4b4759;
+  --muted: #7d798a;
+  --rule: #e5e2ec;
+  --pruef: #4e3f8f;
+  --pruef-strong: #3f3276;
+  --pruef-wash: #eeeaf7;
   --stamp: #b8372a;
-  --stamp-wash: #f6e4e0;
-  --marker: #f3e39a;
+  --stamp-wash: #f7e5e1;
+  --marker: #ece6fa;
+  --hero: #16110d;
 }
 
 @theme inline {
@@ -23,12 +26,14 @@
   --color-muted: var(--muted);
   --color-rule: var(--rule);
   --color-pruef: var(--pruef);
+  --color-pruef-strong: var(--pruef-strong);
   --color-pruef-wash: var(--pruef-wash);
+  --color-hero: var(--hero);
   --color-stamp: var(--stamp);
   --color-stamp-wash: var(--stamp-wash);
   --color-marker: var(--marker);
-  --font-display: var(--font-literata), Georgia, serif;
-  --font-sans: var(--font-schibsted), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, monospace;
 }
 
@@ -40,6 +45,11 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans);
+}
+
+/* dates, amounts and § numbers must sit on the baseline, even in the serif */
+.font-display {
+  font-variant-numeric: lining-nums proportional-nums;
 }
 
 :focus-visible {
@@ -64,12 +74,13 @@ body {
   font-weight: 650;
 }
 .answer > p:first-child {
-  font-family: var(--font-display);
-  font-size: 1.14rem;
-  line-height: 1.6;
+  font-size: 1.06rem;
+  line-height: 1.65;
+  font-weight: 450;
 }
 .answer > p:first-child strong {
-  font-weight: 600;
+  font-weight: 650;
+  color: var(--pruef-strong);
 }
 .answer ul,
 .answer ol {
@@ -101,9 +112,8 @@ body {
 .answer h2,
 .answer h3,
 .answer h4 {
-  font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   margin: 1.1em 0 0.4em;
 }
 .answer table {

@@ -59,7 +59,7 @@ export function AskView() {
       </div>
 
       {error && (
-        <div className="mt-6 flex items-center gap-3 rounded-[4px] border border-stamp/40 bg-stamp-wash px-4 py-3 text-sm text-stamp">
+        <div className="mt-6 flex items-center gap-3 rounded-[8px] border border-stamp/40 bg-stamp-wash px-4 py-3 text-sm text-stamp">
           Die Antwort konnte nicht erzeugt werden.
           <button type="button" onClick={() => regenerate({ body: { sessionDocs: docs } })} className="font-semibold underline underline-offset-2">
             Erneut versuchen
@@ -71,7 +71,7 @@ export function AskView() {
       <div className="fixed inset-x-0 bottom-0 z-20 border-t border-rule bg-paper/92 backdrop-blur">
         <div className="mx-auto w-full max-w-[1180px] px-4 py-3 sm:px-6">
           {docOpen && (
-            <div className="rise mb-3 rounded-[4px] border border-rule bg-sheet p-3">
+            <div className="rise mb-3 rounded-[8px] border border-rule bg-sheet p-3">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <p className="text-sm font-medium">Eigenes Kanzlei-Dokument testen</p>
                 <p className="text-xs text-muted">Nur für diese Sitzung, wird nicht gespeichert.</p>
@@ -80,17 +80,17 @@ export function AskView() {
                 value={draftDoc.title}
                 onChange={(e) => setDraftDoc({ ...draftDoc, title: e.target.value })}
                 placeholder="Titel, z. B. Arbeitsanweisung Lohn"
-                className="mt-2 w-full rounded-[4px] border border-rule bg-paper/40 px-3 py-2 text-sm outline-none focus:border-ink-soft"
+                className="mt-2 w-full rounded-[8px] border border-rule bg-paper/40 px-3 py-2 text-sm outline-none focus:border-pruef"
               />
               <textarea
                 value={draftDoc.text}
                 onChange={(e) => setDraftDoc({ ...draftDoc, text: e.target.value })}
                 placeholder="Text einfügen (Arbeitsanweisung, Mandanten-FAQ, Merkblatt …)"
                 rows={5}
-                className="mt-2 w-full resize-y rounded-[4px] border border-rule bg-paper/40 px-3 py-2 text-sm outline-none focus:border-ink-soft"
+                className="mt-2 w-full resize-y rounded-[8px] border border-rule bg-paper/40 px-3 py-2 text-sm outline-none focus:border-pruef"
               />
               <div className="mt-2 flex justify-end gap-2">
-                <button type="button" onClick={() => setDocOpen(false)} className="rounded-[4px] px-3 py-1.5 text-sm text-ink-soft hover:text-ink">
+                <button type="button" onClick={() => setDocOpen(false)} className="rounded-[8px] px-3 py-1.5 text-sm text-ink-soft hover:text-ink">
                   Abbrechen
                 </button>
                 <button
@@ -101,7 +101,7 @@ export function AskView() {
                     setDraftDoc({ title: "", text: "" });
                     setDocOpen(false);
                   }}
-                  className="rounded-[4px] bg-ink px-3 py-1.5 text-sm font-medium text-sheet disabled:opacity-40"
+                  className="rounded-[8px] bg-pruef px-3 py-1.5 text-sm font-medium text-white hover:bg-pruef-strong disabled:opacity-40"
                 >
                   Dokument hinzufügen
                 </button>
@@ -114,7 +114,7 @@ export function AskView() {
               e.preventDefault();
               ask(input);
             }}
-            className="flex items-end gap-2 rounded-[6px] border border-rule bg-sheet p-2 shadow-[0_1px_0_rgba(27,36,48,0.04)] focus-within:border-ink-soft"
+            className="flex items-end gap-2 rounded-[12px] border border-rule bg-sheet p-2 shadow-[0_10px_30px_-20px_rgba(28,26,36,0.45)] focus-within:border-pruef"
           >
             <textarea
               value={input}
@@ -131,11 +131,11 @@ export function AskView() {
               className="max-h-40 min-h-[2.5rem] flex-1 resize-none bg-transparent px-2 py-2 text-[0.95rem] outline-none placeholder:text-muted"
             />
             {busy ? (
-              <button type="button" onClick={() => stop()} className="h-10 rounded-[4px] border border-rule px-4 text-sm font-medium text-ink-soft hover:text-ink">
+              <button type="button" onClick={() => stop()} className="h-10 rounded-[8px] border border-rule px-4 text-sm font-medium text-ink-soft hover:text-ink">
                 Stopp
               </button>
             ) : (
-              <button type="submit" disabled={!input.trim()} className="h-10 rounded-[4px] bg-ink px-4 text-sm font-medium text-sheet transition-opacity disabled:opacity-35">
+              <button type="submit" disabled={!input.trim()} className="h-10 rounded-[8px] bg-pruef px-5 text-sm font-medium text-white transition-colors hover:bg-pruef-strong disabled:opacity-35">
                 Fragen
               </button>
             )}
@@ -175,11 +175,11 @@ function Exchange({ q, a, pending }: { q: TaxHubMessage; a?: TaxHubMessage; pend
   return (
     <section className="grid gap-x-10 gap-y-4 lg:grid-cols-[minmax(0,1fr)_340px]">
       <div className="min-w-0">
-        <p className="font-display text-[1.02rem] leading-snug text-ink-soft">
+        <p className="font-display text-[1.55rem] font-medium leading-[1.2] text-ink">
           <span className="mr-2 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-muted">Frage</span>
           {question}
         </p>
-        <div className="mt-4 rounded-[4px] border border-rule bg-sheet px-5 py-4 sm:px-6 sm:py-5">
+        <div className="mt-4 rounded-[8px] border border-rule bg-sheet px-5 py-4 sm:px-6 sm:py-5">
           {text ? (
             <Answer
               text={text}
@@ -213,7 +213,7 @@ function EmptyState({ onPick }: { onPick: (q: string) => void }) {
   return (
     <div className="grid gap-10 pt-10 lg:grid-cols-[minmax(0,1fr)_340px]">
       <div>
-        <h1 className="font-display text-[clamp(1.7rem,3.4vw,2.5rem)] font-medium leading-[1.15] tracking-[-0.01em] text-ink">
+        <h1 className="font-display text-[clamp(2.4rem,4.8vw,3.6rem)] font-medium leading-[1.02] tracking-[-0.01em] text-ink">
           Fragen Sie Ihr Kanzlei-Wissen.
           <br />
           <span className="text-ink-soft">Jede Antwort mit Paragraf.</span>
@@ -234,7 +234,7 @@ function EmptyState({ onPick }: { onPick: (q: string) => void }) {
       </div>
       <aside className="hidden lg:block">
         <p className="mb-2 font-mono text-[0.68rem] uppercase tracking-[0.12em] text-muted">So sieht eine Fundstelle aus</p>
-        <div className="rounded-[4px] border border-rule bg-sheet px-3.5 py-3 opacity-80">
+        <div className="rounded-[8px] border border-rule bg-sheet px-3.5 py-3 opacity-80">
           <div className="flex items-baseline gap-2">
             <span className="font-mono text-[0.7rem] font-semibold text-pruef">1</span>
             <span className="font-mono text-[0.78rem] font-medium">§ 355 AO</span>

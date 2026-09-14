@@ -107,12 +107,12 @@ export function IntakeView() {
     <div className="mx-auto w-full max-w-[1180px] px-4 pb-24 sm:px-6">
       <div className="grid gap-x-10 gap-y-6 pt-8 lg:grid-cols-[minmax(0,1fr)_340px]">
         <div className="min-w-0">
-          <h1 className="font-display text-[clamp(1.5rem,3vw,2.1rem)] font-medium leading-tight tracking-[-0.01em]">Posteingang: Anfrage rein, Vorgang raus.</h1>
+          <h1 className="font-display text-[clamp(2.3rem,4.6vw,3.3rem)] font-medium leading-[1.04] tracking-[-0.01em]">Posteingang: Anfrage rein, Vorgang raus.</h1>
           <p className="mt-2 max-w-[62ch] text-[0.95rem] leading-relaxed text-ink-soft">
             Eine E-Mail, eine Nachricht auf dem Anrufbeantworter oder eine Portalnachricht wird eingeordnet, Fristen werden nachvollziehbar berechnet, und die Antwort an den Mandanten liegt als Entwurf bereit.
           </p>
 
-          <div className="mt-6 rounded-[4px] border border-rule bg-sheet">
+          <div className="mt-6 rounded-[8px] border border-rule bg-sheet">
             <div className="flex flex-wrap items-center gap-2 border-b border-rule px-3 py-2">
               <span className="font-mono text-[0.68rem] uppercase tracking-[0.12em] text-muted">Beispiel</span>
               {SAMPLES.map((s) => (
@@ -124,7 +124,7 @@ export function IntakeView() {
                     setChannel(s.channel);
                     setResult(null);
                   }}
-                  className={`rounded-[3px] px-2 py-1 text-[0.78rem] ${text === s.text ? "bg-ink text-sheet" : "text-ink-soft hover:bg-paper hover:text-ink"}`}
+                  className={`rounded-full px-3 py-1 text-[0.78rem] ${text === s.text ? "bg-pruef text-white" : "text-ink-soft hover:bg-pruef-wash hover:text-pruef"}`}
                 >
                   {s.label}
                 </button>
@@ -146,13 +146,13 @@ export function IntakeView() {
                   <option value="portal">Mandantenportal</option>
                 </select>
               </label>
-              <button type="button" onClick={run} disabled={loading || text.trim().length < 10} className="h-9 rounded-[4px] bg-ink px-4 text-sm font-medium text-sheet disabled:opacity-40">
+              <button type="button" onClick={run} disabled={loading || text.trim().length < 10} className="h-10 rounded-[8px] bg-pruef px-5 text-sm font-medium text-white transition-colors hover:bg-pruef-strong disabled:opacity-40">
                 {loading ? "Wird bearbeitet …" : "Vorgang anlegen"}
               </button>
             </div>
           </div>
 
-          {error && <p className="mt-4 rounded-[4px] border border-stamp/40 bg-stamp-wash px-4 py-3 text-sm text-stamp">{error}</p>}
+          {error && <p className="mt-4 rounded-[8px] border border-stamp/40 bg-stamp-wash px-4 py-3 text-sm text-stamp">{error}</p>}
           {loading && (
             <p className="mt-6 flex items-center gap-2 text-sm text-muted">
               <span className="pulse-dot inline-block h-1.5 w-1.5 rounded-full bg-pruef" />
@@ -171,7 +171,7 @@ export function IntakeView() {
                       Dringlichkeit {result.draft.dringlichkeit}
                     </span>
                   </div>
-                  <p className="mt-3 font-display text-[1.15rem] leading-snug">{result.extraction.anliegen}</p>
+                  <p className="mt-3 font-display text-[1.65rem] font-medium leading-[1.15]">{result.extraction.anliegen}</p>
                   <p className="mt-1 text-[0.8rem] text-muted">
                     <Cited text={result.draft.dringlichkeitGrund} onHover={setHover} />
                   </p>
@@ -192,7 +192,7 @@ export function IntakeView() {
               </div>
 
               {result.frist && (
-                <details className="rounded-[4px] border border-rule bg-sheet px-4 py-3 text-[0.82rem]" open>
+                <details className="rounded-[8px] border border-rule bg-sheet px-4 py-3 text-[0.82rem]" open>
                   <summary className="cursor-pointer font-medium">Rechenweg der Einspruchsfrist</summary>
                   <ol className="mt-3 flex flex-col gap-2">
                     {result.frist.steps.map((s, i) => (
@@ -347,7 +347,7 @@ function DeadlineStamp({ frist }: { frist: Einspruchsfrist }) {
 
 function Block({ title, action, children }: { title: string; action?: React.ReactNode; children: React.ReactNode }) {
   return (
-    <section className="rounded-[4px] border border-rule bg-sheet px-4 py-3.5 sm:px-5">
+    <section className="rounded-[8px] border border-rule bg-sheet px-4 py-3.5 sm:px-5">
       <div className="mb-2.5 flex items-center justify-between gap-2">
         <h2 className="font-mono text-[0.7rem] font-medium uppercase tracking-[0.12em] text-muted">{title}</h2>
         {action}

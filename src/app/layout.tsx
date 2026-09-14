@@ -1,20 +1,24 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Literata, Schibsted_Grotesk } from "next/font/google";
+import { Cormorant_Garamond, IBM_Plex_Mono, Inter, Literata, Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
 
+// site + app
+const cormorant = Cormorant_Garamond({ variable: "--font-cormorant", subsets: ["latin"], weight: ["500", "600"] });
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
+const plexMono = IBM_Plex_Mono({ variable: "--font-plex-mono", subsets: ["latin"], weight: ["400", "500", "600"] });
+// the printable one-pager keeps its own document typography
 const literata = Literata({ variable: "--font-literata", subsets: ["latin"], weight: ["400", "500", "600"] });
 const schibsted = Schibsted_Grotesk({ variable: "--font-schibsted", subsets: ["latin"] });
-const plexMono = IBM_Plex_Mono({ variable: "--font-plex-mono", subsets: ["latin"], weight: ["400", "500", "600"] });
 
 export const metadata: Metadata = {
-  title: "TaxHub – Kanzlei-Wissen mit Quellen",
+  title: "TaxHub – Das KI-Sekretariat für Ihre Steuerkanzlei",
   description:
-    "Source-cited assistant for German tax advisory firms: answers grounded in AO, EStG, UStG, StBVV and the firm's own handbook, plus AI intake for client requests.",
+    "TaxHub nimmt Mandantenanfragen entgegen, berechnet Fristen nachvollziehbar und beantwortet Fachfragen mit Fundstelle – aus amtlichem Gesetzestext und dem Kanzlei-Handbuch.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="de" className={`${literata.variable} ${schibsted.variable} ${plexMono.variable} h-full antialiased`}>
+    <html lang="de" className={`${cormorant.variable} ${inter.variable} ${plexMono.variable} ${literata.variable} ${schibsted.variable} h-full antialiased`}>
       <body className="min-h-full">{children}</body>
     </html>
   );

@@ -28,12 +28,12 @@ export default async function KanzleiDoc({ params }: PageProps<"/kanzlei/[slug]"
 
   return (
     <main className="mx-auto w-full max-w-[760px] px-4 py-10 sm:px-6">
-      <Link href="/#quellen" className="text-[0.82rem] text-ink-soft hover:text-ink">
-        ← Zurück zu TaxHub
+      <Link href="/app#quellen" className="text-[0.82rem] text-ink-soft hover:text-pruef">
+        ← Zurück zur Live-Demo
       </Link>
       <p className="mt-6 font-mono text-[0.68rem] uppercase tracking-[0.12em] text-muted">Kanzlei Muster (fiktive Beispielkanzlei) · {owner}</p>
-      <h1 className="mt-1 font-display text-[1.9rem] font-medium leading-tight">{title}</h1>
-      <article className="answer mt-6 rounded-[4px] border border-rule bg-sheet px-6 py-5">
+      <h1 className="mt-1 font-display text-[2.6rem] font-medium leading-[1.05]">{title}</h1>
+      <article className="answer mt-6 rounded-[10px] border border-rule bg-sheet px-6 py-5">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{body}</ReactMarkdown>
       </article>
     </main>

@@ -40,7 +40,7 @@ export function SourceMargin({
       data-active={activeSource === s.n || pinned === s.n}
       onMouseEnter={() => onHover?.(s.n)}
       onMouseLeave={() => onHover?.(null)}
-      className="margin-card rise rounded-[4px] border border-rule bg-sheet px-3.5 py-3 transition-shadow"
+      className="margin-card rise rounded-[8px] border border-rule bg-sheet px-3.5 py-3 transition-shadow"
       style={{ animationDelay: `${Math.min(i, 8) * 40}ms` }}
     >
       <header className="flex items-baseline gap-2">
@@ -49,7 +49,7 @@ export function SourceMargin({
       </header>
       <p className="mt-0.5 text-[0.78rem] leading-snug text-ink-soft">
         {s.title}
-        {s.kind === "firm" && <span className="ml-1.5 rounded-[3px] bg-marker/70 px-1 py-px text-[0.66rem] font-medium text-ink">Kanzlei</span>}
+        {s.kind === "firm" && <span className="ml-1.5 rounded-full bg-pruef-wash px-1.5 py-px text-[0.66rem] font-medium text-pruef">Kanzlei</span>}
         {s.lang === "en" && <span className="ml-1.5 rounded-[3px] bg-paper px-1 py-px text-[0.66rem] font-medium text-ink-soft">EN · nicht amtlich</span>}
       </p>
       <p className={`mt-2 whitespace-pre-line text-[0.78rem] leading-relaxed text-ink ${compact ? "line-clamp-4" : "line-clamp-[9]"}`}>{s.excerpt}</p>
@@ -71,7 +71,7 @@ export function SourceMargin({
         <button
           type="button"
           onClick={() => setShowUncited((v) => !v)}
-          className="self-start rounded-[4px] px-1 py-1 text-left text-[0.75rem] text-muted hover:text-ink"
+          className="self-start rounded-[8px] px-1 py-1 text-left text-[0.75rem] text-muted hover:text-ink"
         >
           {showUncited ? "Weitere Fundstellen ausblenden" : `+ ${rest.length} weitere Fundstellen durchsucht, aber nicht zitiert`}
         </button>

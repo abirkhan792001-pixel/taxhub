@@ -2,10 +2,13 @@
 
 A thin but real slice of a vertical AI hub for **German tax advisory firms (Steuerberater)**, built with Claude Code for the CITO Entrepreneur-in-Residence case.
 
-- **Live demo:** https://taxhub-sqrlane.vercel.app
+- **Website:** https://taxhub-sqrlane.vercel.app
+- **Live demo (app):** https://taxhub-sqrlane.vercel.app/app
 - **One-pager** (why this vertical, what to build, first 30 days, objections): https://taxhub-sqrlane.vercel.app/one-pager
 
 Try: *Wissen fragen* → "Bis wann muss die Einkommensteuererklärung 2025 abgegeben werden …" (the answer catches that 28 Feb 2027 is a Sunday), or *Posteingang* → "Vorgang anlegen" on the sample e-mail.
+
+The marketing site follows the UI/UX language of AI tools that already sell to German professional firms: a photographic hero with a serif headline, violet calls to action, and monospace trust badges. Its trust claims are limited to what the product actually does (citations, rule-based deadlines, human release). There are no testimonials or customer logos, because there are no customers yet. Photos are by Vitaly Gariev on Unsplash (Unsplash License).
 
 ## What it does
 

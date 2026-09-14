@@ -1,4 +1,16 @@
 .op {
+  /* document typography, independent of the site theme */
+  --font-display: var(--font-literata), Georgia, serif;
+  --font-sans: var(--font-schibsted), ui-sans-serif, system-ui, sans-serif;
+  --paper: #eceee8;
+  --sheet: #fbfbf9;
+  --ink: #1b2430;
+  --ink-soft: #4d5864;
+  --muted: #7a838c;
+  --rule: #d3d6ce;
+  --pruef: #17714a;
+  --pruef-wash: #e2efe6;
+  --stamp: #b8372a;
   --op-size: 8.6pt;
   box-sizing: border-box;
   width: min(210mm, 100%);
