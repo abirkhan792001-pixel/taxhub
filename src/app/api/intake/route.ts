@@ -31,14 +31,23 @@ const extractionSchema = z.object({
 const draftSchema = z.object({
   dringlichkeit: z.enum(["hoch", "mittel", "niedrig"]),
   dringlichkeitGrund: z.string(),
-  zusammenfassung: z.string().describe("2–3 Sätze für den zuständigen Sachbearbeiter, mit Belegen [n]"),
+  zusammenfassung: z
+    .string()
+    .describe("2–4 Sätze für den zuständigen Sachbearbeiter mit Belegen [n], inkl. einer als vorläufig markierten ersten fachlichen Einordnung, soweit die Quellen sie tragen (z. B. Schwellenwert über- oder unterschritten)"),
   checkliste: z.array(z.object({ punkt: z.string(), beleg: z.array(z.number()).describe("Quellennummern") })).describe("Unterlagen/Angaben, die beim Mandanten anzufordern sind"),
   naechsteSchritte: z.array(z.object({ schritt: z.string(), wer: z.string(), bis: z.string() })),
   antwortEntwurf: z.object({ betreff: z.string(), text: z.string().describe("E-Mail an den Mandanten, ohne [n]-Belege, Sie-Form, unterschrieben mit 'Ihr Team der Kanzlei Muster'") }),
 });
 
+const CHANNEL: Record<string, string> = {
+  email: "E-Mail",
+  telefon: "Nachricht auf dem Anrufbeantworter (transkribiert) – es hat KEIN Gespräch stattgefunden",
+  portal: "Nachricht im Mandantenportal",
+};
+
 export async function POST(req: Request) {
   const { message, channel = "email" }: { message: string; channel?: "email" | "telefon" | "portal" } = await req.json();
+  const channelText = CHANNEL[channel] ?? CHANNEL.email;
   const text = (message ?? "").trim().slice(0, 6000);
   if (text.length < 10) return Response.json({ error: "Bitte eine Anfrage einfügen." }, { status: 400 });
 
@@ -47,7 +56,7 @@ export async function POST(req: Request) {
       model: PLANNER_MODEL,
       providerOptions: PLANNER_OPTIONS,
       output: Output.object({ schema: extractionSchema }),
-      instructions: `Du bist das digitale Sekretariat einer Steuerberatungskanzlei. Extrahiere aus einer eingehenden Mandantenanfrage (${channel}) die strukturierten Angaben. Heute ist der ${todayDe()}. Erfinde nichts: unbekannte Felder sind null.`,
+      instructions: `Du bist das digitale Sekretariat einer Steuerberatungskanzlei. Extrahiere aus einer eingehenden Mandantenanfrage (${channelText}) die strukturierten Angaben. Heute ist der ${todayDe()}. Erfinde nichts: unbekannte Felder sind null.`,
       prompt: text,
     });
 
@@ -74,10 +83,12 @@ export async function POST(req: Request) {
 Regeln:
 - Stütze Checkliste, Zusammenfassung und nächste Schritte auf die nummerierten QUELLEN (Gesetz und Kanzlei-Handbuch) und gib die Quellennummern an. Nichts erfinden.
 - Halte dich an die Kanzleiregeln (Telefonleitfaden, Fristenmanagement, Mandanten-FAQ), z. B. Rückrufzusagen und Vier-Augen-Prinzip bei Fristen.
-- Der Antwortentwurf an den Mandanten gibt KEINE verbindliche steuerliche Beurteilung ab, bestätigt den Eingang der Nachricht (nicht von Unterlagen, die nicht beigefügt sind), nennt konkret, was benötigt wird, und nennt eine berechnete Frist nur als "vorläufig berechnet, wird von uns geprüft".
+- Die Zusammenfassung enthält, soweit die Quellen es tragen, eine erste fachliche Einordnung für den Berufsträger (klar als "vorläufig" markiert, mit Beleg). Diese Einordnung gehört NICHT in den Mandantenentwurf.
+- Der Antwortentwurf an den Mandanten gibt KEINE verbindliche steuerliche Beurteilung ab, bestätigt den Eingang der Nachricht (nicht von Unterlagen, die nicht beigefügt sind), nennt konkret, was benötigt wird, und nennt eine berechnete Einspruchsfrist mit Datum als "vorläufig berechnet, wird von uns geprüft".
+- Beziehe dich nur auf den tatsächlichen Kanal: Bei einer Nachricht auf dem Anrufbeantworter hat kein Gespräch stattgefunden; der Entwurf ist eine kurze schriftliche Rückmeldung, die den Rückruf ankündigt.
 - Belege als einzelne Marken schreiben: [2][5], nicht [2, 5].
 - Verwende eine berechnete Frist exakt so, wie sie vorgegeben ist.`,
-      prompt: `EINGEHENDE ANFRAGE (${channel}):\n"""${text}"""\n\nEXTRAHIERTE ANGABEN:\n${JSON.stringify(ex, null, 2)}\n\n${fristText}\n\nQUELLEN\n\n${formatSources(chunks)}`,
+      prompt: `EINGEHENDE ANFRAGE (${channelText}):\n"""${text}"""\n\nEXTRAHIERTE ANGABEN:\n${JSON.stringify(ex, null, 2)}\n\n${fristText}\n\nQUELLEN\n\n${formatSources(chunks)}`,
     });
 
     return Response.json({ extraction: ex, frist, draft, sources: toSourceCards(chunks) });
