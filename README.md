@@ -51,7 +51,7 @@ Model access is picked from the environment:
 
 | Env var present | Provider | Default models (override with `PLANNER_MODEL` / `ANSWER_MODEL`) |
 | --- | --- | --- |
-| `GOOGLE_GENERATIVE_AI_API_KEY` | Gemini API directly (the free AI Studio tier needs no card) | `gemini-2.5-flash-lite` planner, `gemini-2.5-flash` answers |
+| `GOOGLE_GENERATIVE_AI_API_KEY` (or `GEMINI_API_KEY` / `Gemini_API_Key`) | Gemini API directly (the free AI Studio tier needs no card) | `gemini-2.5-flash-lite` planner, `gemini-2.5-flash` answers |
 | otherwise | Vercel AI Gateway | `anthropic/claude-haiku-4.5` planner, `anthropic/claude-sonnet-5` answers |
 
 > The demo runs on the free Gemini tier, where Google may use prompts to improve its products. That is acceptable here because the demo only contains public statute text and fictional sample clients. A production deployment for real client data needs a paid, EU-hosted, zero-retention setup (see the one-pager, objection 3).

@@ -1,12 +1,14 @@
 // Which Gemini models does this API key reach (free tier or not)? Never prints the key.
 // Run: node --env-file=.env.local scripts/check-models.mjs
-import { google } from "@ai-sdk/google";
+import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { generateText } from "ai";
 
-if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
-  console.error("GOOGLE_GENERATIVE_AI_API_KEY is not set (expected in .env.local)");
+const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GEMINI_API_KEY || process.env.Gemini_API_Key;
+if (!apiKey) {
+  console.error("No Gemini key found (GOOGLE_GENERATIVE_AI_API_KEY, GEMINI_API_KEY or Gemini_API_Key)");
   process.exit(1);
 }
+const google = createGoogleGenerativeAI({ apiKey });
 
 const CANDIDATES = [
   "gemini-3.8-flash",

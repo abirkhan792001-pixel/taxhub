@@ -1,4 +1,4 @@
-import { google } from "@ai-sdk/google";
+import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { generateText, Output, type LanguageModel } from "ai";
 import { z } from "zod";
 import type { Chunk } from "./corpus";
@@ -6,7 +6,9 @@ import type { NormRef, RetrievedChunk } from "./search";
 
 // With a Google AI Studio key (free tier, no card) the Gemini API is called directly;
 // otherwise models are routed through Vercel AI Gateway ("provider/model" strings).
-const viaGoogle = Boolean(process.env.GOOGLE_GENERATIVE_AI_API_KEY);
+const googleKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GEMINI_API_KEY || process.env.Gemini_API_Key;
+const google = createGoogleGenerativeAI({ apiKey: googleKey });
+const viaGoogle = Boolean(googleKey);
 
 export const PLANNER_MODEL: LanguageModel = viaGoogle
   ? google(process.env.PLANNER_MODEL ?? "gemini-2.5-flash-lite")
