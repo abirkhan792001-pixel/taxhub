@@ -45,13 +45,23 @@ The **firm layer** (`knowledge/*.md`) is a handbook of the fictional *Kanzlei Mu
 
 ## Stack
 
-Next.js 16 (App Router) · AI SDK 7 via **Vercel AI Gateway** (`anthropic/claude-haiku-4.5` planner, `anthropic/claude-sonnet-5` answers; override with `PLANNER_MODEL` / `ANSWER_MODEL`) · Tailwind CSS 4 · deployed on Vercel.
+Next.js 16 (App Router) · AI SDK 7 · Tailwind CSS 4 · deployed on Vercel (Hobby).
+
+Model access is picked from the environment:
+
+| Env var present | Provider | Default models (override with `PLANNER_MODEL` / `ANSWER_MODEL`) |
+| --- | --- | --- |
+| `GOOGLE_GENERATIVE_AI_API_KEY` | Gemini API directly (the free AI Studio tier needs no card) | `gemini-2.5-flash-lite` planner, `gemini-2.5-flash` answers |
+| otherwise | Vercel AI Gateway | `anthropic/claude-haiku-4.5` planner, `anthropic/claude-sonnet-5` answers |
+
+> The demo runs on the free Gemini tier, where Google may use prompts to improve its products. That is acceptable here because the demo only contains public statute text and fictional sample clients. A production deployment for real client data needs a paid, EU-hosted, zero-retention setup (see the one-pager, objection 3).
 
 ## Run locally
 
 ```bash
 npm install
-vercel link && vercel env pull .env.local   # or put AI_GATEWAY_API_KEY=... into .env.local
+echo GOOGLE_GENERATIVE_AI_API_KEY=your-key > .env.local   # free key from aistudio.google.com
+node --env-file=.env.local scripts/check-models.mjs      # which Gemini models this key can use
 npm run dev
 ```
 

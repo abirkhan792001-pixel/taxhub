@@ -1,11 +1,20 @@
-import { generateText, Output } from "ai";
+import { google } from "@ai-sdk/google";
+import { generateText, Output, type LanguageModel } from "ai";
 import { z } from "zod";
 import type { Chunk } from "./corpus";
 import type { NormRef, RetrievedChunk } from "./search";
 
-// Models are routed through Vercel AI Gateway ("provider/model" strings).
-export const PLANNER_MODEL = process.env.PLANNER_MODEL ?? "anthropic/claude-haiku-4.5";
-export const ANSWER_MODEL = process.env.ANSWER_MODEL ?? "anthropic/claude-sonnet-5";
+// With a Google AI Studio key (free tier, no card) the Gemini API is called directly;
+// otherwise models are routed through Vercel AI Gateway ("provider/model" strings).
+const viaGoogle = Boolean(process.env.GOOGLE_GENERATIVE_AI_API_KEY);
+
+export const PLANNER_MODEL: LanguageModel = viaGoogle
+  ? google(process.env.PLANNER_MODEL ?? "gemini-2.5-flash-lite")
+  : (process.env.PLANNER_MODEL ?? "anthropic/claude-haiku-4.5");
+
+export const ANSWER_MODEL: LanguageModel = viaGoogle
+  ? google(process.env.ANSWER_MODEL ?? "gemini-2.5-flash")
+  : (process.env.ANSWER_MODEL ?? "anthropic/claude-sonnet-5");
 
 export const LAWS = ["AO", "EGAO", "EStG", "UStG", "KStG", "GewStG", "GrStG", "StBerG", "StBVV"] as const;
 
