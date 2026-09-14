@@ -3,7 +3,7 @@
   box-sizing: border-box;
   width: min(210mm, 100%);
   margin: 24px auto;
-  padding: 9.5mm 12mm 7mm;
+  padding: 8.5mm 12mm 6.5mm;
   background: var(--sheet);
   color: var(--ink);
   font-family: var(--font-sans);
@@ -69,8 +69,8 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--pruef);
-  margin: 2.6mm 0 1.2mm;
-  padding-top: 1.6mm;
+  margin: 2.2mm 0 1.1mm;
+  padding-top: 1.4mm;
   border-top: 1px solid var(--rule);
 }
 .op section > h2:first-child {
