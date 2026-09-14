@@ -2,14 +2,21 @@ import {
   convertToModelMessages,
   createUIMessageStream,
   createUIMessageStreamResponse,
+  isStepCount,
   streamText,
   toUIMessageStream,
+  tool,
 } from "ai";
+import { z } from "zod";
 import { ANSWER_MODEL, ANSWER_OPTIONS, answerInstructions, formatSources, planNorms, planSearch, sessionChunks, toSourceCards } from "@/lib/ai";
-import { retrieve } from "@/lib/search";
+import { pruefeFristende } from "@/lib/deadlines";
+import { retrieve, type NormRef } from "@/lib/search";
 import type { TaxHubMessage } from "@/lib/types";
 
 export const maxDuration = 60;
+
+// deadline questions always need the general computation rule, even if nobody names it
+const DEADLINE_QUESTION = /frist|bis wann|spätestens|abgabe|einspruch|deadline|due|file by|objection/i;
 
 export async function POST(req: Request) {
   const { messages, sessionDocs = [] }: { messages: TaxHubMessage[]; sessionDocs?: { title: string; text: string }[] } =
@@ -30,10 +37,11 @@ export async function POST(req: Request) {
       writer.write({ type: "data-status", id: "status", data: { stage: "planning" }, transient: true });
 
       const plan = await planSearch(conversation, question);
+      const norms: NormRef[] = [...planNorms(plan), ...(DEADLINE_QUESTION.test(question) ? [{ law: "AO", section: "108" }] : [])];
       const chunks = retrieve({
         rawQuestion: question,
         queries: plan.searchQueries.filter((q) => q !== question),
-        norms: planNorms(plan),
+        norms,
         extraChunks: sessionChunks(sessionDocs),
       });
 
@@ -50,6 +58,15 @@ export async function POST(req: Request) {
         model: ANSWER_MODEL,
         providerOptions: ANSWER_OPTIONS,
         instructions: answerInstructions(plan.language),
+        tools: {
+          fristende_pruefen: tool({
+            description:
+              "Prüft ein berechnetes Fristende (YYYY-MM-DD): Wochentag, bundeseinheitlicher Feiertag und ggf. Verschiebung auf den nächsten Werktag nach § 108 Abs. 3 AO. Vor jeder Nennung eines konkreten Fristendes aufrufen.",
+            inputSchema: z.object({ datum: z.string().describe("Fristende im Format YYYY-MM-DD") }),
+            execute: async ({ datum }) => pruefeFristende(datum),
+          }),
+        },
+        stopWhen: isStepCount(4),
         messages: [
           ...history,
           {

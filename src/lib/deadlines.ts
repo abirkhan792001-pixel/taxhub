@@ -73,6 +73,24 @@ function addMonths(d: Date, n: number) {
   return new Date(Date.UTC(y, m, Math.min(d.getUTCDate(), lastDay)));
 }
 
+// Check a computed deadline date: weekday, and the § 108 Abs. 3 AO shift if it is not a working day
+export function pruefeFristende(datum: string) {
+  const [y, mo, da] = datum.split("-").map(Number);
+  const d = new Date(Date.UTC(y, mo - 1, da));
+  if (Number.isNaN(d.getTime())) return { fehler: "Datum bitte im Format YYYY-MM-DD angeben" };
+  const reason = nonWorkingReason(d);
+  const shifted = reason ? nextWorkingDay(d) : d;
+  return {
+    datum: iso(d),
+    wochentag: d.toLocaleDateString("de-DE", { weekday: "long", timeZone: "UTC" }),
+    werktag: !reason,
+    grund: reason,
+    fristendeNach108Abs3AO: iso(shifted),
+    fristendeWochentag: shifted.toLocaleDateString("de-DE", { weekday: "long", timeZone: "UTC" }),
+    hinweis: "Nur bundeseinheitliche Feiertage berücksichtigt.",
+  };
+}
+
 export function einspruchsfrist(
   bescheidDatum: string,
   zustellung: "post" | "elektronisch" | "ausland" = "post",

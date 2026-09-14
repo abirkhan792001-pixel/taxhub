@@ -3,6 +3,7 @@
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { useMemo, useState } from "react";
+import { citedNumbers } from "@/lib/cite";
 import type { TaxHubMessage } from "@/lib/types";
 import { Answer } from "./Answer";
 import { SourceMargin } from "./SourceMargin";
@@ -167,7 +168,7 @@ function Exchange({ q, a, pending }: { q: TaxHubMessage; a?: TaxHubMessage; pend
   const text = a?.parts.map((p) => (p.type === "text" ? p.text : "")).join("") ?? "";
   const sourcesPart = a?.parts.find((p) => p.type === "data-sources");
   const sources = sourcesPart?.type === "data-sources" ? sourcesPart.data.sources : [];
-  const cited = useMemo(() => new Set([...text.matchAll(/\[(\d{1,2})\]/g)].map((m) => Number(m[1]))), [text]);
+  const cited = useMemo(() => citedNumbers(text), [text]);
 
   const stage = !sources.length ? "Suche in Gesetz und Kanzlei-Handbuch …" : !text ? `${sources.length} Fundstellen gelesen – formuliere Antwort …` : null;
 

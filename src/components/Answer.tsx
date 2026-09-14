@@ -2,9 +2,10 @@
 
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { normalizeCitations } from "@/lib/cite";
 
 // "[3]" in model output -> a citation mark that points at margin card 3
-const linkCitations = (md: string) => md.replace(/\[(\d{1,2})\](?!\()/g, "[$1](#src-$1)");
+const linkCitations = (md: string) => normalizeCitations(md).replace(/\[(\d{1,2})\](?!\()/g, "[$1](#src-$1)");
 
 export function Answer({
   text,

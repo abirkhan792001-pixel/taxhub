@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { SourceCard } from "@/lib/ai";
+import { citedNumbers, normalizeCitations } from "@/lib/cite";
 import type { Einspruchsfrist } from "@/lib/deadlines";
 import { SourceMargin } from "./SourceMargin";
 
@@ -97,8 +98,8 @@ export function IntakeView() {
 
   const cited = useMemo(() => {
     if (!result) return new Set<number>();
-    const s = new Set<number>(result.draft.checkliste.flatMap((c) => c.beleg));
-    for (const m of result.draft.zusammenfassung.matchAll(/\[(\d{1,2})\]/g)) s.add(Number(m[1]));
+    const s = citedNumbers(`${result.draft.zusammenfassung} ${result.draft.dringlichkeitGrund}`);
+    for (const n of result.draft.checkliste.flatMap((c) => c.beleg)) s.add(n);
     return s;
   }, [result]);
 
@@ -171,7 +172,9 @@ export function IntakeView() {
                     </span>
                   </div>
                   <p className="mt-3 font-display text-[1.15rem] leading-snug">{result.extraction.anliegen}</p>
-                  <p className="mt-1 text-[0.8rem] text-muted">{result.draft.dringlichkeitGrund}</p>
+                  <p className="mt-1 text-[0.8rem] text-muted">
+                    <Cited text={result.draft.dringlichkeitGrund} onHover={setHover} />
+                  </p>
                   <dl className="mt-4 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-[0.82rem]">
                     {[
                       ["Mandant", [result.extraction.mandant.name, result.extraction.mandant.mandantennummer && `Nr. ${result.extraction.mandant.mandantennummer}`].filter(Boolean).join(" · ")],
@@ -355,7 +358,7 @@ function Block({ title, action, children }: { title: string; action?: React.Reac
 }
 
 function Cited({ text, onHover }: { text: string; onHover: (n: number | null) => void }) {
-  const parts = text.split(/(\[\d{1,2}\])/g);
+  const parts = normalizeCitations(text).split(/(\[\d{1,2}\])/g);
   return (
     <>
       {parts.map((p, i) => {

@@ -213,6 +213,23 @@ export function retrieve({ queries, norms = [], maxLaw = 7, maxFirm = 3, extraCh
   }
   const firmHits = [...firmFused.entries()].sort((a, b) => b[1] - a[1]).slice(0, maxFirm);
 
+  // follow the firm handbook's own cross-references ("… Art. 97 § 36 EGAO") one hop:
+  // the handbook knows which norm matters, even when the question doesn't name it
+  const lawIds = new Set(lawHits.map(([i]) => i));
+  const followed: [number, number][] = [];
+  for (const [i, s] of firmHits.slice(0, 2)) {
+    for (const ref of parseNormRefs(ix.chunks[i].text).slice(0, 4)) {
+      const candidates = new Set(chunksForNorm(ix, ref).map((j) => ix.chunks[j].id));
+      if (!candidates.size) continue;
+      const best = weighted
+        .flatMap(([q]) => bm25(ix, q, (c) => candidates.has(c.id)).slice(0, 1))
+        .sort((a, b) => b.score - a.score)[0];
+      const j = best?.i ?? ix.byId.get([...candidates][0])!;
+      if (!lawIds.has(j) && !followed.some(([k]) => k === j) && followed.length < 3) followed.push([j, s * 0.9]);
+    }
+  }
+  lawHits.push(...followed);
+
   // neighbouring chunks of the strongest norms (a list split across chunks stays readable)
   const picked = new Map<number, number>();
   [...lawHits, ...firmHits].forEach(([i, s], rank) => {

@@ -83,8 +83,9 @@ REGELN
 3. Wenn die Quellen die Frage nicht oder nur teilweise beantworten, sage das klar ("Dazu enthalten die Quellen nichts …") und nenne, welche Norm oder Unterlage fehlen würde. Lieber eine ehrliche Lücke als eine plausible Vermutung.
 4. Trenne Gesetz und Kanzlei-Richtlinie sichtbar ("Gesetzlich gilt … [1]. Unsere Kanzleiregel: … [4]").
 5. Achte auf Übergangsregelungen (EGAO) und darauf, welcher Besteuerungszeitraum betroffen ist; rechne Daten konkret aus, wenn die Quellen das hergeben.
-6. Format: zuerst die Kurzantwort in 1–3 Sätzen (fett markiert), dann bei Bedarf kurze Stichpunkte mit Details, am Ende optional "Hinweis:" für Unsicherheiten oder Prüfbedarf durch den Berufsträger. Knapp und praxisnah, keine Einleitungsfloskeln.
-7. Englische Übersetzungen der AO sind nicht amtlich; bei Abweichungen gilt der deutsche Text.
+6. Bevor du ein konkretes Fristende nennst, prüfe es mit dem Werkzeug fristende_pruefen. Fällt es auf ein Wochenende oder einen Feiertag, nenne das verschobene Datum mit Wochentag und belege die Verschiebung mit § 108 Abs. 3 AO (sofern in den QUELLEN).
+7. Format: zuerst die Kurzantwort in 1–3 Sätzen, darin nur die entscheidende Angabe fett (z. B. das Datum oder den Betrag), dann bei Bedarf kurze Stichpunkte mit Details, am Ende optional "Hinweis:" für Unsicherheiten oder Prüfbedarf durch den Berufsträger. Knapp und praxisnah, keine Einleitungsfloskeln.
+8. Englische Übersetzungen der AO sind nicht amtlich; bei Abweichungen gilt der deutsche Text.
 
 ${language === "en" ? "Write the answer in English, but keep German legal terms in brackets where helpful (e.g. 'objection period (Einspruchsfrist)')." : "Antworte auf Deutsch."}`;
 }

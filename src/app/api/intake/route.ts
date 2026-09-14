@@ -1,6 +1,6 @@
 import { generateText, Output } from "ai";
 import { z } from "zod";
-import { ANSWER_MODEL, ANSWER_OPTIONS, LAWS, PLANNER_MODEL, PLANNER_OPTIONS, formatSources, planNorms, toSourceCards, todayDe } from "@/lib/ai";
+import { ANSWER_MODEL, LAWS, PLANNER_MODEL, PLANNER_OPTIONS, formatSources, planNorms, toSourceCards, todayDe } from "@/lib/ai";
 import { einspruchsfrist } from "@/lib/deadlines";
 import { retrieve } from "@/lib/search";
 
@@ -59,21 +59,23 @@ export async function POST(req: Request) {
       `Telefonleitfaden Kategorie ${ex.kategorie}`,
       ...(frist ? ["Einspruchsfrist Bekanntgabe Fristenmanagement"] : []),
     ];
-    const chunks = retrieve({ queries, norms: planNorms({ language: "de", searchQueries: [], norms: ex.norms }), maxLaw: 7, maxFirm: 4 });
+    const chunks = retrieve({ queries, norms: planNorms({ language: "de", searchQueries: [], norms: ex.norms }), maxLaw: 5, maxFirm: 4 });
 
     const fristText = frist
       ? `BERECHNETE EINSPRUCHSFRIST (deterministisch, nicht verändern): Bekanntgabe ${frist.bekanntgabe}, Fristende ${frist.fristende} (${frist.daysLeft} Tage ab heute).\nRechenweg:\n${frist.steps.map((s) => `- ${s.date}: ${s.label} (${s.basis})`).join("\n")}`
       : "Keine Einspruchsfrist berechnet (kein Bescheiddatum genannt).";
 
+    // drafting follows fixed inputs (extraction, computed deadline, sources): minimal thinking keeps it fast
     const { output: draft } = await generateText({
       model: ANSWER_MODEL,
-      providerOptions: ANSWER_OPTIONS,
+      providerOptions: PLANNER_OPTIONS,
       output: Output.object({ schema: draftSchema }),
       instructions: `Du bereitest eine Mandantenanfrage für die Sachbearbeitung einer Steuerberatungskanzlei vor. Heute ist der ${todayDe()}.
 Regeln:
 - Stütze Checkliste, Zusammenfassung und nächste Schritte auf die nummerierten QUELLEN (Gesetz und Kanzlei-Handbuch) und gib die Quellennummern an. Nichts erfinden.
 - Halte dich an die Kanzleiregeln (Telefonleitfaden, Fristenmanagement, Mandanten-FAQ), z. B. Rückrufzusagen und Vier-Augen-Prinzip bei Fristen.
-- Der Antwortentwurf an den Mandanten gibt KEINE verbindliche steuerliche Beurteilung ab, bestätigt den Eingang, nennt konkret, was benötigt wird, und nennt eine berechnete Frist nur als "vorläufig berechnet, wird von uns geprüft".
+- Der Antwortentwurf an den Mandanten gibt KEINE verbindliche steuerliche Beurteilung ab, bestätigt den Eingang der Nachricht (nicht von Unterlagen, die nicht beigefügt sind), nennt konkret, was benötigt wird, und nennt eine berechnete Frist nur als "vorläufig berechnet, wird von uns geprüft".
+- Belege als einzelne Marken schreiben: [2][5], nicht [2, 5].
 - Verwende eine berechnete Frist exakt so, wie sie vorgegeben ist.`,
       prompt: `EINGEHENDE ANFRAGE (${channel}):\n"""${text}"""\n\nEXTRAHIERTE ANGABEN:\n${JSON.stringify(ex, null, 2)}\n\n${fristText}\n\nQUELLEN\n\n${formatSources(chunks)}`,
     });
