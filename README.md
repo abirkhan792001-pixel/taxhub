@@ -2,8 +2,10 @@
 
 A thin but real slice of a vertical AI hub for **German tax advisory firms (Steuerberater)**, built with Claude Code for the CITO Entrepreneur-in-Residence case.
 
-- **Live demo:** _link added after deploy_
-- **One-pager** (why this vertical, what to build, first 30 days, objections): [`/one-pager`](src/app/one-pager/page.tsx) in the running app
+- **Live demo:** https://taxhub-sqrlane.vercel.app
+- **One-pager** (why this vertical, what to build, first 30 days, objections): https://taxhub-sqrlane.vercel.app/one-pager
+
+Try: *Wissen fragen* → "Bis wann muss die Einkommensteuererklärung 2025 abgegeben werden …" (the answer catches that 28 Feb 2027 is a Sunday), or *Posteingang* → "Vorgang anlegen" on the sample e-mail.
 
 ## What it does
 
@@ -74,7 +76,9 @@ npm run dev
 
 ## Known limits (honest list)
 
-- No administrative guidance yet (BMF letters, UStAE, AEAO), no case law. These are the next ingestion targets and change many practical answers.
+- No administrative guidance yet (BMF letters, UStAE, AEAO), no case law. These are the next ingestion targets and change many practical answers. Example found during testing: the statute alone suggests the €100,000 small-business limit for a founder, while the BMF letter of 18.03.2025 applies €25,000 in the founding year. The sample handbook bridges this with an internal note (`knowledge/05-merkblatt-kleinunternehmer.md`), the way real firms summarise BMF letters.
+- The answer model gets a deterministic date tool (`fristende_pruefen`) for weekday and § 108 Abs. 3 AO checks; the model decides when to call it.
+- Free-tier Gemini models can be overloaded at peak times; requests fall back through a chain of Gemini models, but latency varies.
 - Holidays: only nationwide public holidays are considered for deadlines. Länder holidays are flagged, not computed.
 - The English AO translation can lag behind the German text, and the UI says so.
 - Single-tenant demo: no authentication, no persistence, no rate limiting, and pasted documents live only in the browser session.

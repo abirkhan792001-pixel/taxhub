@@ -126,7 +126,7 @@ export function AskView() {
                 }
               }}
               rows={1}
-              placeholder="Frage an das Kanzlei-Wissen, z. B. „Bis wann Einspruch gegen den Bescheid vom 10.09.?“"
+              placeholder="Frage an das Kanzlei-Wissen …"
               aria-label="Frage"
               className="max-h-40 min-h-[2.5rem] flex-1 resize-none bg-transparent px-2 py-2 text-[0.95rem] outline-none placeholder:text-muted"
             />

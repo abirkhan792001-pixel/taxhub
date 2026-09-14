@@ -28,7 +28,9 @@ export default function OnePager() {
         <p className="op-meta">
           Abir Khan · September 2026
           <br />
-          Live MVP: taxhub · <Link href="/">open demo</Link>
+          Live MVP: <Link href="/">taxhub-sqrlane.vercel.app</Link>
+          <br />
+          Repo: <a href="https://github.com/abirkhan792001-pixel/taxhub">github.com/abirkhan792001-pixel/taxhub</a>
         </p>
       </header>
 
