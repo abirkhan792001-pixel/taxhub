@@ -1,0 +1,14 @@
+{
+  "onePagePrint": {
+    "verified": true,
+    "evidence": "TaxHub-One-Pager.pdf exported from /one-pager renders as exactly 1 A4 page; on-screen sheet height 297.1 mm including the 1px border (checked 14 Sep 2026)"
+  },
+  "sentToCito": {
+    "done": false,
+    "evidence": "Reply with links to the CITO contact not sent yet"
+  },
+  "loomRecorded": {
+    "done": false,
+    "evidence": "Loom not recorded yet; only the preparation can be checked"
+  }
+}

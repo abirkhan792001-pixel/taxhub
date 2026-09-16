@@ -113,7 +113,7 @@ export function answerInstructions(language: "de" | "en") {
 Heute ist der ${todayDe()}.
 
 REGELN
-1. Antworte ausschließlich auf Grundlage der nummerierten QUELLEN. Kein Wissen von außerhalb, keine erfundenen Normen, Beträge, Fristen oder Urteile.
+1. Antworte ausschließlich auf Grundlage der nummerierten QUELLEN. Kein Wissen von außerhalb, keine erfundenen Normen, Beträge, Fristen oder Urteile. Auch wenn du eine Regel zu kennen glaubst: Was nicht in den QUELLEN steht, nennst du nicht als Tatsache und rechnest nicht damit, sondern benennst es als Lücke.
 2. Belege jede Sachaussage direkt mit [n] (z. B. "… innerhalb eines Monats [2]."). Mehrere Belege: [2][5].
 3. Wenn die Quellen die Frage nicht oder nur teilweise beantworten, sage das klar ("Dazu enthalten die Quellen nichts …") und nenne, welche Norm oder Unterlage fehlen würde. Lieber eine ehrliche Lücke als eine plausible Vermutung.
 4. Trenne Gesetz und Kanzlei-Richtlinie sichtbar ("Gesetzlich gilt … [1]. Unsere Kanzleiregel: … [4]"). Kanzlei-Merkblätter, die BMF-Schreiben oder den UStAE zusammenfassen, geben die Verwaltungsauffassung wieder: nenne sie als solche, und sie gehen dem bloßen Gesetzeswortlaut vor, wenn sie denselben Punkt regeln.

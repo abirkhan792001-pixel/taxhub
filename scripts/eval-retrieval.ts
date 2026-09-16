@@ -1,5 +1,6 @@
 // Retrieval regression check: does the right norm show up in the top results?
 // Run: npm run eval   (no API key needed – tests the search layer only)
+import { mkdirSync, writeFileSync } from "node:fs";
 import { retrieve } from "../src/lib/search";
 
 type Case = { q: string[]; expect: string[] };
@@ -41,3 +42,6 @@ for (const c of CASES) {
   if (best >= 3) console.log("    top:", r.slice(0, 5).map((x) => x.ref).join(" | "));
 }
 console.log(`\nhit@3 ${hit3}/${CASES.length}   hit@8 ${hit8}/${CASES.length}`);
+
+mkdirSync("evals/results", { recursive: true });
+writeFileSync("evals/results/retrieval.json", JSON.stringify({ cases: CASES.length, hit3, hit8 }, null, 2));

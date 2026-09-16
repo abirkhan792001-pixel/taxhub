@@ -77,6 +77,20 @@ npm run dev
 | `npm run check:deadlines` | Print deadline calculations for edge cases (weekends, Easter, 3 October) |
 | `npx tsx scripts/try-query.ts "Frage" ["Suchbegriff" …]` | Inspect retrieval for a single question |
 
+## Evaluation
+
+The case brief is turned into a scored metric, the **TaxHub Case Readiness Score** ([evals/rubric.md](evals/rubric.md)), and tested against the live deployment:
+
+- **Product evals** ([evals/cases.ts](evals/cases.ts)): 17 knowledge questions and 7 intake requests. They measure expected source retrieved and cited, citation coverage and validity, key-fact correctness, whether the assistant admits when the sources don't cover a question (and does not produce the memorised fact), a document pasted at runtime, category accuracy, deadline exactness and reply-draft quality.
+- **Deterministic tests:** 13 objection-deadline and weekday/holiday cases worked out by hand.
+- **Deliverable checks:** live routes, public repository, corpus, one-pager sections, and whether every figure in the argument carries a source or an assumption marker.
+
+```bash
+npm run eval:all        # retrieval + deadlines + deliverables + live evals + score
+```
+
+The latest scorecard is committed at [evals/results/scorecard.md](evals/results/scorecard.md).
+
 ## Known limits (honest list)
 
 - No administrative guidance yet (BMF letters, UStAE, AEAO), no case law. These are the next ingestion targets and change many practical answers. Example found during testing: the statute alone suggests the €100,000 small-business limit for a founder, while the BMF letter of 18.03.2025 applies €25,000 in the founding year. The sample handbook bridges this with an internal note (`knowledge/05-merkblatt-kleinunternehmer.md`), the way real firms summarise BMF letters.

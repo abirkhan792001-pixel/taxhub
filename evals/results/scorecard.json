@@ -1,0 +1,194 @@
+{
+  "scoredAt": "2026-09-16T15:34:43.498Z",
+  "earned": 73.7,
+  "assessable": 75,
+  "share": 0.9826666666666667,
+  "band": "Ready to send",
+  "pending": {
+    "loom": 25,
+    "note": "Loom not recorded yet; only the preparation can be checked"
+  },
+  "blocks": [
+    {
+      "block": "A",
+      "earned": 10,
+      "max": 10
+    },
+    {
+      "block": "B",
+      "earned": 39.7,
+      "max": 40
+    },
+    {
+      "block": "D",
+      "earned": 20,
+      "max": 20
+    },
+    {
+      "block": "E",
+      "earned": 4,
+      "max": 5
+    }
+  ],
+  "items": [
+    {
+      "id": "A1",
+      "criterion": "Market and structure argued with sourced figures",
+      "max": 2.5,
+      "points": 2.5,
+      "evidence": "One-pager ‘Why Steuerberater first’ with footnoted BStBK and STAX figures"
+    },
+    {
+      "id": "A2",
+      "criterion": "ICP defined",
+      "max": 2.5,
+      "points": 2.5,
+      "evidence": "Size band 15–60 staff, BAG structure, buyer and champion named"
+    },
+    {
+      "id": "A3",
+      "criterion": "Willingness to pay evidenced",
+      "max": 2.5,
+      "points": 2.5,
+      "evidence": "Competitor and adjacent prices with sources; price hypothesis marked as assumption"
+    },
+    {
+      "id": "A4",
+      "criterion": "Incumbent and gap named",
+      "max": 2.5,
+      "points": 2.5,
+      "evidence": "DATEV figures and Copilot scope sourced; gap stated"
+    },
+    {
+      "id": "B1",
+      "criterion": "Live and shipped with a repo",
+      "max": 5,
+      "points": 5,
+      "evidence": "Routes / 200, /app 200, /one-pager 200, /kanzlei/01-fristenmanagement 200; repo public, README links the demo: true"
+    },
+    {
+      "id": "B2",
+      "criterion": "Real material, not a hardcoded demo",
+      "max": 8,
+      "points": 8,
+      "evidence": "10 official statute sources, 3440 passages; unseen pasted document answered with citation: true; retrieval hit@8 17/17"
+    },
+    {
+      "id": "B3",
+      "criterion": "Grounded and source-cited",
+      "max": 12,
+      "points": 12,
+      "evidence": "Expected source retrieved 100 %, cited 100 %; citation coverage 95 %; answers without invalid citations 100 %"
+    },
+    {
+      "id": "B4",
+      "criterion": "Honest when the sources are silent",
+      "max": 5,
+      "points": 5,
+      "evidence": "Out-of-scope questions answered with an explicit ‘not in the sources’ and no memorised fact: 100 %"
+    },
+    {
+      "id": "B5",
+      "criterion": "Genuinely useful answers",
+      "max": 6,
+      "points": 6,
+      "evidence": "Key facts correct 100 % of in-scope questions; intake category accuracy 100 %"
+    },
+    {
+      "id": "B6",
+      "criterion": "Proactive output (stretch)",
+      "max": 4,
+      "points": 3.7,
+      "evidence": "Objection deadline exact on dated cases 100 %, deadline unit tests 13/13; reply drafts pass quality checks 86 %"
+    },
+    {
+      "id": "D1",
+      "criterion": "Build-first section present",
+      "max": 2,
+      "points": 2,
+      "evidence": "‘What I would build first’ with a concrete scope"
+    },
+    {
+      "id": "D2",
+      "criterion": "First 30 days as exactly three moves",
+      "max": 3,
+      "points": 3,
+      "evidence": "Three moves, each with a day range"
+    },
+    {
+      "id": "D3",
+      "criterion": "Three hardest objections, each with an answer",
+      "max": 3,
+      "points": 3,
+      "evidence": "Three objection and answer pairs"
+    },
+    {
+      "id": "D4",
+      "criterion": "It is one page",
+      "max": 2,
+      "points": 2,
+      "evidence": "TaxHub-One-Pager.pdf exported from /one-pager renders as exactly 1 A4 page; on-screen sheet height 297.1 mm including the 1px border (checked 14 Sep 2026)"
+    },
+    {
+      "id": "D5",
+      "criterion": "Grounded, not invented",
+      "max": 10,
+      "points": 10,
+      "evidence": "10/10 blocks with figures carry a footnote or an assumption marker"
+    },
+    {
+      "id": "E1",
+      "criterion": "Built with Claude Code / AI tooling",
+      "max": 2,
+      "points": 2,
+      "evidence": "11 of 12 commits co-authored by Claude"
+    },
+    {
+      "id": "E2",
+      "criterion": "Language English",
+      "max": 1,
+      "points": 1,
+      "evidence": "One-pager 97 % English function words; README in English"
+    },
+    {
+      "id": "E3",
+      "criterion": "Something new, not NOAH",
+      "max": 1,
+      "points": 1,
+      "evidence": "Repository created after the case was received"
+    },
+    {
+      "id": "E4",
+      "criterion": "Sent back",
+      "max": 1,
+      "points": 0,
+      "evidence": "Reply with links to the CITO contact not sent yet"
+    }
+  ],
+  "productMetrics": {
+    "askCasesPassed": "17/17",
+    "intakeCasesPassed": "6/7",
+    "medianAnswerSeconds": 10.2,
+    "medianFirstTokenSeconds": 9,
+    "medianIntakeSeconds": 4.5,
+    "englishQuestionAnsweredInEnglish": "100 %",
+    "checklistItemsWithCitation": "86 %",
+    "deadlineUnitTests": "13/13",
+    "retrievalHit3": "14/17",
+    "retrievalHit8": "17/17"
+  },
+  "failures": [
+    "intake/undated-notice: draft check failed (mentions a provisionally calculated deadline, but none was calculated)"
+  ],
+  "loomReadiness": {
+    "estimatedDuration": "3:42",
+    "checks": {
+      "Opening with a time box": true,
+      "First pain question by ~0:26": true,
+      "Value framed in the buyer's numbers": true,
+      "Pushback handled": true,
+      "Concrete next step with a date": true,
+      "Estimated under 5:00": true
+    }
+  }
+}

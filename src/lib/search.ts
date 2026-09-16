@@ -230,6 +230,25 @@ export function retrieve({ queries, norms = [], maxLaw = 7, maxFirm = 4, extraCh
   }
   lawHits.push(...followed);
 
+  // statutes spread one concept over consecutive sections (§ 169 Festsetzungsfrist, § 170 Beginn der
+  // Festsetzungsfrist): pull in the adjacent section of a top hit when their titles share a topic word
+  const inLaw = new Set(lawHits.map(([i]) => i));
+  const topicWords = (title: string) => tokenize(title).filter((t) => t.length >= 7);
+  const siblings: [number, number][] = [];
+  for (const [i, s] of lawHits.slice(0, 3)) {
+    const hit = ix.chunks[i];
+    const m = hit.id.match(/^([A-Za-z]+)-(\d+)(?:-\d+)?$/); // plain numbered sections only, e.g. AO-170-1
+    if (!m || hit.kind !== "law") continue;
+    const hitWords = topicWords(hit.title);
+    for (const d of [-1, 1]) {
+      const base = `${m[1]}-${Number(m[2]) + d}`;
+      const j = ix.byId.get(base) ?? ix.byId.get(`${base}-1`);
+      if (j === undefined || inLaw.has(j) || siblings.some(([k]) => k === j) || siblings.length >= 2) continue;
+      if (topicWords(ix.chunks[j].title).some((w) => hitWords.some((h) => w.includes(h) || h.includes(w)))) siblings.push([j, s * 0.85]);
+    }
+  }
+  lawHits.push(...siblings);
+
   // neighbouring chunks of the strongest norms (a list split across chunks stays readable)
   const picked = new Map<number, number>();
   [...lawHits, ...firmHits].forEach(([i, s], rank) => {

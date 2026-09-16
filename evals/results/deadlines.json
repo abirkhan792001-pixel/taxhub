@@ -1,0 +1,84 @@
+{
+  "passed": 13,
+  "total": 13,
+  "results": [
+    {
+      "case": "Einspruchsfrist 2026-09-03 (Thu → Mon, no shift)",
+      "pass": true,
+      "got": "2026-09-07 → 2026-10-07",
+      "expected": "2026-09-07 → 2026-10-07"
+    },
+    {
+      "case": "Einspruchsfrist 2026-09-08 (notice fiction on Saturday → Monday)",
+      "pass": true,
+      "got": "2026-09-14 → 2026-10-14",
+      "expected": "2026-09-14 → 2026-10-14"
+    },
+    {
+      "case": "Einspruchsfrist 2026-09-29 (Saturday 3 Oct (also a holiday) → Monday)",
+      "pass": true,
+      "got": "2026-10-05 → 2026-11-05",
+      "expected": "2026-10-05 → 2026-11-05"
+    },
+    {
+      "case": "Einspruchsfrist 2026-03-30 (Good Friday, weekend and Easter Monday → Tuesday)",
+      "pass": true,
+      "got": "2026-04-07 → 2026-05-07",
+      "expected": "2026-04-07 → 2026-05-07"
+    },
+    {
+      "case": "Einspruchsfrist 2026-12-18 (electronic notice, § 122 Abs. 2a AO)",
+      "pass": true,
+      "got": "2026-12-22 → 2027-01-22",
+      "expected": "2026-12-22 → 2027-01-22"
+    },
+    {
+      "case": "Einspruchsfrist 2026-12-27 (deadline 31 Jan 2027 is a Sunday → Monday 1 Feb)",
+      "pass": true,
+      "got": "2026-12-31 → 2027-02-01",
+      "expected": "2026-12-31 → 2027-02-01"
+    },
+    {
+      "case": "Einspruchsfrist 2027-01-27 (fiction on Sunday → Monday, then one month)",
+      "pass": true,
+      "got": "2027-02-01 → 2027-03-01",
+      "expected": "2027-02-01 → 2027-03-01"
+    },
+    {
+      "case": "Einspruchsfrist 2026-08-27 (31 Aug + one month → 30 Sep (§ 188 Abs. 3 BGB))",
+      "pass": true,
+      "got": "2026-08-31 → 2026-09-30",
+      "expected": "2026-08-31 → 2026-09-30"
+    },
+    {
+      "case": "Einspruchsfrist 2026-02-26 (day before Good Friday stays)",
+      "pass": true,
+      "got": "2026-03-02 → 2026-04-02",
+      "expected": "2026-03-02 → 2026-04-02"
+    },
+    {
+      "case": "Fristende 2027-02-28 (filing deadline 2025 with advisor falls on a Sunday)",
+      "pass": true,
+      "got": "kein Werktag → 2027-03-01",
+      "expected": "kein Werktag → 2027-03-01"
+    },
+    {
+      "case": "Fristende 2026-07-31 (filing deadline 2025 without advisor is a Friday)",
+      "pass": true,
+      "got": "Werktag → 2026-07-31",
+      "expected": "Werktag → 2026-07-31"
+    },
+    {
+      "case": "Fristende 2026-10-03 (Tag der Deutschen Einheit on a Saturday)",
+      "pass": true,
+      "got": "kein Werktag → 2026-10-05",
+      "expected": "kein Werktag → 2026-10-05"
+    },
+    {
+      "case": "Fristende 2026-12-25 (Christmas Day and Boxing Day, then the weekend)",
+      "pass": true,
+      "got": "kein Werktag → 2026-12-28",
+      "expected": "kein Werktag → 2026-12-28"
+    }
+  ]
+}

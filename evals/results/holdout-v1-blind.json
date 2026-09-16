@@ -1,0 +1,727 @@
+{
+  "summary": {
+    "base": "https://taxhub-sqrlane.vercel.app",
+    "ranAt": "2026-09-16T15:36:47.762Z",
+    "ask": {
+      "cases": 5,
+      "passed": 4,
+      "retrievalRecall": 1,
+      "expectedSourceCited": 1,
+      "citationCoverage": 1,
+      "answersWithoutInvalidCitations": 1,
+      "keyFactAccuracy": 0.75,
+      "abstentionAccuracy": 1,
+      "sessionDocumentPass": null,
+      "languageMatch": 1,
+      "medianTotalMs": 2944,
+      "medianTtftMs": 2430
+    },
+    "intake": {
+      "cases": 0,
+      "passed": 0,
+      "categoryAccuracy": null,
+      "deadlineAccuracy": null,
+      "datedDeadlineAccuracy": null,
+      "draftQuality": null,
+      "checklistCitationCoverage": null,
+      "medianTotalMs": null
+    }
+  },
+  "ask": [
+    {
+      "id": "holdout-assessment-period",
+      "scope": "in",
+      "pass": false,
+      "retrieved": true,
+      "expectedCited": true,
+      "citedNumbers": [
+        7,
+        1,
+        3,
+        8
+      ],
+      "invalidCitations": [],
+      "factualSentences": 3,
+      "citationCoverage": 1,
+      "keyFactsCorrect": false,
+      "missingFacts": [
+        "/2030/"
+      ],
+      "forbiddenFacts": [],
+      "abstained": true,
+      "language": "de",
+      "expectedLanguage": "de",
+      "toolCalls": 0,
+      "ttftMs": 2430,
+      "totalMs": 3377,
+      "errors": [],
+      "sources": [
+        {
+          "n": 1,
+          "id": "AO-171-4",
+          "ref": "§ 171 Abs. 7–9 AO",
+          "title": "Ablaufhemmung",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 2,
+          "id": "AO-171-5",
+          "ref": "§ 171 Abs. 10–10a AO",
+          "title": "Ablaufhemmung",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 3,
+          "id": "AO-171-1",
+          "ref": "§ 171 Abs. 1–3a AO",
+          "title": "Ablaufhemmung",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 4,
+          "id": "AO-171-3",
+          "ref": "§ 171 Abs. 4–6 AO",
+          "title": "Ablaufhemmung",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 5,
+          "id": "AO-171-7",
+          "ref": "§ 171 Abs. 15 AO",
+          "title": "Ablaufhemmung",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 6,
+          "id": "AO-171-6",
+          "ref": "§ 171 Abs. 11–14 AO",
+          "title": "Ablaufhemmung",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 7,
+          "id": "AO-170-1",
+          "ref": "§ 170 Abs. 1–3 AO",
+          "title": "Beginn der Festsetzungsfrist",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 8,
+          "id": "AO-171-2",
+          "ref": "§ 171 Abs. 4 AO",
+          "title": "Ablaufhemmung",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 9,
+          "id": "KB-02-mandanten-faq-belege-checkliste-einkommensteuer-vermietung",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Checkliste Einkommensteuer (Vermietung)",
+          "title": "Checkliste Einkommensteuer (Vermietung)",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 10,
+          "id": "KB-02-mandanten-faq-belege-checkliste-einkommensteuer-angestellte",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Checkliste Einkommensteuer (Angestellte)",
+          "title": "Checkliste Einkommensteuer (Angestellte)",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 11,
+          "id": "KB-02-mandanten-faq-belege-wann-kommt-mein-steuerbescheid",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wann kommt mein Steuerbescheid?",
+          "title": "Wann kommt mein Steuerbescheid?",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 12,
+          "id": "EStG-6-16",
+          "ref": "§ 6 Abs. 5, Teil 2/2 EStG",
+          "title": "Bewertung",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 13,
+          "id": "EStG-35a-1",
+          "ref": "§ 35a Abs. 1–3 EStG",
+          "title": "Steuerermäßigung bei Aufwendungen für haushaltsnahe Beschäftigungsverhältnisse, haushaltsnahe Dienstleistungen und Handwerkerleistungen",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 14,
+          "id": "KB-03-honorar-und-auftrag-mandate-die-wir-nicht-annehmen",
+          "ref": "Honorarrichtlinie und Auftragsannahme › Mandate, die wir nicht annehmen",
+          "title": "Mandate, die wir nicht annehmen",
+          "sourceName": "Honorarrichtlinie und Auftragsannahme",
+          "kind": "firm"
+        }
+      ],
+      "answer": "Die Festsetzungsfrist für die Einkommensteuer beginnt bei einer im Jahr 2026 eingereichten Steuererklärung spätestens mit Ablauf des **31.12.2029** (drei Jahre nach dem Einreichungsjahr) [7]. Die reguläre Festsetzungsfrist beträgt vier Jahre (§ 169 Abs. 2 Satz 1 Nr. 2 AO – hier nicht in den Quellen, aber über § 170 Abs. 2 Nr. 1 AO herleitbar), sodass sie regulär mit Ablauf des **31.12.2033** endet. \n\nGesetzlich gilt für den Fristbeginn:\n* Wird eine Steuererklärung eingereicht, beginnt die Festsetzungsfrist mit Ablauf des Kalenderjahrs der Einreichung, **spätestens jedoch mit Ablauf des dritten Kalenderjahrs**, das auf das Entstehungsjahr folgt [7].\n\nHinweis: Das genaue Fristende kann sich durch gesetzliche Ablaufhemmungen (z. B. bei Außenprüfungen, vorläufiger Festsetzung oder anhängigen Einsprüchen) deutlich verlängern [1][3][8]."
+    },
+    {
+      "id": "holdout-home-office",
+      "scope": "in",
+      "pass": true,
+      "retrieved": true,
+      "expectedCited": true,
+      "citedNumbers": [
+        11
+      ],
+      "invalidCitations": [],
+      "factualSentences": 4,
+      "citationCoverage": 1,
+      "keyFactsCorrect": true,
+      "missingFacts": [],
+      "forbiddenFacts": [],
+      "abstained": false,
+      "language": "de",
+      "expectedLanguage": "de",
+      "toolCalls": 0,
+      "ttftMs": 2239,
+      "totalMs": 2944,
+      "errors": [],
+      "sources": [
+        {
+          "n": 1,
+          "id": "EStG-4-8",
+          "ref": "§ 4 Abs. 5, Teil 3/5 EStG",
+          "title": "Gewinnbegriff im Allgemeinen",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 2,
+          "id": "EStG-9-1",
+          "ref": "§ 9 Abs. 1, Teil 1/5 EStG",
+          "title": "Werbungskosten",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 3,
+          "id": "EStG-9-11",
+          "ref": "§ 9 Abs. 4a–5 EStG",
+          "title": "Werbungskosten",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 4,
+          "id": "EStG-9-6",
+          "ref": "§ 9 Abs. 1–3 EStG",
+          "title": "Werbungskosten",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 5,
+          "id": "EStG-9-4",
+          "ref": "§ 9 Abs. 1, Teil 4/5 EStG",
+          "title": "Werbungskosten",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 6,
+          "id": "EStG-9-7",
+          "ref": "§ 9 Abs. 4, Teil 1/2 EStG",
+          "title": "Werbungskosten",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 7,
+          "id": "EStG-9-3",
+          "ref": "§ 9 Abs. 1, Teil 3/5 EStG",
+          "title": "Werbungskosten",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 8,
+          "id": "KB-02-mandanten-faq-belege-checkliste-einkommensteuer-angestellte",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Checkliste Einkommensteuer (Angestellte)",
+          "title": "Checkliste Einkommensteuer (Angestellte)",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 9,
+          "id": "EStG-35a-2",
+          "ref": "§ 35a Abs. 4–5 EStG",
+          "title": "Steuerermäßigung bei Aufwendungen für haushaltsnahe Beschäftigungsverhältnisse, haushaltsnahe Dienstleistungen und Handwerkerleistungen",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 10,
+          "id": "EStG-4-7",
+          "ref": "§ 4 Abs. 5, Teil 2/5 EStG",
+          "title": "Gewinnbegriff im Allgemeinen",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 11,
+          "id": "EStG-4-9",
+          "ref": "§ 4 Abs. 5, Teil 4/5 EStG",
+          "title": "Gewinnbegriff im Allgemeinen",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 12,
+          "id": "EStG-9-2",
+          "ref": "§ 9 Abs. 1, Teil 2/5 EStG",
+          "title": "Werbungskosten",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 13,
+          "id": "EStG-9-10",
+          "ref": "§ 9 Abs. 4a, Teil 2/2 EStG",
+          "title": "Werbungskosten",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 14,
+          "id": "EStG-9-12",
+          "ref": "§ 9 Abs. 6 EStG",
+          "title": "Werbungskosten",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 15,
+          "id": "KB-03-honorar-und-auftrag-vergütung",
+          "ref": "Honorarrichtlinie und Auftragsannahme › Vergütung",
+          "title": "Vergütung",
+          "sourceName": "Honorarrichtlinie und Auftragsannahme",
+          "kind": "firm"
+        },
+        {
+          "n": 16,
+          "id": "StBVV-4",
+          "ref": "§ 4 StBVV",
+          "title": "Vergütungsvereinbarung",
+          "sourceName": "Steuerberatervergütungsverordnung",
+          "kind": "law"
+        },
+        {
+          "n": 17,
+          "id": "StBVV-24-4",
+          "ref": "§ 24 Abs. 1, Teil 4/4 StBVV",
+          "title": "Steuererklärungen",
+          "sourceName": "Steuerberatervergütungsverordnung",
+          "kind": "law"
+        },
+        {
+          "n": 18,
+          "id": "KB-01-fristenmanagement-mandantenanrufe-zu-bescheiden",
+          "ref": "Kanzlei-Handbuch – Fristenmanagement › Mandantenanrufe zu Bescheiden",
+          "title": "Mandantenanrufe zu Bescheiden",
+          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
+          "kind": "firm"
+        },
+        {
+          "n": 19,
+          "id": "KB-02-mandanten-faq-belege-wie-reichen-sie-unterlagen-ein",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wie reichen Sie Unterlagen ein?",
+          "title": "Wie reichen Sie Unterlagen ein?",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        }
+      ],
+      "answer": "Für Tage im Homeoffice kann ein Mandant die **Tagespauschale von 6 Euro pro Kalendertag**, höchstens **1 260 Euro im Wirtschafts- oder Kalenderjahr**, ansetzen [11]. \n\n* **Gesetzliche Regelung:** Die Tagespauschale von 6 Euro pro Tag (max. 1 260 Euro/Jahr) gilt für Tage, an denen die betriebliche oder berufliche Tätigkeit überwiegend in der häuslichen Wohnung ausgeübt und keine außerhalb gelegene erste Tätigkeitsstätte aufgesucht wird [11]. Steht dauerhaft kein anderer Arbeitsplatz zur Verfügung, ist der Abzug auch dann zulässig, wenn am selben Tag auswärts oder an der ersten Tätigkeitsstätte gearbeitet wurde [11].\n* **Kürzung / Ausschluss:** Der Abzug ist ausgeschlossen, soweit für die Wohnung Unterkunftskosten im Rahmen einer doppelten Haushaltsführung oder für ein häusliches Arbeitszimmer abgezogen werden [11]."
+    },
+    {
+      "id": "holdout-interest-rate",
+      "scope": "in",
+      "pass": true,
+      "retrieved": true,
+      "expectedCited": true,
+      "citedNumbers": [
+        5
+      ],
+      "invalidCitations": [],
+      "factualSentences": 3,
+      "citationCoverage": 1,
+      "keyFactsCorrect": true,
+      "missingFacts": [],
+      "forbiddenFacts": [],
+      "abstained": false,
+      "language": "de",
+      "expectedLanguage": "de",
+      "toolCalls": 0,
+      "ttftMs": 2715,
+      "totalMs": 2866,
+      "errors": [],
+      "sources": [
+        {
+          "n": 1,
+          "id": "AO-233a-2",
+          "ref": "§ 233a Abs. 3–4 AO",
+          "title": "Verzinsung von Steuernachforderungen und Steuererstattungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 2,
+          "id": "AO-233a-1",
+          "ref": "§ 233a Abs. 1–2a AO",
+          "title": "Verzinsung von Steuernachforderungen und Steuererstattungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 3,
+          "id": "AO-233a-4",
+          "ref": "§ 233a Abs. 7–8 AO",
+          "title": "Verzinsung von Steuernachforderungen und Steuererstattungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 4,
+          "id": "AO-233a-3",
+          "ref": "§ 233a Abs. 5–6 AO",
+          "title": "Verzinsung von Steuernachforderungen und Steuererstattungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 5,
+          "id": "AO-238",
+          "ref": "§ 238 AO",
+          "title": "Höhe und Berechnung der Zinsen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 6,
+          "id": "EGAO-Art_97_15-3",
+          "ref": "Art. 97 § 15 Abs. 14–16 EGAO",
+          "title": "Zinsen",
+          "sourceName": "Einführungsgesetz zur Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 7,
+          "id": "KStG-21a",
+          "ref": "§ 21a KStG",
+          "title": "Deckungsrückstellungen",
+          "sourceName": "Körperschaftsteuergesetz",
+          "kind": "law"
+        }
+      ],
+      "answer": "Die Nachzahlungszinsen nach § 233a AO betragen **0,15 Prozent für jeden Monat, was 1,8 Prozent für jedes Jahr** entspricht [5]. \n\n* Dieser Zinssatz ist in den Fällen des § 233a AO ab dem 1. Januar 2019 anzuwenden [5].\n* Für die Berechnung wird der zu verzinsende Betrag auf den nächsten durch 50 Euro teilbaren Betrag abgerundet, und angefangene Monate bleiben außer Ansatz [5]."
+    },
+    {
+      "id": "holdout-english-assessment",
+      "scope": "in",
+      "pass": true,
+      "retrieved": true,
+      "expectedCited": true,
+      "citedNumbers": [
+        4,
+        2
+      ],
+      "invalidCitations": [],
+      "factualSentences": 4,
+      "citationCoverage": 1,
+      "keyFactsCorrect": true,
+      "missingFacts": [],
+      "forbiddenFacts": [],
+      "abstained": false,
+      "language": "en",
+      "expectedLanguage": "en",
+      "toolCalls": 0,
+      "ttftMs": 7356,
+      "totalMs": 7820,
+      "errors": [],
+      "sources": [
+        {
+          "n": 1,
+          "id": "AO-170-2",
+          "ref": "§ 170 Abs. 4–6 AO",
+          "title": "Beginn der Festsetzungsfrist",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 2,
+          "id": "AO-170-1",
+          "ref": "§ 170 Abs. 1–3 AO",
+          "title": "Beginn der Festsetzungsfrist",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 3,
+          "id": "AO-170-3",
+          "ref": "§ 170 Abs. 7 AO",
+          "title": "Beginn der Festsetzungsfrist",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 4,
+          "id": "AO-169",
+          "ref": "§ 169 AO",
+          "title": "Festsetzungsfrist",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 5,
+          "id": "AO-191-2",
+          "ref": "§ 191 Abs. 3–5 AO",
+          "title": "Haftungsbescheide, Duldungsbescheide",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 6,
+          "id": "EStG-105",
+          "ref": "§ 105 EStG",
+          "title": "Festsetzung und Auszahlung der Mobilitätsprämie",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 7,
+          "id": "EStG-34a-1",
+          "ref": "§ 34a Abs. 1 EStG",
+          "title": "Begünstigung der nicht entnommenen Gewinne",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 8,
+          "id": "KB-02-mandanten-faq-belege-checkliste-einkommensteuer-vermietung",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Checkliste Einkommensteuer (Vermietung)",
+          "title": "Checkliste Einkommensteuer (Vermietung)",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 9,
+          "id": "KB-02-mandanten-faq-belege-checkliste-einkommensteuer-angestellte",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Checkliste Einkommensteuer (Angestellte)",
+          "title": "Checkliste Einkommensteuer (Angestellte)",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 10,
+          "id": "KB-02-mandanten-faq-belege-bis-wann-brauchen-wir-ihre-unterlagen",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Bis wann brauchen wir Ihre Unterlagen?",
+          "title": "Bis wann brauchen wir Ihre Unterlagen?",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 11,
+          "id": "KB-02-mandanten-faq-belege-wann-kommt-mein-steuerbescheid",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wann kommt mein Steuerbescheid?",
+          "title": "Wann kommt mein Steuerbescheid?",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 12,
+          "id": "EStG-6-4",
+          "ref": "§ 6 Abs. 1, Teil 4/11 EStG",
+          "title": "Bewertung",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 13,
+          "id": "EStG-35a-1",
+          "ref": "§ 35a Abs. 1–3 EStG",
+          "title": "Steuerermäßigung bei Aufwendungen für haushaltsnahe Beschäftigungsverhältnisse, haushaltsnahe Dienstleistungen und Handwerkerleistungen",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        }
+      ],
+      "answer": "The regular **assessment period (*Festsetzungsfrist*) for income tax is four years** [4]. \n\n* **Statutory rule:** The period generally begins at the end of the calendar year in which the tax arose [2]. However, if a tax return (*Steuererklärung*) must be submitted, the period begins at the end of the calendar year in which the tax return is submitted, but **at the latest at the end of the third calendar year** following the year the tax arose (unless it begins later) [2]. \n* **Longer periods:** In cases of tax evasion (*Steuerhinterziehung*), the period is ten years, and for reckless tax shortening (*leichtfertige Steuerverkürzung*), it is five years [4]."
+    },
+    {
+      "id": "holdout-out-small-invoice",
+      "scope": "out",
+      "pass": true,
+      "retrieved": null,
+      "expectedCited": null,
+      "citedNumbers": [],
+      "invalidCitations": [],
+      "factualSentences": 0,
+      "citationCoverage": null,
+      "keyFactsCorrect": true,
+      "missingFacts": [],
+      "forbiddenFacts": [],
+      "abstained": true,
+      "language": "de",
+      "expectedLanguage": "de",
+      "toolCalls": 0,
+      "ttftMs": 2088,
+      "totalMs": 2313,
+      "errors": [],
+      "sources": [
+        {
+          "n": 1,
+          "id": "KStG-21-2",
+          "ref": "§ 21 Abs. 1–2 KStG",
+          "title": "Beitragsrückerstattungen",
+          "sourceName": "Körperschaftsteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 2,
+          "id": "EStG-14a-3",
+          "ref": "§ 14a Abs. 4, Teil 1/2 EStG",
+          "title": "Vergünstigungen bei der Veräußerung bestimmter land- und forstwirtschaftlicher Betriebe",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 3,
+          "id": "KB-05-merkblatt-kleinunternehmer-gründungsjahr-grenze-25-000-euro-verwaltungsauffassung",
+          "ref": "Merkblatt Kleinunternehmerregelung und Existenzgründer › Gründungsjahr: Grenze 25.000 Euro (Verwaltungsauffassung)",
+          "title": "Gründungsjahr: Grenze 25.000 Euro (Verwaltungsauffassung)",
+          "sourceName": "Merkblatt Kleinunternehmerregelung und Existenzgründer",
+          "kind": "firm"
+        },
+        {
+          "n": 4,
+          "id": "EStG-6a-3",
+          "ref": "§ 6a Abs. 3, Teil 1/2 EStG",
+          "title": "Pensionsrückstellung",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 5,
+          "id": "KB-05-merkblatt-kleinunternehmer-umsatzgrenzen-nach-19-ustg-seit-2025",
+          "ref": "Merkblatt Kleinunternehmerregelung und Existenzgründer › Umsatzgrenzen nach § 19 UStG (seit 2025)",
+          "title": "Umsatzgrenzen nach § 19 UStG (seit 2025)",
+          "sourceName": "Merkblatt Kleinunternehmerregelung und Existenzgründer",
+          "kind": "firm"
+        },
+        {
+          "n": 6,
+          "id": "AO-200a-5",
+          "ref": "§ 200a Abs. 7 AO",
+          "title": "Qualifiziertes Mitwirkungsverlangen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 7,
+          "id": "UStG-19-1",
+          "ref": "§ 19 Abs. 1–2 UStG",
+          "title": "Besteuerung der Kleinunternehmer",
+          "sourceName": "Umsatzsteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 8,
+          "id": "AO-156-1",
+          "ref": "§ 156 Abs. 1 AO",
+          "title": "Absehen von der Steuerfestsetzung",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 9,
+          "id": "EStG-46-5",
+          "ref": "§ 46 Abs. 2–5 EStG",
+          "title": "Veranlagung bei Bezug von Einkünften aus nichtselbständiger Arbeit",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 10,
+          "id": "EStG-15a-3",
+          "ref": "§ 15a Abs. 3 EStG",
+          "title": "Verluste bei beschränkter Haftung",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 11,
+          "id": "KB-02-mandanten-faq-belege-checkliste-einkommensteuer-angestellte",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Checkliste Einkommensteuer (Angestellte)",
+          "title": "Checkliste Einkommensteuer (Angestellte)",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 12,
+          "id": "KStG-21-1",
+          "ref": "§ 21 Abs. 1 KStG",
+          "title": "Beitragsrückerstattungen",
+          "sourceName": "Körperschaftsteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 13,
+          "id": "KB-02-mandanten-faq-belege-checkliste-einkommensteuer-vermietung",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Checkliste Einkommensteuer (Vermietung)",
+          "title": "Checkliste Einkommensteuer (Vermietung)",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 14,
+          "id": "EStG-14a-2",
+          "ref": "§ 14a Abs. 2–3 EStG",
+          "title": "Vergünstigungen bei der Veräußerung bestimmter land- und forstwirtschaftlicher Betriebe",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 15,
+          "id": "EStG-14a-4",
+          "ref": "§ 14a Abs. 4, Teil 2/2 EStG",
+          "title": "Vergünstigungen bei der Veräußerung bestimmter land- und forstwirtschaftlicher Betriebe",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 16,
+          "id": "EStG-6a-2",
+          "ref": "§ 6a Abs. 2 EStG",
+          "title": "Pensionsrückstellung",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 17,
+          "id": "EStG-6a-4",
+          "ref": "§ 6a Abs. 3, Teil 2/2 EStG",
+          "title": "Pensionsrückstellung",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        }
+      ],
+      "answer": "Dazu enthalten die Quellen nichts. Um diese Frage zu beantworten, müssten die Regelungen zur Kleinbetragsrechnung (gemäß § 33 UStDV) vorliegen, die in den aktuellen Quellen nicht enthalten sind."
+    }
+  ],
+  "intake": []
+}

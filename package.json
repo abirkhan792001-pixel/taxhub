@@ -10,7 +10,12 @@
     "typecheck": "tsc --noEmit",
     "ingest": "node scripts/ingest.mjs",
     "eval": "tsx scripts/eval-retrieval.ts",
-    "check:deadlines": "tsx scripts/check-deadlines.ts"
+    "check:deadlines": "tsx scripts/check-deadlines.ts",
+    "eval:deadlines": "tsx evals/deadlines.test.ts",
+    "eval:live": "tsx evals/run-live.ts",
+    "eval:deliverables": "tsx evals/check-deliverables.ts",
+    "eval:score": "tsx evals/score.ts",
+    "eval:all": "npm run eval && npm run eval:deadlines && npm run eval:deliverables && npm run eval:live && npm run eval:score"
   },
   "dependencies": {
     "@ai-sdk/google": "^4.0.69",

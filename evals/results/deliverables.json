@@ -1,0 +1,57 @@
+{
+  "base": "https://taxhub-sqrlane.vercel.app",
+  "checkedAt": "2026-09-16T15:22:31.237Z",
+  "routes": {
+    "/": 200,
+    "/app": 200,
+    "/one-pager": 200,
+    "/kanzlei/01-fristenmanagement": 200
+  },
+  "routesAll200": true,
+  "repo": {
+    "url": "https://github.com/abirkhan792001-pixel/taxhub",
+    "visibility": "public",
+    "createdAt": "2026-09-14T15:07:07Z",
+    "readmeLinksLiveDemo": true,
+    "coAuthoredCommits": 11,
+    "totalCommitsSeen": 12,
+    "createdForCase": true
+  },
+  "corpus": {
+    "lawSources": 10,
+    "lawChunks": 3440,
+    "firmChunks": 21
+  },
+  "onePager": {
+    "sections": [
+      "Why Steuerberater first",
+      "ICP and willingness to pay",
+      "The incumbent and the gap",
+      "What I would build first",
+      "First 30 days",
+      "Three hardest objections"
+    ],
+    "A1_marketStructure": true,
+    "A2_icpDefined": true,
+    "A3_wtpEvidenced": true,
+    "A4_incumbentAndGap": true,
+    "D1_buildFirst": true,
+    "D2_threeMoves": true,
+    "D3_threeObjections": true,
+    "D5_numericClaims": 10,
+    "D5_supported": 10,
+    "D5_unsupported": [],
+    "englishShare": 0.9693877551020408
+  },
+  "speech": {
+    "estimatedDurationSec": 222,
+    "underFiveMinutes": true,
+    "firstPainQuestionSec": 26,
+    "painWithin60s": true,
+    "hasOpening": true,
+    "valueInNumbers": true,
+    "pushbackHandled": true,
+    "concreteNextStep": true,
+    "words": 437
+  }
+}
