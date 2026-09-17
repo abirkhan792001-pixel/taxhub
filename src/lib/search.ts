@@ -200,7 +200,16 @@ export function retrieve({ queries, norms = [], maxLaw = 7, maxFirm = 4, extraCh
     chunksForNorm(ix, ref).forEach((i, j) => fused.set(i, (fused.get(i) ?? 0) + 0.05 - r * 0.001 - j * 0.0005));
   });
 
-  const lawHits = [...fused.entries()].sort((a, b) => b[1] - a[1]).slice(0, maxLaw);
+  // a named norm is shown in full (up to 8 passages) so a second named norm cannot crowd out the
+  // paragraph that answers the question; search results fill the remaining slots
+  const requested = [...new Set(allNorms.flatMap((ref) => chunksForNorm(ix, ref)))].slice(0, 8);
+  const lawHits: [number, number][] = requested.map((i) => [i, fused.get(i) ?? 0.05]);
+  const lawBudget = Math.max(maxLaw, requested.length + 3);
+  for (const [i, s] of [...fused.entries()].sort((a, b) => b[1] - a[1])) {
+    if (lawHits.length >= lawBudget) break;
+    if (!requested.includes(i)) lawHits.push([i, s]);
+  }
+  lawHits.sort((a, b) => b[1] - a[1]);
 
   // firm knowledge is ranked separately (so it always gets a voice) but fused on
   // the same reciprocal-rank scale, slightly discounted against the statute text

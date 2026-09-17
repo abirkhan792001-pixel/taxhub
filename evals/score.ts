@@ -1,6 +1,6 @@
 // Combines the evaluation results into the TaxHub Case Readiness Score (see evals/rubric.md).
 // Usage: npm run eval:score
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 
 const load = <T>(p: string): T => JSON.parse(readFileSync(p, "utf8")) as T;
 
@@ -111,6 +111,23 @@ const scorecard = {
   loomReadiness,
 };
 
+type AskOnly = { summary: { ask: { cases: number; passed: number } }; ask: { id: string; pass: boolean; missingFacts: string[]; forbiddenFacts: string[] }[] };
+const optional = <T>(p: string): T | null => (existsSync(p) ? load<T>(p) : null);
+const baseline = optional<{ earned: number; assessable: number; productMetrics: { askCasesPassed: string; intakeCasesPassed: string } }>("evals/results/baseline/scorecard.json");
+const holdouts = [
+  { label: "Holdout v1 (blind, before fixes)", file: "evals/results/holdout-v1-blind.json" },
+  { label: "Holdout v1 re-run after fixes (not blind)", file: "evals/results/holdout-v1-postfix.json" },
+  { label: "Holdout v2 (blind, written after fixes)", file: "evals/results/holdout2.json" },
+]
+  .map((h) => ({ ...h, data: optional<AskOnly>(h.file) }))
+  .filter((h) => h.data)
+  .map((h) => ({
+    label: h.label,
+    passed: `${h.data!.summary.ask.passed}/${h.data!.summary.ask.cases}`,
+    failures: h.data!.ask.filter((x) => !x.pass).map((x) => `${x.id}${x.missingFacts.length ? ` (missing ${x.missingFacts.join(", ")})` : ""}${x.forbiddenFacts.length ? ` (forbidden ${x.forbiddenFacts.join(", ")})` : ""}`),
+  }));
+Object.assign(scorecard, { baseline: baseline && { earned: baseline.earned, assessable: baseline.assessable, ask: baseline.productMetrics.askCasesPassed, intake: baseline.productMetrics.intakeCasesPassed }, holdouts });
+
 writeFileSync("evals/results/scorecard.json", JSON.stringify(scorecard, null, 2));
 
 const md = [
@@ -140,6 +157,30 @@ const md = [
   `## Loom readiness (preparation only, no points)`,
   ``,
   ...(loomReadiness ? [`Estimated duration ${loomReadiness.estimatedDuration}.`, ``, ...Object.entries(loomReadiness.checks).map(([k, v]) => `- ${v ? "✓" : "✗"} ${k}`)] : ["- speech not checked"]),
+  ``,
+  `## Before and after the fixes`,
+  ``,
+  ...(baseline
+    ? [
+        `| | Score | Knowledge questions | Intake requests |`,
+        `| --- | --- | --- | --- |`,
+        `| Baseline | ${baseline.earned} / ${baseline.assessable} | ${baseline.productMetrics.askCasesPassed} | ${baseline.productMetrics.intakeCasesPassed} |`,
+        `| Now | ${earned} / ${assessable} | ${scorecard.productMetrics.askCasesPassed} | ${scorecard.productMetrics.intakeCasesPassed} |`,
+      ]
+    : ["- no baseline recorded"]),
+  ``,
+  `## Holdout questions (generalisation, no points)`,
+  ``,
+  ...holdouts.map((h) => `- **${h.label}: ${h.passed}**${h.failures.length ? ` — failed: ${h.failures.join("; ")}` : ""}`),
+  ``,
+  `## Limits of this metric`,
+  ``,
+  `- The rubric and the test cases were written by the builder, who knew the corpus. The holdout sets reduce, but do not remove, that bias.`,
+  `- Structural checks confirm that the one-pager contains each required part and marks its figures; they cannot judge how persuasive the argument is.`,
+  `- Fact checks use regular expressions: an answer can contain the right number and still reason badly. Failed and borderline answers were read in full.`,
+  `- Expected sources match on any listed norm, so an answer can pass the source check while missing one of several needed norms.`,
+  `- Model output varies between runs; latency and coverage move by several points on the free Gemini tier.`,
+  `- The Loom, a quarter of the brief, is not scored until it is recorded.`,
   ``,
 ].join("\n");
 writeFileSync("evals/results/scorecard.md", md);

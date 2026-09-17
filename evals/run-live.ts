@@ -215,16 +215,23 @@ function scoreIntake(c: IntakeCase, run: Awaited<ReturnType<typeof callIntake>>)
 
 // ---------------------------------------------------------------- runner
 
-async function withRetry<T>(label: string, fn: () => Promise<T>, ok: (v: T) => boolean): Promise<T> {
-  try {
-    const v = await fn();
-    if (ok(v)) return v;
-    console.warn(`  ${label}: empty or errored response, retrying in 30 s`);
-  } catch (err) {
-    console.warn(`  ${label}: ${String(err).slice(0, 120)}, retrying in 30 s`);
+// up to three attempts with backoff; a case that still fails is recorded as failed, not fatal to the run
+async function withRetry<T>(label: string, fn: () => Promise<T>, ok: (v: T) => boolean): Promise<T | Error> {
+  let last: unknown = new Error("empty or errored response");
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const v = await fn();
+      if (ok(v) || attempt === 3) return v;
+      last = new Error("empty or errored response");
+    } catch (err) {
+      last = err;
+    }
+    if (attempt < 3) {
+      console.warn(`  ${label}: ${String(last).slice(0, 120)}, retry ${attempt} in ${30 * attempt} s`);
+      await sleep(30_000 * attempt);
+    }
   }
-  await sleep(30_000);
-  return fn();
+  return last instanceof Error ? last : new Error(String(last));
 }
 
 const median = (xs: number[]) => {
@@ -246,7 +253,8 @@ async function main() {
 
   const ask = [];
   for (const c of pick(SUITES[SUITE] ?? ASK_CASES)) {
-    const run = await withRetry(c.id, () => callAsk(c), (r) => r.text.length > 0 && r.errors.length === 0);
+    const attempt = await withRetry(c.id, () => callAsk(c), (r) => r.text.length > 0 && r.errors.length === 0);
+    const run = attempt instanceof Error ? { text: "", sources: [], ttftMs: null, totalMs: 0, errors: [String(attempt)], toolCalls: 0 } : attempt;
     const r = scoreAsk(c, run);
     ask.push(r);
     console.log(`${r.pass ? "✓" : "✗"} ask    ${c.id.padEnd(28)} cov ${r.citationCoverage?.toFixed(2) ?? " –  "}  ${String(r.totalMs).padStart(6)} ms${r.missingFacts.length ? `  missing ${r.missingFacts.join(" ")}` : ""}${r.forbiddenFacts.length ? `  FORBIDDEN ${r.forbiddenFacts.join(" ")}` : ""}${r.invalidCitations.length ? `  invalid [${r.invalidCitations}]` : ""}`);
@@ -255,7 +263,14 @@ async function main() {
 
   const intake = [];
   for (const c of SUITE === "main" ? pick(INTAKE_CASES) : []) {
-    const run = await withRetry(c.id, () => callIntake(c), () => true);
+    const attempt = await withRetry(c.id, () => callIntake(c), () => true);
+    if (attempt instanceof Error) {
+      console.log(`✗ intake ${c.id.padEnd(28)} request failed: ${String(attempt).slice(0, 100)}`);
+      intake.push({ id: c.id, pass: false, category: "ERROR", expectedCategory: c.expectCategory, categoryCorrect: false, deadline: null, expectedDeadline: c.expectDeadline, deadlineCorrect: false, draftStatesDeadline: null, draftHasRawCitations: false, draftForbidden: [], draftQualityOk: false, invalidCitations: [], checklistCoverage: null, missingFacts: [], urgency: "", totalMs: 0, summary: "", draft: "", error: String(attempt) });
+      await sleep(PAUSE_MS);
+      continue;
+    }
+    const run = attempt;
     const r = scoreIntake(c, run);
     intake.push(r);
     console.log(`${r.pass ? "✓" : "✗"} intake ${c.id.padEnd(28)} ${r.category.padEnd(10)} deadline ${r.deadlineCorrect ? "ok" : "WRONG"}  ${String(r.totalMs).padStart(6)} ms`);
