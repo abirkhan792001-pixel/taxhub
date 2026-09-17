@@ -1,6 +1,6 @@
 {
   "base": "https://taxhub-sqrlane.vercel.app",
-  "checkedAt": "2026-09-16T15:22:31.237Z",
+  "checkedAt": "2026-09-17T08:41:09.280Z",
   "routes": {
     "/": 200,
     "/app": 200,
@@ -13,8 +13,8 @@
     "visibility": "public",
     "createdAt": "2026-09-14T15:07:07Z",
     "readmeLinksLiveDemo": true,
-    "coAuthoredCommits": 11,
-    "totalCommitsSeen": 12,
+    "coAuthoredCommits": 14,
+    "totalCommitsSeen": 15,
     "createdForCase": true
   },
   "corpus": {

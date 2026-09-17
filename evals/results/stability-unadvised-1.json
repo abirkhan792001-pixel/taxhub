@@ -1,0 +1,181 @@
+{
+  "summary": {
+    "base": "https://taxhub-sqrlane.vercel.app",
+    "ranAt": "2026-09-17T08:36:36.160Z",
+    "ask": {
+      "cases": 1,
+      "passed": 1,
+      "retrievalRecall": 1,
+      "expectedSourceCited": 1,
+      "citationCoverage": 1,
+      "answersWithoutInvalidCitations": 1,
+      "keyFactAccuracy": 1,
+      "abstentionAccuracy": null,
+      "sessionDocumentPass": null,
+      "incompleteAnswers": 0,
+      "languageMatch": null,
+      "medianTotalMs": 3577,
+      "medianTtftMs": 3389
+    },
+    "intake": {
+      "cases": 0,
+      "passed": 0,
+      "categoryAccuracy": null,
+      "deadlineAccuracy": null,
+      "datedDeadlineAccuracy": null,
+      "draftQuality": null,
+      "checklistCitationCoverage": null,
+      "medianTotalMs": null
+    }
+  },
+  "ask": [
+    {
+      "id": "deadline-2025-unadvised",
+      "scope": "in",
+      "pass": true,
+      "incomplete": false,
+      "retrieved": true,
+      "expectedCited": true,
+      "citedNumbers": [
+        2
+      ],
+      "invalidCitations": [],
+      "factualSentences": 1,
+      "citationCoverage": 1,
+      "keyFactsCorrect": true,
+      "missingFacts": [],
+      "forbiddenFacts": [],
+      "abstained": false,
+      "language": "de",
+      "expectedLanguage": "de",
+      "toolCalls": 1,
+      "ttftMs": 3389,
+      "totalMs": 3577,
+      "errors": [],
+      "sources": [
+        {
+          "n": 1,
+          "id": "AO-149-2",
+          "ref": "§ 149 Abs. 3, Teil 1/2 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 2,
+          "id": "AO-149-1",
+          "ref": "§ 149 Abs. 1–2 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 3,
+          "id": "AO-149-4",
+          "ref": "§ 149 Abs. 4 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 4,
+          "id": "AO-149-3",
+          "ref": "§ 149 Abs. 3, Teil 2/2 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 5,
+          "id": "AO-149-6",
+          "ref": "§ 149 Abs. 6 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 6,
+          "id": "AO-150-1",
+          "ref": "§ 150 Abs. 1–4 AO",
+          "title": "Form und Inhalt der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 7,
+          "id": "AO-149-5",
+          "ref": "§ 149 Abs. 4–5 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 8,
+          "id": "AO-108",
+          "ref": "§ 108 AO",
+          "title": "Fristen und Termine",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 9,
+          "id": "KB-03-honorar-und-auftrag-mandate-die-wir-nicht-annehmen",
+          "ref": "Honorarrichtlinie und Auftragsannahme › Mandate, die wir nicht annehmen",
+          "title": "Mandate, die wir nicht annehmen",
+          "sourceName": "Honorarrichtlinie und Auftragsannahme",
+          "kind": "firm"
+        },
+        {
+          "n": 10,
+          "id": "EStG-25",
+          "ref": "§ 25 EStG",
+          "title": "Veranlagungszeitraum, Steuererklärungspflicht",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 11,
+          "id": "AO-150-3",
+          "ref": "§ 150 Abs. 7 AO",
+          "title": "Form und Inhalt der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 12,
+          "id": "EGAO-Art_97_8-1",
+          "ref": "Art. 97 § 8 Abs. 1–3 EGAO",
+          "title": "Verspätungszuschlag",
+          "sourceName": "Einführungsgesetz zur Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 13,
+          "id": "KB-02-mandanten-faq-belege-wie-reichen-sie-unterlagen-ein",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wie reichen Sie Unterlagen ein?",
+          "title": "Wie reichen Sie Unterlagen ein?",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 14,
+          "id": "KB-02-mandanten-faq-belege-bis-wann-brauchen-wir-ihre-unterlagen",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Bis wann brauchen wir Ihre Unterlagen?",
+          "title": "Bis wann brauchen wir Ihre Unterlagen?",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 15,
+          "id": "KB-02-mandanten-faq-belege-wann-kommt-mein-steuerbescheid",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wann kommt mein Steuerbescheid?",
+          "title": "Wann kommt mein Steuerbescheid?",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        }
+      ],
+      "answer": "Gesetzlich gilt: Ohne beauftragten Steuerberater ist die Einkommensteuererklärung 2025 spätestens sieben Monate nach Ablauf des Kalenderjahres, also am **Freitag, 31. Juli 2026**, abzugeben [2]."
+    }
+  ],
+  "intake": []
+}

@@ -1,0 +1,69 @@
+{
+  "summary": {
+    "base": "https://taxhub-sqrlane.vercel.app",
+    "ranAt": "2026-09-17T08:37:15.542Z",
+    "ask": {
+      "cases": 0,
+      "passed": 0,
+      "retrievalRecall": null,
+      "expectedSourceCited": null,
+      "citationCoverage": null,
+      "answersWithoutInvalidCitations": null,
+      "keyFactAccuracy": null,
+      "abstentionAccuracy": null,
+      "sessionDocumentPass": null,
+      "incompleteAnswers": 0,
+      "languageMatch": null,
+      "medianTotalMs": null,
+      "medianTtftMs": null
+    },
+    "intake": {
+      "cases": 1,
+      "passed": 1,
+      "categoryAccuracy": 1,
+      "deadlineAccuracy": 1,
+      "datedDeadlineAccuracy": null,
+      "draftQuality": 1,
+      "checklistCitationCoverage": 1,
+      "medianTotalMs": 5683
+    }
+  },
+  "ask": [],
+  "intake": [
+    {
+      "id": "demir-voicemail",
+      "pass": true,
+      "category": "NEUMANDAT",
+      "expectedCategory": "NEUMANDAT",
+      "categoryCorrect": true,
+      "deadline": null,
+      "expectedDeadline": null,
+      "deadlineCorrect": true,
+      "draftStatesDeadline": null,
+      "draftHasRawCitations": false,
+      "draftForbidden": [],
+      "draftQualityOk": true,
+      "invalidCitations": [],
+      "checklistCoverage": 1,
+      "missingFacts": [],
+      "urgency": "mittel",
+      "totalMs": 5683,
+      "summary": "Die Mandantin hat sich im März als Grafikdesignerin selbstständig gemacht, im laufenden Jahr einen voraussichtlichen Umsatz von ca. 28.000 Euro und fragt an, ob sie Kleinunternehmerin ist oder Umsatzsteuer zahlen muss [Anfrage]. Vorläufige fachliche Einordnung für den Sachbearbeiter: Da im Jahr der Gründung die Umsatzgrenze von 25.000 Euro (nicht 100.000 Euro) maßgeblich ist und der voraussichtliche Umsatz bei rund 28.000 Euro liegt, wird die Grenze voraussichtlich überschritten [1][12]. Gemäß Kanzleiregel beraten wir bei einem erwarteten Umsatz über oder knapp unter 25.000 Euro zur Regelbesteuerung und prüfen den Vorsteuerabzug [12]. Die Auskünfte zur Betriebseröffnung bzw. Aufnahme einer freiberuflichen Tätigkeit sind elektronisch über ELSTER zu übermitteln [5][6].",
+      "draft": "Ihre Selbstständigkeit als Grafikdesignerin und Fragebogen zur steuerlichen Erfassung\nGuten Tag Frau Demir,\n\nwir bestätigen den Eingang Ihrer Nachricht auf unserem Anrufbeantworter. Vielen Dank für Ihr Vertrauen, dass wir Sie bei Ihrer Existenzgründung als Grafikdesignerin unterstützen dürfen.\n\nDa Sie uns bisher keine Unterlagen beigefügt haben, benötigen wir für die Bearbeitung und Beantwortung Ihres Anliegens bezüglich der Kleinunternehmerregelung und des Fragebogens zur steuerlichen Erfassung noch folgende Angaben und Unterlagen von Ihnen:\n\n- Das Schreiben des Finanzamts mitsamt dem Fragebogen zur steuerlichen Erfassung\n- Den genauen Beginn Ihrer Tätigkeit\n- Ihre genauen voraussichtlichen Umsätze und Gewinne für das Gründungsjahr und das Folgejahr\n- Ihre Steuer-ID\n- Ihre Bankverbindung\n- Angaben zu geplanten Investitionen\n\nWir melden uns zeitnah telefonisch bei Ihnen, um die Details zu besprechen.\n\nIhr Team der Kanzlei Muster",
+      "sources": [
+        "1: § 19 Abs. 1–2 UStG",
+        "2: § 18 Abs. 1 UStG",
+        "3: § 19 Abs. 3–4 UStG",
+        "4: § 19 Abs. 5–6 UStG",
+        "5: § 138 Abs. 1–1a AO",
+        "6: Merkblatt Kleinunternehmerregelung und Existenzgründer › Existenzgründer: Fragebogen zur steuerlichen Erfassung",
+        "7: Honorarrichtlinie und Auftragsannahme › Auftragsannahme (Neumandate)",
+        "8: Telefonleitfaden Sekretariat › Was das Sekretariat nicht tut",
+        "9: § 138 Abs. 1b–1c AO",
+        "10: § 27a Abs. 1–1a UStG",
+        "11: § 137 AO",
+        "12: Merkblatt Kleinunternehmerregelung und Existenzgründer › Gründungsjahr: Grenze 25.000 Euro (Verwaltungsauffassung)"
+      ]
+    }
+  ]
+}

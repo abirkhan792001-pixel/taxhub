@@ -1,7 +1,7 @@
 {
   "summary": {
     "base": "https://taxhub-sqrlane.vercel.app",
-    "ranAt": "2026-09-17T08:24:00.611Z",
+    "ranAt": "2026-09-17T08:34:03.362Z",
     "ask": {
       "cases": 1,
       "passed": 0,
@@ -12,9 +12,10 @@
       "keyFactAccuracy": 0,
       "abstentionAccuracy": null,
       "sessionDocumentPass": null,
+      "incompleteAnswers": 0,
       "languageMatch": null,
-      "medianTotalMs": 4280,
-      "medianTtftMs": 3996
+      "medianTotalMs": 4471,
+      "medianTtftMs": 4143
     },
     "intake": {
       "cases": 0,
@@ -32,23 +33,28 @@
       "id": "follow-up-turn",
       "scope": "in",
       "pass": false,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": false,
-      "citedNumbers": [],
+      "citedNumbers": [
+        1,
+        13
+      ],
       "invalidCitations": [],
       "factualSentences": 1,
       "citationCoverage": 0,
       "keyFactsCorrect": false,
       "missingFacts": [
-        "/31\\.\\s*Juli\\s*2026|31\\.07\\.2026/"
+        "/31\\.\\s*Juli\\s*2026|31\\.07\\.2026/",
+        "lead /31\\.\\s*Juli\\s*2026|31\\.07\\.2026/"
       ],
       "forbiddenFacts": [],
       "abstained": true,
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 0,
-      "ttftMs": 3996,
-      "totalMs": 4280,
+      "ttftMs": 4143,
+      "totalMs": 4471,
       "errors": [],
       "sources": [
         {
@@ -69,14 +75,6 @@
         },
         {
           "n": 3,
-          "id": "KB-03-honorar-und-auftrag-mandate-die-wir-nicht-annehmen",
-          "ref": "Honorarrichtlinie und Auftragsannahme › Mandate, die wir nicht annehmen",
-          "title": "Mandate, die wir nicht annehmen",
-          "sourceName": "Honorarrichtlinie und Auftragsannahme",
-          "kind": "firm"
-        },
-        {
-          "n": 4,
           "id": "EStG-25",
           "ref": "§ 25 EStG",
           "title": "Veranlagungszeitraum, Steuererklärungspflicht",
@@ -84,7 +82,7 @@
           "kind": "law"
         },
         {
-          "n": 5,
+          "n": 4,
           "id": "EStG-26-1",
           "ref": "§ 26 Abs. 1 EStG",
           "title": "Veranlagung von Ehegatten",
@@ -92,7 +90,7 @@
           "kind": "law"
         },
         {
-          "n": 6,
+          "n": 5,
           "id": "EStG-111-2",
           "ref": "§ 111 Abs. 4–7 EStG",
           "title": "Vorläufiger Verlustrücktrag für 2020 und 2021",
@@ -100,7 +98,23 @@
           "kind": "law"
         },
         {
+          "n": 6,
+          "id": "EStG-32d-5",
+          "ref": "§ 32d Abs. 2–4 EStG",
+          "title": "Gesonderter Steuertarif für Einkünfte aus Kapitalvermögen",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
           "n": 7,
+          "id": "KB-02-mandanten-faq-belege-bis-wann-brauchen-wir-ihre-unterlagen",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Bis wann brauchen wir Ihre Unterlagen?",
+          "title": "Bis wann brauchen wir Ihre Unterlagen?",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 8,
           "id": "AO-149-2",
           "ref": "§ 149 Abs. 3, Teil 1/2 AO",
           "title": "Abgabe der Steuererklärungen",
@@ -108,35 +122,27 @@
           "kind": "law"
         },
         {
-          "n": 8,
-          "id": "StBerG-65a",
-          "ref": "§ 65a StBerG",
-          "title": "Pflicht zur Übernahme der Beratungshilfe",
-          "sourceName": "Steuerberatungsgesetz",
-          "kind": "law"
-        },
-        {
           "n": 9,
-          "id": "AO-89-1",
-          "ref": "§ 89 Abs. 1 AO",
-          "title": "Beratung, Auskunft",
-          "sourceName": "Abgabenordnung",
+          "id": "EStG-105",
+          "ref": "§ 105 EStG",
+          "title": "Festsetzung und Auszahlung der Mobilitätsprämie",
+          "sourceName": "Einkommensteuergesetz",
           "kind": "law"
         },
         {
           "n": 10,
-          "id": "KB-01-fristenmanagement-erklärungsfristen",
-          "ref": "Kanzlei-Handbuch – Fristenmanagement › Erklärungsfristen",
-          "title": "Erklärungsfristen",
-          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
+          "id": "KB-03-honorar-und-auftrag-mandate-die-wir-nicht-annehmen",
+          "ref": "Honorarrichtlinie und Auftragsannahme › Mandate, die wir nicht annehmen",
+          "title": "Mandate, die wir nicht annehmen",
+          "sourceName": "Honorarrichtlinie und Auftragsannahme",
           "kind": "firm"
         },
         {
           "n": 11,
-          "id": "KB-03-honorar-und-auftrag-vergütung",
-          "ref": "Honorarrichtlinie und Auftragsannahme › Vergütung",
-          "title": "Vergütung",
-          "sourceName": "Honorarrichtlinie und Auftragsannahme",
+          "id": "KB-01-fristenmanagement-erklärungsfristen",
+          "ref": "Kanzlei-Handbuch – Fristenmanagement › Erklärungsfristen",
+          "title": "Erklärungsfristen",
+          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
           "kind": "firm"
         },
         {
@@ -149,22 +155,14 @@
         },
         {
           "n": 13,
-          "id": "KB-02-mandanten-faq-belege-wie-reichen-sie-unterlagen-ein",
-          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wie reichen Sie Unterlagen ein?",
-          "title": "Wie reichen Sie Unterlagen ein?",
-          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "id": "KB-01-fristenmanagement-mandantenanrufe-zu-bescheiden",
+          "ref": "Kanzlei-Handbuch – Fristenmanagement › Mandantenanrufe zu Bescheiden",
+          "title": "Mandantenanrufe zu Bescheiden",
+          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
           "kind": "firm"
-        },
-        {
-          "n": 14,
-          "id": "EGAO-Art_97_36-2",
-          "ref": "Art. 97 § 36 Abs. 3, Teil 1/3 EGAO",
-          "title": "Sonderregelungen auf Grund der Corona-Pandemie",
-          "sourceName": "Einführungsgesetz zur Abgabenordnung",
-          "kind": "law"
         }
       ],
-      "answer": "Dazu enthalten die Quellen nichts. Für die Beantwortung der Frage, bis wann ein nicht beratener Steuerpflichtiger die Einkommensteuererklärung 2025 abgeben muss, fehlen in den vorliegenden Unterlagen die entsprechenden Bestimmungen des § 149 Absatz 2 der Abgabenordnung (AO) sowie etwaige Übergangsregelungen für den Veranlagungszeitraum 2025."
+      "answer": "Dazu enthalten die Quellen nichts [1]–[13]. \n\nUm das gesetzliche Fristende für nicht beratene Steuerpflichtige für den Veranlagungszeitraum 2025 zu bestimmen, fehlen in den vorliegenden Unterlagen die Regelungen des § 149 Abs. 1 und 2 der Abgabenordnung (AO) sowie etwaige gesetzliche Frstanpassungen für diesen Personenkreis."
     }
   ],
   "intake": []

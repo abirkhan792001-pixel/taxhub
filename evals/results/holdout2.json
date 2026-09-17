@@ -12,6 +12,7 @@
       "keyFactAccuracy": 1,
       "abstentionAccuracy": 1,
       "sessionDocumentPass": null,
+      "incompleteAnswers": 0,
       "languageMatch": null,
       "medianTotalMs": 6109,
       "medianTtftMs": 4821
@@ -32,6 +33,7 @@
       "id": "blind-saver-allowance",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -146,6 +148,7 @@
       "id": "blind-trade-tax-allowance",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -284,6 +287,7 @@
       "id": "blind-vat-return-deadline",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -402,6 +406,7 @@
       "id": "blind-out-minimum-wage",
       "scope": "out",
       "pass": true,
+      "incomplete": false,
       "retrieved": null,
       "expectedCited": null,
       "citedNumbers": [],

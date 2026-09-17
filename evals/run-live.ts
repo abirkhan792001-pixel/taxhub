@@ -1,8 +1,8 @@
 // Runs the ask and intake test cases against a deployed TaxHub and computes the metrics
 // defined in evals/rubric.md. Usage: npm run eval:live  (EVAL_BASE_URL to target another deployment)
 import { mkdirSync, writeFileSync } from "node:fs";
-import { normalizeCitations } from "../src/lib/cite";
 import { ASK_CASES, HOLDOUT_CASES, HOLDOUT_V2_CASES, INTAKE_CASES, type AskCase, type IntakeCase } from "./cases";
+import { citedNumbers, scoreAsk, summarize, type Source } from "./metrics";
 
 const BASE = process.env.EVAL_BASE_URL ?? "https://taxhub-sqrlane.vercel.app";
 const PAUSE_MS = Number(process.env.EVAL_PAUSE_MS ?? 6000); // free-tier model rate limits
@@ -11,38 +11,6 @@ const SUITE = process.env.EVAL_SUITE ?? "main"; // "main" (ask + intake), "holdo
 const SUITES: Record<string, AskCase[]> = { main: ASK_CASES, holdout: HOLDOUT_CASES, holdout2: HOLDOUT_V2_CASES };
 const OUT = process.env.EVAL_OUT ?? (SUITE === "main" ? "live" : SUITE);
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
-
-// "the sources don't cover this", in German or English
-const ABSTAIN =
-  /(Quellen|Fundstellen|sources?)[^.\n]{0,90}\b(nicht|keine|keinen|nichts|kein|not|no|don['’]t)\b|\b(nicht|keine|keinen)\b[^.\n]{0,50}\b(in|aus)\s+den\s+(vorliegenden\s+|bereitgestellten\s+)?(Quellen|Fundstellen)|lässt sich[^.\n]{0,60}nicht|\bnot\s+(covered|contained|included|found|provided)\b|\bno\s+(information|provision|section)\b|existiert\s+(in\s+den\s+Quellen\s+)?nicht|nicht\s+enthalten|gibt es (in den Quellen )?keinen/i;
-
-type Source = { n: number; id: string; ref: string; title: string; sourceName: string; kind: string };
-
-const citedNumbers = (text: string) => [...new Set([...normalizeCitations(text).matchAll(/\[(\d{1,2})\]/g)].map((m) => Number(m[1])))];
-
-function factualSentences(text: string) {
-  const lines = normalizeCitations(text)
-    .replace(/\*\*|__/g, "")
-    // a citation placed right after the full stop belongs to that sentence
-    .replace(/([.!?])\s*((?:\[\d{1,2}\])+)/g, "$2$1")
-    .split("\n")
-    .map((l) => l.replace(/^\s*(?:[-*•]|\d+\.)\s+/, "").trim())
-    .filter((l) => l && !/^#{1,6}\s/.test(l) && !/:\s*$/.test(l));
-  // split at sentence ends, but not after ordinals and dates ("31. Juli") or legal abbreviations ("Abs.", "i. V. m.")
-  return lines
-    .flatMap((l) => l.split(/(?<=[^\d\s][.!?])(?<!\b(?:[A-Za-z]|Abs|Nr|Art|bzw|ggf|vgl|inkl|evtl|ca|Tz|Rn)\.)\s+(?=[A-ZÄÖÜ„"(])/))
-    .map((s) => s.trim())
-    .filter((s) => s.length >= 30 && !ABSTAIN.test(s));
-}
-
-const matchesExpected = (s: Source, expected: string) =>
-  s.id === expected || s.id.startsWith(`${expected}-`) || (expected.startsWith("KB-") && s.id.startsWith(expected)) || s.title === expected || s.sourceName === expected;
-
-function detectLanguage(text: string): "de" | "en" {
-  const en = (text.match(/\b(the|and|is|of|to|for|with|when|must|tax)\b/gi) ?? []).length;
-  const de = (text.match(/\b(der|die|das|und|ist|nicht|für|mit|wenn|muss|Steuer)\b/gi) ?? []).length;
-  return en > de ? "en" : "de";
-}
 
 // ---------------------------------------------------------------- ask
 
@@ -90,53 +58,6 @@ async function callAsk(c: AskCase) {
     }
   }
   return { text, sources, ttftMs, totalMs: performance.now() - t0, errors, toolCalls, finished };
-}
-
-function scoreAsk(c: AskCase, run: Awaited<ReturnType<typeof callAsk>>) {
-  const cited = citedNumbers(run.text);
-  const validNumbers = new Set(run.sources.map((s) => s.n));
-  const invalidCitations = cited.filter((n) => !validNumbers.has(n));
-  const expected = c.expectSources ?? [];
-  const retrieved = expected.length ? run.sources.some((s) => expected.some((e) => matchesExpected(s, e))) : null;
-  const expectedCited = expected.length ? run.sources.filter((s) => cited.includes(s.n)).some((s) => expected.some((e) => matchesExpected(s, e))) : null;
-  const sentences = factualSentences(run.text);
-  const withCitation = sentences.filter((s) => /\[\d{1,2}\]/.test(s)).length;
-  const coverage = sentences.length ? withCitation / sentences.length : null;
-  const missingFacts = (c.mustContain ?? []).filter((re) => !re.test(run.text)).map(String);
-  const forbiddenFacts = (c.mustNotContain ?? []).filter((re) => re.test(run.text)).map(String);
-  const abstained = ABSTAIN.test(run.text);
-  const language = detectLanguage(run.text);
-  const keyFactsCorrect = missingFacts.length === 0 && forbiddenFacts.length === 0 && run.text.length > 0;
-  const incomplete = !run.finished;
-  const pass =
-    !incomplete &&
-    (c.scope === "out"
-      ? abstained && forbiddenFacts.length === 0
-      : !!retrieved && !!expectedCited && invalidCitations.length === 0 && keyFactsCorrect && (!c.language || c.language === language));
-  return {
-    id: c.id,
-    scope: c.scope,
-    pass,
-    incomplete,
-    retrieved,
-    expectedCited,
-    citedNumbers: cited,
-    invalidCitations,
-    factualSentences: sentences.length,
-    citationCoverage: coverage,
-    keyFactsCorrect,
-    missingFacts,
-    forbiddenFacts,
-    abstained,
-    language,
-    expectedLanguage: c.language ?? "de",
-    toolCalls: run.toolCalls,
-    ttftMs: run.ttftMs && Math.round(run.ttftMs),
-    totalMs: Math.round(run.totalMs),
-    errors: run.errors,
-    sources: run.sources.map(({ n, id, ref, title, sourceName, kind }) => ({ n, id, ref, title, sourceName, kind })),
-    answer: run.text,
-  };
 }
 
 // ---------------------------------------------------------------- intake
@@ -215,6 +136,7 @@ function scoreIntake(c: IntakeCase, run: Awaited<ReturnType<typeof callIntake>>)
     totalMs: Math.round(run.totalMs),
     summary: draft.zusammenfassung,
     draft: draftText,
+    sources: sources.map((x) => `${x.n}: ${x.ref}`),
   };
 }
 
@@ -238,19 +160,6 @@ async function withRetry<T>(label: string, fn: () => Promise<T>, ok: (v: T) => b
   }
   return last instanceof Error ? last : new Error(String(last));
 }
-
-const median = (xs: number[]) => {
-  const s = [...xs].sort((a, b) => a - b);
-  return s.length ? s[Math.floor((s.length - 1) / 2)] : null;
-};
-const share = (xs: (boolean | null)[]) => {
-  const d = xs.filter((x): x is boolean => x !== null);
-  return d.length ? d.filter(Boolean).length / d.length : null;
-};
-const mean = (xs: (number | null)[]) => {
-  const d = xs.filter((x): x is number => x !== null);
-  return d.length ? d.reduce((a, b) => a + b, 0) / d.length : null;
-};
 
 async function main() {
   const pick = <T extends { id: string }>(xs: T[]) => (ONLY ? xs.filter((x) => ONLY.split(",").includes(x.id)) : xs);
@@ -282,38 +191,7 @@ async function main() {
     await sleep(PAUSE_MS);
   }
 
-  const inScope = ask.filter((a) => a.scope === "in");
-  const outScope = ask.filter((a) => a.scope === "out");
-  const dated = intake.filter((i) => i.expectedDeadline !== null);
-  const summary = {
-    base: BASE,
-    ranAt: new Date().toISOString(),
-    ask: {
-      cases: ask.length,
-      passed: ask.filter((a) => a.pass).length,
-      retrievalRecall: share(inScope.map((a) => a.retrieved)),
-      expectedSourceCited: share(inScope.map((a) => a.expectedCited)),
-      citationCoverage: mean(inScope.map((a) => a.citationCoverage)),
-      answersWithoutInvalidCitations: share(ask.map((a) => a.invalidCitations.length === 0)),
-      keyFactAccuracy: share(inScope.map((a) => a.keyFactsCorrect)),
-      abstentionAccuracy: share(outScope.map((a) => a.abstained && a.forbiddenFacts.length === 0)),
-      sessionDocumentPass: ask.find((a) => a.id === "session-document")?.pass ?? null,
-      incompleteAnswers: ask.filter((a) => a.incomplete).length,
-      languageMatch: share(ask.filter((a) => a.expectedLanguage === "en").map((a) => a.language === "en")),
-      medianTotalMs: median(ask.map((a) => a.totalMs)),
-      medianTtftMs: median(ask.map((a) => a.ttftMs ?? a.totalMs)),
-    },
-    intake: {
-      cases: intake.length,
-      passed: intake.filter((i) => i.pass).length,
-      categoryAccuracy: share(intake.map((i) => i.categoryCorrect)),
-      deadlineAccuracy: share(intake.map((i) => i.deadlineCorrect)),
-      datedDeadlineAccuracy: share(dated.map((i) => i.deadlineCorrect)),
-      draftQuality: share(intake.map((i) => i.draftQualityOk)),
-      checklistCitationCoverage: mean(intake.map((i) => i.checklistCoverage)),
-      medianTotalMs: median(intake.map((i) => i.totalMs)),
-    },
-  };
+  const summary = summarize(BASE, new Date().toISOString(), ask, intake);
 
   mkdirSync("evals/results", { recursive: true });
   writeFileSync(`evals/results/${OUT}.json`, JSON.stringify({ summary, ask, intake }, null, 2));

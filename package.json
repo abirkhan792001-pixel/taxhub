@@ -15,7 +15,8 @@
     "eval:live": "tsx evals/run-live.ts",
     "eval:deliverables": "tsx evals/check-deliverables.ts",
     "eval:score": "tsx evals/score.ts",
-    "eval:all": "npm run eval && npm run eval:deadlines && npm run eval:deliverables && npm run eval:live && npm run eval:score"
+    "eval:all": "npm run eval && npm run eval:deadlines && npm run eval:deliverables && npm run eval:live && npm run eval:rescore && npm run eval:score",
+    "eval:rescore": "tsx evals/rescore.ts"
   },
   "dependencies": {
     "@ai-sdk/google": "^4.0.69",

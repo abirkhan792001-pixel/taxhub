@@ -8,6 +8,7 @@ export type AskCase = {
   expectSources?: string[]; // chunk id prefixes (e.g. "AO-149") or a session document title
   mustContain?: RegExp[];
   mustNotContain?: RegExp[];
+  leadMustContain?: RegExp[]; // must appear in the short answer itself, not just somewhere in the details
   language?: "de" | "en";
   sessionDocs?: { title: string; text: string }[];
   history?: { role: "user" | "assistant"; text: string }[];
@@ -21,6 +22,7 @@ export const ASK_CASES: AskCase[] = [
     scope: "in",
     expectSources: ["AO-149"],
     mustContain: [/1\.\s*März\s*2027|01\.03\.2027/],
+    leadMustContain: [/1\.\s*März\s*2027|01\.03\.2027/],
     note: "§ 149 Abs. 3 AO: last day of February 2027 = Sunday → § 108 Abs. 3 AO → Monday 1 March 2027",
   },
   {
@@ -29,6 +31,7 @@ export const ASK_CASES: AskCase[] = [
     scope: "in",
     expectSources: ["AO-149"],
     mustContain: [/31\.\s*Juli\s*2026|31\.07\.2026/],
+    leadMustContain: [/31\.\s*Juli\s*2026|31\.07\.2026/],
     note: "§ 149 Abs. 2 AO: seven months after the end of 2025 = Friday 31 July 2026",
   },
   {
@@ -110,6 +113,7 @@ export const ASK_CASES: AskCase[] = [
     scope: "in",
     expectSources: ["AO-149"],
     mustContain: [/31\.\s*Juli\s*2026|31\.07\.2026/],
+    leadMustContain: [/31\.\s*Juli\s*2026|31\.07\.2026/],
     history: [
       { role: "user", text: "Bis wann muss die Einkommensteuererklärung 2025 abgegeben werden, wenn wir als Kanzlei sie erstellen?" },
       { role: "assistant", text: "Die Einkommensteuererklärung 2025 muss bei Erstellung durch die Kanzlei bis Montag, 1. März 2027 abgegeben werden [1][7]." },

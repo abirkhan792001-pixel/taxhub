@@ -12,6 +12,7 @@
       "keyFactAccuracy": 0.75,
       "abstentionAccuracy": 1,
       "sessionDocumentPass": null,
+      "incompleteAnswers": 0,
       "languageMatch": 1,
       "medianTotalMs": 2944,
       "medianTtftMs": 2430
@@ -32,6 +33,7 @@
       "id": "holdout-assessment-period",
       "scope": "in",
       "pass": false,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -175,6 +177,7 @@
       "id": "holdout-home-office",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -353,6 +356,7 @@
       "id": "holdout-interest-rate",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -435,6 +439,7 @@
       "id": "holdout-english-assessment",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -566,6 +571,7 @@
       "id": "holdout-out-small-invoice",
       "scope": "out",
       "pass": true,
+      "incomplete": false,
       "retrieved": null,
       "expectedCited": null,
       "citedNumbers": [],

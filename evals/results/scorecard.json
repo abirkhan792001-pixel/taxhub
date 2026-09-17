@@ -1,9 +1,9 @@
 {
-  "scoredAt": "2026-09-16T15:34:43.498Z",
-  "earned": 73.7,
+  "scoredAt": "2026-09-17T08:42:57.125Z",
+  "earned": 73.4,
   "assessable": 75,
-  "share": 0.9826666666666667,
-  "band": "Ready to send",
+  "share": 0.9786666666666668,
+  "band": "Send after fixing the named gaps",
   "pending": {
     "loom": 25,
     "note": "Loom not recorded yet; only the preparation can be checked"
@@ -16,7 +16,7 @@
     },
     {
       "block": "B",
-      "earned": 39.7,
+      "earned": 39.4,
       "max": 40
     },
     {
@@ -78,7 +78,7 @@
       "criterion": "Grounded and source-cited",
       "max": 12,
       "points": 12,
-      "evidence": "Expected source retrieved 100 %, cited 100 %; citation coverage 95 %; answers without invalid citations 100 %"
+      "evidence": "Expected source retrieved 100 %, cited 100 %; citation coverage 93 %; answers without invalid citations 100 %"
     },
     {
       "id": "B4",
@@ -91,15 +91,15 @@
       "id": "B5",
       "criterion": "Genuinely useful answers",
       "max": 6,
-      "points": 6,
-      "evidence": "Key facts correct 100 % of in-scope questions; intake category accuracy 100 %"
+      "points": 5.4,
+      "evidence": "Key facts correct 86 % of in-scope questions; intake category accuracy 100 %"
     },
     {
       "id": "B6",
       "criterion": "Proactive output (stretch)",
       "max": 4,
-      "points": 3.7,
-      "evidence": "Objection deadline exact on dated cases 100 %, deadline unit tests 13/13; reply drafts pass quality checks 86 %"
+      "points": 4,
+      "evidence": "Objection deadline exact on dated cases 100 %, deadline unit tests 13/13; reply drafts pass quality checks 100 %"
     },
     {
       "id": "D1",
@@ -141,7 +141,7 @@
       "criterion": "Built with Claude Code / AI tooling",
       "max": 2,
       "points": 2,
-      "evidence": "11 of 12 commits co-authored by Claude"
+      "evidence": "14 of 15 commits co-authored by Claude"
     },
     {
       "id": "E2",
@@ -166,19 +166,21 @@
     }
   ],
   "productMetrics": {
-    "askCasesPassed": "17/17",
+    "askCasesPassed": "15/17",
     "intakeCasesPassed": "6/7",
-    "medianAnswerSeconds": 10.2,
-    "medianFirstTokenSeconds": 9,
-    "medianIntakeSeconds": 4.5,
+    "medianAnswerSeconds": 2.8,
+    "medianFirstTokenSeconds": 2.3,
+    "medianIntakeSeconds": 5.2,
     "englishQuestionAnsweredInEnglish": "100 %",
-    "checklistItemsWithCitation": "86 %",
+    "checklistItemsWithCitation": "100 %",
     "deadlineUnitTests": "13/13",
     "retrievalHit3": "14/17",
     "retrievalHit8": "17/17"
   },
   "failures": [
-    "intake/undated-notice: draft check failed (mentions a provisionally calculated deadline, but none was calculated)"
+    "ask/deadline-2025-unadvised: missing /31\\.\\s*Juli\\s*2026|31\\.07\\.2026/, lead /31\\.\\s*Juli\\s*2026|31\\.07\\.2026/",
+    "ask/follow-up-turn: missing /31\\.\\s*Juli\\s*2026|31\\.07\\.2026/, lead /31\\.\\s*Juli\\s*2026|31\\.07\\.2026/",
+    "intake/demir-voicemail: missing /25[.\\s]?000/"
   ],
   "loomReadiness": {
     "estimatedDuration": "3:42",
@@ -190,5 +192,84 @@
       "Concrete next step with a date": true,
       "Estimated under 5:00": true
     }
-  }
+  },
+  "pointsBand": "Ready to send",
+  "gate": {
+    "criticalFailures": [
+      "ask/deadline-2025-unadvised: wrong or missing key fact",
+      "ask/follow-up-turn: wrong or missing key fact",
+      "intake/demir-voicemail: wrong deadline or assessment"
+    ],
+    "unstable": [
+      "deadline-2025-unadvised: 2 of 4 runs",
+      "follow-up-turn: 2 of 4 runs",
+      "demir-voicemail: 1 of 4 runs"
+    ]
+  },
+  "reliability": {
+    "runs": 33,
+    "passed": 26
+  },
+  "baseline": {
+    "earned": 73.7,
+    "assessable": 75,
+    "ask": "17/17",
+    "intake": "6/7"
+  },
+  "holdouts": [
+    {
+      "label": "Holdout v1 (blind, before fixes)",
+      "passed": "4/5",
+      "failures": [
+        "holdout-assessment-period (missing /2030/)"
+      ]
+    },
+    {
+      "label": "Holdout v1 re-run after fixes (not blind)",
+      "passed": "5/5",
+      "failures": []
+    },
+    {
+      "label": "Holdout v2 (blind, written after the first fixes)",
+      "passed": "4/4",
+      "failures": []
+    },
+    {
+      "label": "Holdout v2 re-run on the final deployment",
+      "passed": "4/4",
+      "failures": []
+    }
+  ],
+  "stability": [
+    {
+      "id": "deadline-2025-unadvised",
+      "prefix": "stability-unadvised",
+      "kind": "ask",
+      "label": "Filing deadline without advisor (headline date)",
+      "passed": 2,
+      "runs": 4,
+      "extraRuns": 3,
+      "extraPasses": 2
+    },
+    {
+      "id": "follow-up-turn",
+      "prefix": "stability-followup",
+      "kind": "ask",
+      "label": "Multi-turn follow-up",
+      "passed": 2,
+      "runs": 4,
+      "extraRuns": 3,
+      "extraPasses": 2
+    },
+    {
+      "id": "demir-voicemail",
+      "prefix": "stability-founder",
+      "kind": "intake",
+      "label": "Founder intake (25,000 euro founding-year limit)",
+      "passed": 1,
+      "runs": 4,
+      "extraRuns": 3,
+      "extraPasses": 1
+    }
+  ]
 }

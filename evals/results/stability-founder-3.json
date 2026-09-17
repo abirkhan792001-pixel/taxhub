@@ -1,0 +1,73 @@
+{
+  "summary": {
+    "base": "https://taxhub-sqrlane.vercel.app",
+    "ranAt": "2026-09-17T08:37:40.692Z",
+    "ask": {
+      "cases": 0,
+      "passed": 0,
+      "retrievalRecall": null,
+      "expectedSourceCited": null,
+      "citationCoverage": null,
+      "answersWithoutInvalidCitations": null,
+      "keyFactAccuracy": null,
+      "abstentionAccuracy": null,
+      "sessionDocumentPass": null,
+      "incompleteAnswers": 0,
+      "languageMatch": null,
+      "medianTotalMs": null,
+      "medianTtftMs": null
+    },
+    "intake": {
+      "cases": 1,
+      "passed": 0,
+      "categoryAccuracy": 1,
+      "deadlineAccuracy": 1,
+      "datedDeadlineAccuracy": null,
+      "draftQuality": 0,
+      "checklistCitationCoverage": 1,
+      "medianTotalMs": 4966
+    }
+  },
+  "ask": [],
+  "intake": [
+    {
+      "id": "demir-voicemail",
+      "pass": false,
+      "category": "NEUMANDAT",
+      "expectedCategory": "NEUMANDAT",
+      "categoryCorrect": true,
+      "deadline": null,
+      "expectedDeadline": null,
+      "deadlineCorrect": true,
+      "draftStatesDeadline": null,
+      "draftHasRawCitations": false,
+      "draftForbidden": [
+        "/Telefonat|Gespräch mit Ihnen|unserem Gespräch|angenehme/i"
+      ],
+      "draftQualityOk": false,
+      "invalidCitations": [],
+      "checklistCoverage": 1,
+      "missingFacts": [
+        "/25[.\\s]?000/"
+      ],
+      "urgency": "mittel",
+      "totalMs": 4966,
+      "summary": "Die Mandantin hat sich im März 2026 als Grafikdesignerin selbstständig gemacht und einen Fragebogen zur steuerlichen Erfassung erhalten [Transkript]. Ihr voraussichtlicher Umsatz im laufenden Jahr liegt bei ca. 28.000 Euro [Transkript]. Vorläufige fachliche Einordnung für den Berufsträger: Da im Gründungsjahr (laufendes Kalenderjahr) die Umsatzgrenze von 100.000 Euro nicht überschritten wird [1], [8] und für das Vorjahr (2025) keine Umsätze vorlagen (0 Euro), sind die Voraussetzungen der Kleinunternehmerregelung nach § 19 Abs. 1 UStG voraussichtlich erfüllt. Die elektronische Übermittlung des Fragebogens ist über ELSTER erforderlich [5].",
+      "draft": "Ihre Existenzgründung und Fragebogen zur steuerlichen Erfassung\nSehr geehrte Frau Demir, wir bestätigen den Eingang Ihrer Nachricht auf unserem Anrufbeantworter. Wir werden Sie zeitnah telefonisch zurückrufen, um Ihre Fragen zur Selbstständigkeit als Grafikdesignerin und zur Kleinunternehmerregelung zu besprechen. Um Ihr Anliegen optimal bearbeiten zu können, bitten wir Sie bis zu unserem Gespräch noch um folgende Angaben und Unterlagen: Datum des Beginns Ihrer Tätigkeit, Ihre steuerliche Identifikationsnummer (Steuer-ID), Ihre Bankverbindung sowie eine Schätzung Ihrer voraussichtlichen Umsätze und Gewinne für das Gründungs- und das Folgejahr. Zudem benötigen wir das Schreiben des Finanzamts mit dem Fragebogen, damit wir eventuelle Fristen prüfen können. Bitte beachten Sie, dass diese Nachricht keine verbindliche steuerliche Beurteilung darstellt. Wir freuen uns auf das Gespräch mit Ihnen. Ihr Team der Kanzlei Muster",
+      "sources": [
+        "1: § 19 Abs. 1–2 UStG",
+        "2: § 19 Abs. 5–6 UStG",
+        "3: § 18 Abs. 1 UStG",
+        "4: § 19 Abs. 3–4 UStG",
+        "5: Merkblatt Kleinunternehmerregelung und Existenzgründer › Existenzgründer: Fragebogen zur steuerlichen Erfassung",
+        "6: § 138 Abs. 1–1a AO",
+        "7: Merkblatt Kleinunternehmerregelung und Existenzgründer › Verzicht auf die Kleinunternehmerregelung",
+        "8: Merkblatt Kleinunternehmerregelung und Existenzgründer › Umsatzgrenzen nach § 19 UStG (seit 2025)",
+        "9: Honorarrichtlinie und Auftragsannahme › Auftragsannahme (Neumandate)",
+        "10: § 137 AO",
+        "11: § 27a Abs. 1–1a UStG",
+        "12: § 27a Abs. 2, Teil 1/2 UStG"
+      ]
+    }
+  ]
+}

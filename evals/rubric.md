@@ -48,6 +48,9 @@ Quality flags reported with B, not scored: median answer latency (target ≤ 20 
 - **Expected source:** the test case names the norm(s) or document(s) a correct answer must rest on (e.g. `AO-149`); retrieved = present in the returned sources; cited = one of those sources is cited.
 - **Key facts:** per case, regular expressions that must appear (e.g. `1. März 2027`) and, for out-of-scope cases, facts that must *not* appear (e.g. the memorised ErbStG allowance).
 - **Abstention:** the answer states that the provided sources do not contain the answer.
+- **Lead check:** for date questions the expected date must stand in the short answer (the first paragraph). An answer whose headline says "3 August" and whose details mention "31 July" fails.
+- **Incomplete answer:** a stream that ends without its finish event (e.g. a function timeout) counts as failed, not as a normal response.
+- **Reliability:** passed case runs ÷ all case runs on the final deployment, including repeated runs of every case that failed at least once. A single run hides model variance.
 
 ## C · Pitch / Loom (25, pending)
 
@@ -93,3 +96,12 @@ Hard gates: ≤ 5:00 duration; spoken by the candidate; speaking to a person, no
 | ≥ 90 % | Ready to send |
 | 75–89 % | Send after fixing the named gaps |
 | < 75 % | Not ready |
+
+### Critical-error gate
+
+Points alone under-weight the errors that matter most in tax work: a wrong filing deadline costs only a fraction of B5. The verdict is therefore capped at **"Send after fixing the named gaps"**, whatever the points, when either of these is true:
+
+- any in-scope answer on the final deployment has a wrong or missing key fact (date, amount, assessment), or an out-of-scope answer states a fact the sources do not contain;
+- any case passes in fewer than all of its repeated runs.
+
+The scorecard lists every gate violation by case.

@@ -1,0 +1,192 @@
+{
+  "summary": {
+    "base": "https://taxhub-sqrlane.vercel.app",
+    "ranAt": "2026-09-17T08:37:27.711Z",
+    "ask": {
+      "cases": 1,
+      "passed": 0,
+      "retrievalRecall": 1,
+      "expectedSourceCited": 1,
+      "citationCoverage": 1,
+      "answersWithoutInvalidCitations": 1,
+      "keyFactAccuracy": 0,
+      "abstentionAccuracy": null,
+      "sessionDocumentPass": null,
+      "incompleteAnswers": 0,
+      "languageMatch": null,
+      "medianTotalMs": 4327,
+      "medianTtftMs": 3050
+    },
+    "intake": {
+      "cases": 0,
+      "passed": 0,
+      "categoryAccuracy": null,
+      "deadlineAccuracy": null,
+      "datedDeadlineAccuracy": null,
+      "draftQuality": null,
+      "checklistCitationCoverage": null,
+      "medianTotalMs": null
+    }
+  },
+  "ask": [
+    {
+      "id": "deadline-2025-unadvised",
+      "scope": "in",
+      "pass": false,
+      "incomplete": false,
+      "retrieved": true,
+      "expectedCited": true,
+      "citedNumbers": [
+        3,
+        9
+      ],
+      "invalidCitations": [],
+      "factualSentences": 5,
+      "citationCoverage": 1,
+      "keyFactsCorrect": false,
+      "missingFacts": [
+        "lead /31\\.\\s*Juli\\s*2026|31\\.07\\.2026/"
+      ],
+      "forbiddenFacts": [],
+      "abstained": true,
+      "language": "de",
+      "expectedLanguage": "de",
+      "toolCalls": 1,
+      "ttftMs": 3050,
+      "totalMs": 4327,
+      "errors": [],
+      "sources": [
+        {
+          "n": 1,
+          "id": "AO-149-2",
+          "ref": "§ 149 Abs. 3, Teil 1/2 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 2,
+          "id": "AO-150-1",
+          "ref": "§ 150 Abs. 1–4 AO",
+          "title": "Form und Inhalt der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 3,
+          "id": "AO-149-1",
+          "ref": "§ 149 Abs. 1–2 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 4,
+          "id": "AO-149-3",
+          "ref": "§ 149 Abs. 3, Teil 2/2 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 5,
+          "id": "AO-149-4",
+          "ref": "§ 149 Abs. 4 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 6,
+          "id": "AO-149-6",
+          "ref": "§ 149 Abs. 6 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 7,
+          "id": "AO-149-5",
+          "ref": "§ 149 Abs. 4–5 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 8,
+          "id": "EStG-25",
+          "ref": "§ 25 EStG",
+          "title": "Veranlagungszeitraum, Steuererklärungspflicht",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 9,
+          "id": "AO-108",
+          "ref": "§ 108 AO",
+          "title": "Fristen und Termine",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 10,
+          "id": "KB-02-mandanten-faq-belege-wie-reichen-sie-unterlagen-ein",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wie reichen Sie Unterlagen ein?",
+          "title": "Wie reichen Sie Unterlagen ein?",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 11,
+          "id": "KB-02-mandanten-faq-belege-bis-wann-brauchen-wir-ihre-unterlagen",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Bis wann brauchen wir Ihre Unterlagen?",
+          "title": "Bis wann brauchen wir Ihre Unterlagen?",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 12,
+          "id": "KB-02-mandanten-faq-belege-wann-kommt-mein-steuerbescheid",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wann kommt mein Steuerbescheid?",
+          "title": "Wann kommt mein Steuerbescheid?",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 13,
+          "id": "KB-03-honorar-und-auftrag-mandate-die-wir-nicht-annehmen",
+          "ref": "Honorarrichtlinie und Auftragsannahme › Mandate, die wir nicht annehmen",
+          "title": "Mandate, die wir nicht annehmen",
+          "sourceName": "Honorarrichtlinie und Auftragsannahme",
+          "kind": "firm"
+        },
+        {
+          "n": 14,
+          "id": "StBerG-86e-1",
+          "ref": "§ 86e Abs. 1–4 StBerG",
+          "title": "Besonderes elektronisches Steuerberaterpostfach für Berufsausübungsgesellschaften",
+          "sourceName": "Steuerberatungsgesetz",
+          "kind": "law"
+        },
+        {
+          "n": 15,
+          "id": "StBerG-86d-1",
+          "ref": "§ 86d Abs. 1–2 StBerG",
+          "title": "Besonderes elektronisches Steuerberaterpostfach",
+          "sourceName": "Steuerberatungsgesetz",
+          "kind": "law"
+        },
+        {
+          "n": 16,
+          "id": "StBerG-86d-3",
+          "ref": "§ 86d Abs. 6–7 StBerG",
+          "title": "Besonderes elektronisches Steuerberaterpostfach",
+          "sourceName": "Steuerberatungsgesetz",
+          "kind": "law"
+        }
+      ],
+      "answer": "Die Einkommensteuererklärung 2025 ohne steuerliche Beratung ist gesetzlich spätestens am **3. August 2026** abzugeben [3][9].\n\n* Gesetzlich gilt: Steuererklärungen, die sich auf ein Kalenderjahr beziehen, sind spätestens sieben Monate nach Ablauf des Kalenderjahres abzugeben (§ 149 Abs. 2 Satz 1 AO) [3]. \n* Für den Veranlagungszeitraum 2025 endet diese Frist grundsätzlich am 31. Juli 2026 [3]. Da der 31. Juli 2026 jedoch ein Freitag ist, gilt dies – laut dem Tool auf Basis des § 108 Abs. 3 AO fällt der 31. Juli 2026 allerdings auf einen Freitag, jedoch endet die Frist bei einem Fristende am Sonntag, den 2. August 2026, am darauffolgenden Werktag (Montag, 3. August 2026) [9]. *(Hinweis: Der 31.07.2026 ist ein Freitag; die reguläre Siebenmonatsfrist ab 31.12.2025 endet am 31. Juli 2026. Eine Verschiebung nach § 108 Abs. 3 AO greift hier nicht, da der 31.07. kein Wochenende/Feiertag ist. Die Quellen nennen keinen abweichenden Termin für 2025.)*\n\nHinweis: Die Quellen nennen für das reguläre Fristende 2025 explizit das Fristmodell nach § 149 Abs. 2 AO (sieben Monate) [3]."
+    }
+  ],
+  "intake": []
+}

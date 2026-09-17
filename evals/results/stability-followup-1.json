@@ -1,20 +1,21 @@
 {
   "summary": {
     "base": "https://taxhub-sqrlane.vercel.app",
-    "ranAt": "2026-09-17T08:23:48.393Z",
+    "ranAt": "2026-09-17T08:33:51.125Z",
     "ask": {
       "cases": 1,
       "passed": 1,
       "retrievalRecall": 1,
       "expectedSourceCited": 1,
-      "citationCoverage": 0.75,
+      "citationCoverage": 0.5,
       "answersWithoutInvalidCitations": 1,
       "keyFactAccuracy": 1,
       "abstentionAccuracy": null,
       "sessionDocumentPass": null,
+      "incompleteAnswers": 0,
       "languageMatch": null,
-      "medianTotalMs": 3659,
-      "medianTtftMs": 3100
+      "medianTotalMs": 4459,
+      "medianTtftMs": 3857
     },
     "intake": {
       "cases": 0,
@@ -32,17 +33,15 @@
       "id": "follow-up-turn",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
-        2,
-        7,
-        12,
-        16
+        15
       ],
       "invalidCitations": [],
       "factualSentences": 4,
-      "citationCoverage": 0.75,
+      "citationCoverage": 0.5,
       "keyFactsCorrect": true,
       "missingFacts": [],
       "forbiddenFacts": [],
@@ -50,8 +49,8 @@
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 1,
-      "ttftMs": 3100,
-      "totalMs": 3659,
+      "ttftMs": 3857,
+      "totalMs": 4459,
       "errors": [],
       "sources": [
         {
@@ -64,54 +63,6 @@
         },
         {
           "n": 2,
-          "id": "AO-149-1",
-          "ref": "§ 149 Abs. 1–2 AO",
-          "title": "Abgabe der Steuererklärungen",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 3,
-          "id": "AO-149-3",
-          "ref": "§ 149 Abs. 3, Teil 2/2 AO",
-          "title": "Abgabe der Steuererklärungen",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 4,
-          "id": "AO-149-4",
-          "ref": "§ 149 Abs. 4 AO",
-          "title": "Abgabe der Steuererklärungen",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 5,
-          "id": "AO-149-6",
-          "ref": "§ 149 Abs. 6 AO",
-          "title": "Abgabe der Steuererklärungen",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 6,
-          "id": "AO-149-5",
-          "ref": "§ 149 Abs. 4–5 AO",
-          "title": "Abgabe der Steuererklärungen",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 7,
-          "id": "AO-150-1",
-          "ref": "§ 150 Abs. 1–4 AO",
-          "title": "Form und Inhalt der Steuererklärungen",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 8,
           "id": "EStG-25",
           "ref": "§ 25 EStG",
           "title": "Veranlagungszeitraum, Steuererklärungspflicht",
@@ -119,31 +70,7 @@
           "kind": "law"
         },
         {
-          "n": 9,
-          "id": "KB-03-honorar-und-auftrag-mandate-die-wir-nicht-annehmen",
-          "ref": "Honorarrichtlinie und Auftragsannahme › Mandate, die wir nicht annehmen",
-          "title": "Mandate, die wir nicht annehmen",
-          "sourceName": "Honorarrichtlinie und Auftragsannahme",
-          "kind": "firm"
-        },
-        {
-          "n": 10,
-          "id": "StBerG-65a",
-          "ref": "§ 65a StBerG",
-          "title": "Pflicht zur Übernahme der Beratungshilfe",
-          "sourceName": "Steuerberatungsgesetz",
-          "kind": "law"
-        },
-        {
-          "n": 11,
-          "id": "AO-89-1",
-          "ref": "§ 89 Abs. 1 AO",
-          "title": "Beratung, Auskunft",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 12,
+          "n": 3,
           "id": "KB-01-fristenmanagement-erklärungsfristen",
           "ref": "Kanzlei-Handbuch – Fristenmanagement › Erklärungsfristen",
           "title": "Erklärungsfristen",
@@ -151,23 +78,31 @@
           "kind": "firm"
         },
         {
-          "n": 13,
-          "id": "KB-02-mandanten-faq-belege-wie-reichen-sie-unterlagen-ein",
-          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wie reichen Sie Unterlagen ein?",
-          "title": "Wie reichen Sie Unterlagen ein?",
-          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
-          "kind": "firm"
-        },
-        {
-          "n": 14,
-          "id": "StBerG-20",
-          "ref": "§ 20 StBerG",
-          "title": "Leitung einer Beratungsstelle",
-          "sourceName": "Steuerberatungsgesetz",
+          "n": 4,
+          "id": "AO-150-1",
+          "ref": "§ 150 Abs. 1–4 AO",
+          "title": "Form und Inhalt der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
           "kind": "law"
         },
         {
-          "n": 15,
+          "n": 5,
+          "id": "EStG-26-1",
+          "ref": "§ 26 Abs. 1 EStG",
+          "title": "Veranlagung von Ehegatten",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 6,
+          "id": "AO-149-3",
+          "ref": "§ 149 Abs. 3, Teil 2/2 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 7,
           "id": "EGAO-Art_97_36-2",
           "ref": "Art. 97 § 36 Abs. 3, Teil 1/3 EGAO",
           "title": "Sonderregelungen auf Grund der Corona-Pandemie",
@@ -175,15 +110,103 @@
           "kind": "law"
         },
         {
-          "n": 16,
+          "n": 8,
+          "id": "EStG-32d-5",
+          "ref": "§ 32d Abs. 2–4 EStG",
+          "title": "Gesonderter Steuertarif für Einkünfte aus Kapitalvermögen",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 9,
           "id": "KB-02-mandanten-faq-belege-bis-wann-brauchen-wir-ihre-unterlagen",
           "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Bis wann brauchen wir Ihre Unterlagen?",
           "title": "Bis wann brauchen wir Ihre Unterlagen?",
           "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
           "kind": "firm"
+        },
+        {
+          "n": 10,
+          "id": "EStG-111-2",
+          "ref": "§ 111 Abs. 4–7 EStG",
+          "title": "Vorläufiger Verlustrücktrag für 2020 und 2021",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 11,
+          "id": "EStG-105",
+          "ref": "§ 105 EStG",
+          "title": "Festsetzung und Auszahlung der Mobilitätsprämie",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 12,
+          "id": "AO-89-1",
+          "ref": "§ 89 Abs. 1 AO",
+          "title": "Beratung, Auskunft",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 13,
+          "id": "AO-109-1",
+          "ref": "§ 109 Abs. 1–3 AO",
+          "title": "Verlängerung von Fristen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 14,
+          "id": "KB-03-honorar-und-auftrag-mandate-die-wir-nicht-annehmen",
+          "ref": "Honorarrichtlinie und Auftragsannahme › Mandate, die wir nicht annehmen",
+          "title": "Mandate, die wir nicht annehmen",
+          "sourceName": "Honorarrichtlinie und Auftragsannahme",
+          "kind": "firm"
+        },
+        {
+          "n": 15,
+          "id": "AO-149-1",
+          "ref": "§ 149 Abs. 1–2 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 16,
+          "id": "EStG-24",
+          "ref": "§ 24 EStG",
+          "title": "",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 17,
+          "id": "KB-01-fristenmanagement-mandantenanrufe-zu-bescheiden",
+          "ref": "Kanzlei-Handbuch – Fristenmanagement › Mandantenanrufe zu Bescheiden",
+          "title": "Mandantenanrufe zu Bescheiden",
+          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
+          "kind": "firm"
+        },
+        {
+          "n": 18,
+          "id": "EStG-32d-4",
+          "ref": "§ 32d Abs. 2, Teil 3/3 EStG",
+          "title": "Gesonderter Steuertarif für Einkünfte aus Kapitalvermögen",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 19,
+          "id": "EStG-32d-6",
+          "ref": "§ 32d Abs. 5 EStG",
+          "title": "Gesonderter Steuertarif für Einkünfte aus Kapitalvermögen",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
         }
       ],
-      "answer": "Wenn der Mandant die Einkommensteuererklärung 2025 selbst abgibt, gilt als gesetzliches Fristende der **31. Juli 2026 (Freitag)** [2][7]. \n\n* **Gesetzlich gilt:** Steuererklärungen, die sich auf ein Kalenderjahr beziehen, sind spätestens sieben Monate nach Ablauf des Kalenderjahres abzugeben, sofern die Steuergesetze nichts anderes bestimmen (§ 149 Abs. 2 AO) [2]. Für den Veranlagungszeitraum 2025 ist dies der 31. Juli 2026.\n* **Unsere Kanzleiregel:** Die internen Kanzleivorgaben zu Fristen und Unterlageneinreichen betreffen beratene Mandanten [12][16]."
+      "answer": "Gesetzlich gilt für die selbst erstellte Einkommensteuererklärung 2025 eine Abgabefrist von sieben Monaten nach Ablauf des Kalenderjahres, mithin spätestens am **Freitag, 31. Juli 2026** [15]. \n\n* **Gesetzliche Frist:** 31. Juli 2026 (§ 149 Abs. 2 Satz 1 AO) [15]. Da dies ein Werktag ist, erfolgt keine Verschiebung nach § 108 Abs. 3 AO.\n* **Hinweis zur Frist:** Da der 31. Juli 2026 bereits in der Vergangenheit liegt (heute ist der 17. September 2026), wäre diese Frist für das Veranlagungsjahr 2025 ohne Berater bereits abgelaufen."
     }
   ],
   "intake": []

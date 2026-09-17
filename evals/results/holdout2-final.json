@@ -1,20 +1,21 @@
 {
   "summary": {
     "base": "https://taxhub-sqrlane.vercel.app",
-    "ranAt": "2026-09-17T08:24:48.534Z",
+    "ranAt": "2026-09-17T08:34:55.309Z",
     "ask": {
       "cases": 4,
       "passed": 4,
       "retrievalRecall": 1,
       "expectedSourceCited": 1,
-      "citationCoverage": 0.8333333333333334,
+      "citationCoverage": 1,
       "answersWithoutInvalidCitations": 1,
       "keyFactAccuracy": 1,
       "abstentionAccuracy": 1,
       "sessionDocumentPass": null,
+      "incompleteAnswers": 0,
       "languageMatch": null,
-      "medianTotalMs": 2295,
-      "medianTtftMs": 2021
+      "medianTotalMs": 3168,
+      "medianTtftMs": 2842
     },
     "intake": {
       "cases": 0,
@@ -32,6 +33,7 @@
       "id": "blind-saver-allowance",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -47,8 +49,8 @@
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 0,
-      "ttftMs": 2021,
-      "totalMs": 2295,
+      "ttftMs": 2842,
+      "totalMs": 2946,
       "errors": [],
       "sources": [
         {
@@ -69,46 +71,6 @@
         },
         {
           "n": 3,
-          "id": "EStG-20-5",
-          "ref": "§ 20 Abs. 1, Teil 5/7 EStG",
-          "title": "",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 4,
-          "id": "EStG-20-4",
-          "ref": "§ 20 Abs. 1, Teil 4/7 EStG",
-          "title": "",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 5,
-          "id": "EStG-20-10",
-          "ref": "§ 20 Abs. 2–3a EStG",
-          "title": "",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 6,
-          "id": "EStG-20-16",
-          "ref": "§ 20 Abs. 6–8 EStG",
-          "title": "",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 7,
-          "id": "EStG-20-8",
-          "ref": "§ 20 Abs. 2, Teil 1/2 EStG",
-          "title": "",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 8,
           "id": "EStG-20-2",
           "ref": "§ 20 Abs. 1, Teil 2/7 EStG",
           "title": "",
@@ -116,7 +78,7 @@
           "kind": "law"
         },
         {
-          "n": 9,
+          "n": 4,
           "id": "EStG-20-3",
           "ref": "§ 20 Abs. 1, Teil 3/7 EStG",
           "title": "",
@@ -124,7 +86,23 @@
           "kind": "law"
         },
         {
-          "n": 10,
+          "n": 5,
+          "id": "EStG-20-4",
+          "ref": "§ 20 Abs. 1, Teil 4/7 EStG",
+          "title": "",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 6,
+          "id": "EStG-20-5",
+          "ref": "§ 20 Abs. 1, Teil 5/7 EStG",
+          "title": "",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 7,
           "id": "EStG-20-6",
           "ref": "§ 20 Abs. 1, Teil 6/7 EStG",
           "title": "",
@@ -132,37 +110,70 @@
           "kind": "law"
         },
         {
-          "n": 11,
+          "n": 8,
           "id": "EStG-20-7",
           "ref": "§ 20 Abs. 1, Teil 7/7 EStG",
           "title": "",
           "sourceName": "Einkommensteuergesetz",
           "kind": "law"
+        },
+        {
+          "n": 9,
+          "id": "EStG-20-8",
+          "ref": "§ 20 Abs. 2, Teil 1/2 EStG",
+          "title": "",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 10,
+          "id": "EStG-20-9",
+          "ref": "§ 20 Abs. 2, Teil 2/2 EStG",
+          "title": "",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 11,
+          "id": "EStG-20-10",
+          "ref": "§ 20 Abs. 2–3a EStG",
+          "title": "",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 12,
+          "id": "EStG-20-16",
+          "ref": "§ 20 Abs. 6–8 EStG",
+          "title": "",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
         }
       ],
-      "answer": "Der Sparer-Pauschbetrag für eine alleinstehende Mandantin beträgt **1 000 Euro** als Werbungskostenabzug bei den Einkünften aus Kapitalvermögen [1].\n\n* **Gesetzliche Grundlage:** Nach § 20 Abs. 9 Satz 1 EStG ist bei der Ermittlung der Einkünfte aus Kapitalvermögen ein Betrag von 1 000 Euro abzuziehen; der Abzug tatsächlicher Werbungskosten ist ausgeschlossen [1]."
+      "answer": "Der Sparer-Pauschbetrag für eine alleinstehende Mandantin beträgt **1 000 Euro** [1]. Der Abzug tatsächlicher Werbungskosten ist dabei ausgeschlossen [1]."
     },
     {
       "id": "blind-trade-tax-allowance",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
         1
       ],
       "invalidCitations": [],
-      "factualSentences": 2,
-      "citationCoverage": 0.5,
+      "factualSentences": 3,
+      "citationCoverage": 1,
       "keyFactsCorrect": true,
       "missingFacts": [],
       "forbiddenFacts": [],
       "abstained": false,
       "language": "de",
       "expectedLanguage": "de",
-      "toolCalls": 0,
-      "ttftMs": 2068,
-      "totalMs": 2376,
+      "toolCalls": 1,
+      "ttftMs": 2836,
+      "totalMs": 3168,
       "errors": [],
       "sources": [
         {
@@ -183,17 +194,17 @@
         },
         {
           "n": 3,
-          "id": "StBVV-24-1",
-          "ref": "§ 24 Abs. 1, Teil 1/4 StBVV",
-          "title": "Steuererklärungen",
-          "sourceName": "Steuerberatervergütungsverordnung",
+          "id": "EStG-39a-5",
+          "ref": "§ 39a Abs. 2, Teil 1/2 EStG",
+          "title": "Freibetrag und Hinzurechnungsbetrag",
+          "sourceName": "Einkommensteuergesetz",
           "kind": "law"
         },
         {
           "n": 4,
-          "id": "EStG-35-1",
-          "ref": "§ 35 Abs. 1, Teil 1/2 EStG",
-          "title": "",
+          "id": "EStG-39a-4",
+          "ref": "§ 39a Abs. 1, Teil 4/4 EStG",
+          "title": "Freibetrag und Hinzurechnungsbetrag",
           "sourceName": "Einkommensteuergesetz",
           "kind": "law"
         },
@@ -207,14 +218,6 @@
         },
         {
           "n": 6,
-          "id": "EStG-39a-4",
-          "ref": "§ 39a Abs. 1, Teil 4/4 EStG",
-          "title": "Freibetrag und Hinzurechnungsbetrag",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 7,
           "id": "EStG-39a-6",
           "ref": "§ 39a Abs. 2, Teil 2/2 EStG",
           "title": "Freibetrag und Hinzurechnungsbetrag",
@@ -222,42 +225,34 @@
           "kind": "law"
         },
         {
-          "n": 8,
-          "id": "EStG-39a-5",
-          "ref": "§ 39a Abs. 2, Teil 1/2 EStG",
+          "n": 7,
+          "id": "EStG-39a-8",
+          "ref": "§ 39a Abs. 4–5 EStG",
           "title": "Freibetrag und Hinzurechnungsbetrag",
           "sourceName": "Einkommensteuergesetz",
           "kind": "law"
         },
         {
-          "n": 9,
-          "id": "StBVV-24-2",
-          "ref": "§ 24 Abs. 1, Teil 2/4 StBVV",
-          "title": "Steuererklärungen",
-          "sourceName": "Steuerberatervergütungsverordnung",
-          "kind": "law"
-        },
-        {
-          "n": 10,
-          "id": "EStG-35-2",
-          "ref": "§ 35 Abs. 1, Teil 2/2 EStG",
-          "title": "",
-          "sourceName": "Einkommensteuergesetz",
+          "n": 8,
+          "id": "GewStG-6",
+          "ref": "§ 6 GewStG",
+          "title": "Besteuerungsgrundlage",
+          "sourceName": "Gewerbesteuergesetz",
           "kind": "law"
         }
       ],
-      "answer": "Für natürliche Personen (Einzelunternehmer) beträgt der Freibetrag beim Gewerbeertrag **24.500 Euro** [1].\n\n* **Gesetzliche Grundlage:** Der Gewerbeertrag ist bei natürlichen Personen sowie Personengesellschaften um einen Freibetrag in Höhe von **24.500 Euro** zu kürzen (höchstens jedoch in Höhe des abgerundeten Gewerbeertrags) [§ 1 Abs. 1 Satz 3 Nr. 1 GewStG]."
+      "answer": "Ja, bei der Gewerbesteuer gibt es für Einzelunternehmer (natürliche Personen) einen Freibetrag in Höhe von **24 500 Euro** [1].\n\n* **Berechnung:** Der Gewerbeertrag wird auf volle 100 Euro nach unten abgerundet und um diesen Freibetrag gekürzt (höchstens jedoch bis zur Höhe des abgerundeten Gewerbeertrags) [1].\n* **Rechtsgrundlage:** Gesetzlich gilt dies nach § 11 Abs. 1 Satz 3 Nr. 1 GewStG [1]."
     },
     {
       "id": "blind-vat-return-deadline",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
         1,
-        7,
-        3
+        2
       ],
       "invalidCitations": [],
       "factualSentences": 5,
@@ -268,9 +263,9 @@
       "abstained": false,
       "language": "de",
       "expectedLanguage": "de",
-      "toolCalls": 1,
-      "ttftMs": 2653,
-      "totalMs": 3441,
+      "toolCalls": 0,
+      "ttftMs": 4647,
+      "totalMs": 5102,
       "errors": [],
       "sources": [
         {
@@ -283,16 +278,16 @@
         },
         {
           "n": 2,
-          "id": "UStG-18-5",
-          "ref": "§ 18 Abs. 4–4b UStG",
+          "id": "UStG-18-2",
+          "ref": "§ 18 Abs. 2 UStG",
           "title": "Besteuerungsverfahren",
           "sourceName": "Umsatzsteuergesetz",
           "kind": "law"
         },
         {
           "n": 3,
-          "id": "UStG-18-2",
-          "ref": "§ 18 Abs. 2 UStG",
+          "id": "UStG-18-5",
+          "ref": "§ 18 Abs. 4–4b UStG",
           "title": "Besteuerungsverfahren",
           "sourceName": "Umsatzsteuergesetz",
           "kind": "law"
@@ -307,9 +302,9 @@
         },
         {
           "n": 5,
-          "id": "UStG-19-1",
-          "ref": "§ 19 Abs. 1–2 UStG",
-          "title": "Besteuerung der Kleinunternehmer",
+          "id": "UStG-18-7",
+          "ref": "§ 18 Abs. 4d UStG",
+          "title": "Besteuerungsverfahren",
           "sourceName": "Umsatzsteuergesetz",
           "kind": "law"
         },
@@ -323,14 +318,22 @@
         },
         {
           "n": 7,
-          "id": "AO-108",
-          "ref": "§ 108 AO",
-          "title": "Fristen und Termine",
-          "sourceName": "Abgabenordnung",
+          "id": "UStG-18-10",
+          "ref": "§ 18 Abs. 4e, Teil 3/3 UStG",
+          "title": "Besteuerungsverfahren",
+          "sourceName": "Umsatzsteuergesetz",
           "kind": "law"
         },
         {
           "n": 8,
+          "id": "UStG-18-17",
+          "ref": "§ 18 Abs. 9, Teil 2/3 UStG",
+          "title": "Besteuerungsverfahren",
+          "sourceName": "Umsatzsteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 9,
           "id": "UStG-18-4",
           "ref": "§ 18 Abs. 3 UStG",
           "title": "Besteuerungsverfahren",
@@ -338,17 +341,9 @@
           "kind": "law"
         },
         {
-          "n": 9,
+          "n": 10,
           "id": "UStG-18-6",
           "ref": "§ 18 Abs. 4c UStG",
-          "title": "Besteuerungsverfahren",
-          "sourceName": "Umsatzsteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 10,
-          "id": "UStG-18-7",
-          "ref": "§ 18 Abs. 4d UStG",
           "title": "Besteuerungsverfahren",
           "sourceName": "Umsatzsteuergesetz",
           "kind": "law"
@@ -363,73 +358,58 @@
         },
         {
           "n": 12,
-          "id": "UStG-18-9",
-          "ref": "§ 18 Abs. 4e, Teil 2/3 UStG",
-          "title": "Besteuerungsverfahren",
-          "sourceName": "Umsatzsteuergesetz",
-          "kind": "law"
+          "id": "KB-03-honorar-und-auftrag-mandate-die-wir-nicht-annehmen",
+          "ref": "Honorarrichtlinie und Auftragsannahme › Mandate, die wir nicht annehmen",
+          "title": "Mandate, die wir nicht annehmen",
+          "sourceName": "Honorarrichtlinie und Auftragsannahme",
+          "kind": "firm"
         },
         {
           "n": 13,
-          "id": "KB-05-merkblatt-kleinunternehmer-gründungsjahr-grenze-25-000-euro-verwaltungsauffassung",
-          "ref": "Merkblatt Kleinunternehmerregelung und Existenzgründer › Gründungsjahr: Grenze 25.000 Euro (Verwaltungsauffassung)",
-          "title": "Gründungsjahr: Grenze 25.000 Euro (Verwaltungsauffassung)",
+          "id": "KB-05-merkblatt-kleinunternehmer-umsatzgrenzen-nach-19-ustg-seit-2025",
+          "ref": "Merkblatt Kleinunternehmerregelung und Existenzgründer › Umsatzgrenzen nach § 19 UStG (seit 2025)",
+          "title": "Umsatzgrenzen nach § 19 UStG (seit 2025)",
           "sourceName": "Merkblatt Kleinunternehmerregelung und Existenzgründer",
           "kind": "firm"
         },
         {
           "n": 14,
-          "id": "KB-01-fristenmanagement-erklärungsfristen",
-          "ref": "Kanzlei-Handbuch – Fristenmanagement › Erklärungsfristen",
-          "title": "Erklärungsfristen",
-          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
+          "id": "KB-05-merkblatt-kleinunternehmer-verzicht-auf-die-kleinunternehmerregelung",
+          "ref": "Merkblatt Kleinunternehmerregelung und Existenzgründer › Verzicht auf die Kleinunternehmerregelung",
+          "title": "Verzicht auf die Kleinunternehmerregelung",
+          "sourceName": "Merkblatt Kleinunternehmerregelung und Existenzgründer",
           "kind": "firm"
         },
         {
           "n": 15,
-          "id": "KB-01-fristenmanagement-mandantenanrufe-zu-bescheiden",
-          "ref": "Kanzlei-Handbuch – Fristenmanagement › Mandantenanrufe zu Bescheiden",
-          "title": "Mandantenanrufe zu Bescheiden",
-          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
-          "kind": "firm"
+          "id": "UStG-19-1",
+          "ref": "§ 19 Abs. 1–2 UStG",
+          "title": "Besteuerung der Kleinunternehmer",
+          "sourceName": "Umsatzsteuergesetz",
+          "kind": "law"
         },
         {
           "n": 16,
-          "id": "KB-01-fristenmanagement-einspruchsfrist-bei-bescheiden-vier-augen-prinzip",
-          "ref": "Kanzlei-Handbuch – Fristenmanagement › Einspruchsfrist bei Bescheiden (Vier-Augen-Prinzip)",
-          "title": "Einspruchsfrist bei Bescheiden (Vier-Augen-Prinzip)",
-          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
+          "id": "KB-05-merkblatt-kleinunternehmer-gründungsjahr-grenze-25-000-euro-verwaltungsauffassung",
+          "ref": "Merkblatt Kleinunternehmerregelung und Existenzgründer › Gründungsjahr: Grenze 25.000 Euro (Verwaltungsauffassung)",
+          "title": "Gründungsjahr: Grenze 25.000 Euro (Verwaltungsauffassung)",
+          "sourceName": "Merkblatt Kleinunternehmerregelung und Existenzgründer",
           "kind": "firm"
-        },
-        {
-          "n": 17,
-          "id": "AO-149-5",
-          "ref": "§ 149 Abs. 4–5 AO",
-          "title": "Abgabe der Steuererklärungen",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 18,
-          "id": "EGAO-Art_97_36-1",
-          "ref": "Art. 97 § 36 Abs. 1–2 EGAO",
-          "title": "Sonderregelungen auf Grund der Corona-Pandemie",
-          "sourceName": "Einführungsgesetz zur Abgabenordnung",
-          "kind": "law"
         }
       ],
-      "answer": "Die Umsatzsteuer-Voranmeldung ist grundsätzlich bis zum **10. Tag nach Ablauf jedes Voranmeldungszeitraums** zu übermitteln [1]. Fällt dieser Tag auf einen Sonntag, gesetzlichen Feiertag oder Sonnabend, endet die Frist mit dem Ablauf des nächsten Werktags (§ 108 Abs. 3 AO) [7].\n\n* **Gesetzlich gilt:** Für den Voranmeldungszeitraum September 2026 (Fristende 10.10.2026, ein Samstag) verschiebt sich das Fristende nach § 108 Abs. 3 AO auf **Montag, den 12. Oktober 2026** [1][7].\n* **Voranmeldungszeitraum:** Dieser ist kalendervierteljährlich, sofern die Steuer für das vorangegangene Kalenderjahr nicht mehr als 9.000 Euro betrug [3]. Beträgt sie mehr als 9.000 Euro oder wurde die Tätigkeit im laufenden/folgenden Kalenderjahr aufgenommen, ist der Kalendermonat Voranmeldungszeitraum [3]."
+      "answer": "Die Umsatzsteuer-Voranmeldung ist grundsätzlich **bis zum zehnten Tag nach Ablauf jedes Voranmeldungszeitraums** zu übermitteln [1].\n\nGesetzlich gilt:\n- **Übermittlungsweg:** Die Übermittlung hat nach amtlich vorgeschriebenem Datensatz über die amtlich bestimmte Schnittstelle zu erfolgen [1]. Auf Antrag kann das Finanzamt zur Vermeidung unbilliger Härten auf die elektronische Übermittlung verzichten (dann Vordruck) [1].\n- **Voranmeldungszeitraum:** Das ist grundsätzlich das Kalendervierteljahr [2]. Der Kalendermonat gilt als Voranmeldungszeitraum, wenn die Steuer für das vorangegangene Kalenderjahr mehr als 9.000 Euro betrug, im laufenden und folgenden Kalenderjahr bei Neugründungen sowie in bestimmten Fällen bei Vorratsgesellschaften oder Firmenmänteln [2]."
     },
     {
       "id": "blind-out-minimum-wage",
       "scope": "out",
       "pass": true,
+      "incomplete": false,
       "retrieved": null,
       "expectedCited": null,
       "citedNumbers": [],
       "invalidCitations": [],
-      "factualSentences": 0,
-      "citationCoverage": null,
+      "factualSentences": 1,
+      "citationCoverage": 0,
       "keyFactsCorrect": true,
       "missingFacts": [],
       "forbiddenFacts": [],
@@ -437,8 +417,8 @@
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 0,
-      "ttftMs": 1782,
-      "totalMs": 1941,
+      "ttftMs": 2935,
+      "totalMs": 3235,
       "errors": [],
       "sources": [
         {
@@ -451,14 +431,22 @@
         },
         {
           "n": 2,
-          "id": "EStG-39b-3",
-          "ref": "§ 39b Abs. 2, Teil 2/5 EStG",
-          "title": "Einbehaltung der Lohnsteuer",
-          "sourceName": "Einkommensteuergesetz",
+          "id": "AO-108",
+          "ref": "§ 108 AO",
+          "title": "Fristen und Termine",
+          "sourceName": "Abgabenordnung",
           "kind": "law"
         },
         {
           "n": 3,
+          "id": "EStG-3-1",
+          "ref": "§ 3 (Teil 1/41) EStG",
+          "title": "",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 4,
           "id": "EStG-32-4",
           "ref": "§ 32 Abs. 5 EStG",
           "title": "Kinder, Freibeträge für Kinder",
@@ -466,71 +454,31 @@
           "kind": "law"
         },
         {
-          "n": 4,
-          "id": "EStG-10-13",
-          "ref": "§ 10 Abs. 2b EStG",
-          "title": "",
+          "n": 5,
+          "id": "EStG-112",
+          "ref": "§ 112 EStG",
+          "title": "Veranlagungszeitraum, Höhe",
           "sourceName": "Einkommensteuergesetz",
           "kind": "law"
         },
         {
-          "n": 5,
-          "id": "StBerG-111e",
-          "ref": "§ 111e StBerG",
-          "title": "Vernehmung des gesetzlichen Vertreters",
-          "sourceName": "Steuerberatungsgesetz",
-          "kind": "law"
-        },
-        {
           "n": 6,
-          "id": "StBVV-4a",
-          "ref": "§ 4a StBVV",
-          "title": "Unterschreiten der gesetzlichen Vergütung",
-          "sourceName": "Steuerberatervergütungsverordnung",
-          "kind": "law"
-        },
-        {
-          "n": 7,
-          "id": "KB-01-fristenmanagement-erklärungsfristen",
-          "ref": "Kanzlei-Handbuch – Fristenmanagement › Erklärungsfristen",
-          "title": "Erklärungsfristen",
-          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
-          "kind": "firm"
-        },
-        {
-          "n": 8,
-          "id": "KB-02-mandanten-faq-belege-bis-wann-brauchen-wir-ihre-unterlagen",
-          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Bis wann brauchen wir Ihre Unterlagen?",
-          "title": "Bis wann brauchen wir Ihre Unterlagen?",
-          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
-          "kind": "firm"
-        },
-        {
-          "n": 9,
-          "id": "StBerG-111c",
-          "ref": "§ 111c StBerG",
-          "title": "Besonderer Vertreter",
-          "sourceName": "Steuerberatungsgesetz",
-          "kind": "law"
-        },
-        {
-          "n": 10,
-          "id": "AO-149-1",
-          "ref": "§ 149 Abs. 1–2 AO",
-          "title": "Abgabe der Steuererklärungen",
+          "id": "AO-14a",
+          "ref": "§ 14a AO",
+          "title": "Personenvereinigungen",
           "sourceName": "Abgabenordnung",
           "kind": "law"
         },
         {
-          "n": 11,
-          "id": "EGAO-Art_97_36-2",
-          "ref": "Art. 97 § 36 Abs. 3, Teil 1/3 EGAO",
-          "title": "Sonderregelungen auf Grund der Corona-Pandemie",
-          "sourceName": "Einführungsgesetz zur Abgabenordnung",
+          "n": 7,
+          "id": "AO-279",
+          "ref": "§ 279 AO",
+          "title": "Form und Inhalt des Aufteilungsbescheids",
+          "sourceName": "Abgabenordnung",
           "kind": "law"
         },
         {
-          "n": 12,
+          "n": 8,
           "id": "AO-407",
           "ref": "§ 407 AO",
           "title": "Beteiligung der Finanzbehörde in sonstigen Fällen",
@@ -538,7 +486,7 @@
           "kind": "law"
         },
         {
-          "n": 13,
+          "n": 9,
           "id": "AO-409",
           "ref": "§ 409 AO",
           "title": "Zuständige Verwaltungsbehörde",
@@ -546,39 +494,39 @@
           "kind": "law"
         },
         {
+          "n": 10,
+          "id": "AO-107",
+          "ref": "§ 107 AO",
+          "title": "Entschädigung der Auskunftspflichtigen und der Sachverständigen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 11,
+          "id": "EStG-3-2",
+          "ref": "§ 3 (Teil 2/41) EStG",
+          "title": "",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 12,
+          "id": "KB-01-fristenmanagement-erklärungsfristen",
+          "ref": "Kanzlei-Handbuch – Fristenmanagement › Erklärungsfristen",
+          "title": "Erklärungsfristen",
+          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
+          "kind": "firm"
+        },
+        {
+          "n": 13,
+          "id": "KB-02-mandanten-faq-belege-bis-wann-brauchen-wir-ihre-unterlagen",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Bis wann brauchen wir Ihre Unterlagen?",
+          "title": "Bis wann brauchen wir Ihre Unterlagen?",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
           "n": 14,
-          "id": "EStG-39b-2",
-          "ref": "§ 39b Abs. 2, Teil 1/5 EStG",
-          "title": "Einbehaltung der Lohnsteuer",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 15,
-          "id": "EStG-39b-4",
-          "ref": "§ 39b Abs. 2, Teil 3/5 EStG",
-          "title": "Einbehaltung der Lohnsteuer",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 16,
-          "id": "EStG-32-3",
-          "ref": "§ 32 Abs. 4, Teil 2/2 EStG",
-          "title": "Kinder, Freibeträge für Kinder",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 17,
-          "id": "EStG-32-5",
-          "ref": "§ 32 Abs. 6, Teil 1/3 EStG",
-          "title": "Kinder, Freibeträge für Kinder",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 18,
           "id": "KB-05-merkblatt-kleinunternehmer-gründungsjahr-grenze-25-000-euro-verwaltungsauffassung",
           "ref": "Merkblatt Kleinunternehmerregelung und Existenzgründer › Gründungsjahr: Grenze 25.000 Euro (Verwaltungsauffassung)",
           "title": "Gründungsjahr: Grenze 25.000 Euro (Verwaltungsauffassung)",
@@ -586,15 +534,31 @@
           "kind": "firm"
         },
         {
-          "n": 19,
+          "n": 15,
           "id": "KB-01-fristenmanagement-mandantenanrufe-zu-bescheiden",
           "ref": "Kanzlei-Handbuch – Fristenmanagement › Mandantenanrufe zu Bescheiden",
           "title": "Mandantenanrufe zu Bescheiden",
           "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
           "kind": "firm"
+        },
+        {
+          "n": 16,
+          "id": "AO-149-1",
+          "ref": "§ 149 Abs. 1–2 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 17,
+          "id": "EGAO-Art_97_36-2",
+          "ref": "Art. 97 § 36 Abs. 3, Teil 1/3 EGAO",
+          "title": "Sonderregelungen auf Grund der Corona-Pandemie",
+          "sourceName": "Einführungsgesetz zur Abgabenordnung",
+          "kind": "law"
         }
       ],
-      "answer": "Dazu enthalten die Quellen nichts; es fehlt eine entsprechende gesetzliche Regelung zum Mindestlohn im Jahr 2026 [1–19]."
+      "answer": "Dazu enthalten die Quellen nichts. \n\nUm die Höhe des gesetzlichen Mindestlohns im Jahr 2026 beantworten zu können, fehlen die entsprechenden gesetzlichen Bestimmungen, insbesondere das Mindestlohngesetz (MiLoG) bzw. die dazugehörigen Verordnungen zur Anpassung des Mindestlohns in den Quellen."
     }
   ],
   "intake": []

@@ -1,0 +1,71 @@
+{
+  "summary": {
+    "base": "https://taxhub-sqrlane.vercel.app",
+    "ranAt": "2026-09-17T08:36:49.302Z",
+    "ask": {
+      "cases": 0,
+      "passed": 0,
+      "retrievalRecall": null,
+      "expectedSourceCited": null,
+      "citationCoverage": null,
+      "answersWithoutInvalidCitations": null,
+      "keyFactAccuracy": null,
+      "abstentionAccuracy": null,
+      "sessionDocumentPass": null,
+      "incompleteAnswers": 0,
+      "languageMatch": null,
+      "medianTotalMs": null,
+      "medianTtftMs": null
+    },
+    "intake": {
+      "cases": 1,
+      "passed": 0,
+      "categoryAccuracy": 1,
+      "deadlineAccuracy": 1,
+      "datedDeadlineAccuracy": null,
+      "draftQuality": 1,
+      "checklistCitationCoverage": 1,
+      "medianTotalMs": 5105
+    }
+  },
+  "ask": [],
+  "intake": [
+    {
+      "id": "demir-voicemail",
+      "pass": false,
+      "category": "NEUMANDAT",
+      "expectedCategory": "NEUMANDAT",
+      "categoryCorrect": true,
+      "deadline": null,
+      "expectedDeadline": null,
+      "deadlineCorrect": true,
+      "draftStatesDeadline": null,
+      "draftHasRawCitations": false,
+      "draftForbidden": [],
+      "draftQualityOk": true,
+      "invalidCitations": [],
+      "checklistCoverage": 1,
+      "missingFacts": [
+        "/25[.\\s]?000/"
+      ],
+      "urgency": "mittel",
+      "totalMs": 5105,
+      "summary": "Die Mandantin hat sich im März 2026 als Grafikdesignerin selbstständig gemacht und erzielt im laufenden Jahr einen voraussichtlichen Umsatz von ca. 28.000 Euro [Anfrage]. Vorläufige fachliche Einordnung für den Berufsträger: Da die Mandantin im laufenden Kalenderjahr 2026 die Umsatzgrenze von 100.000 Euro nach § 19 Abs. 1 UStG voraussichtlich nicht überschreitet [1] und im vorangegangenen Kalenderjahr (2025) als Neugründung noch keine Umsätze erzielt hat, greift die Kleinunternehmerregelung, sofern die Voraussetzungen vorliegen. Für die Existenzgründung ist der Fragebogen zur steuerlichen Erfassung elektronisch zu übermitteln [5].",
+      "draft": "Ihre Selbstständigkeit als Grafikdesignerin / Rückrufbitte\nSehr geehrte Frau Demir, wir bestätigen den Eingang Ihrer Nachricht auf unserem Anrufbeantworter bezüglich Ihrer Existenzgründung und der Kleinunternehmerregelung. Wir rufen Sie zeitnah zurück, um Ihr Anliegen zu besprechen. Damit wir Sie optimal unterstützen können, benötigen wir vorab einige Angaben und Unterlagen von Ihnen: Bitte senden Sie uns das Anschreiben des Finanzamts (mit Angabe der Frist), den genauen Beginn Ihrer Tätigkeit, Ihre voraussichtlichen Umsätze und Gewinne für das Gründungs- und Folgejahr, Ihre Bankverbindung, Ihre Steuer-ID sowie Angaben zu geplanten Investitionen. Zudem benötigen wir eine Ausweiskopie für unsere internen Unterlagen. Ihr Team der Kanzlei Muster",
+      "sources": [
+        "1: § 19 Abs. 1–2 UStG",
+        "2: § 19 Abs. 5–6 UStG",
+        "3: § 18 Abs. 1 UStG",
+        "4: § 19 Abs. 3–4 UStG",
+        "5: Merkblatt Kleinunternehmerregelung und Existenzgründer › Existenzgründer: Fragebogen zur steuerlichen Erfassung",
+        "6: Honorarrichtlinie und Auftragsannahme › Auftragsannahme (Neumandate)",
+        "7: § 138 Abs. 1–1a AO",
+        "8: § 137 AO",
+        "9: Art. 97 § 26 Abs. 5, Teil 1/2 EGAO",
+        "10: § 39 Abs. 3–5 StBVV",
+        "11: Merkblatt Kleinunternehmerregelung und Existenzgründer › Umsatzgrenzen nach § 19 UStG (seit 2025)",
+        "12: Merkblatt Kleinunternehmerregelung und Existenzgründer › Verzicht auf die Kleinunternehmerregelung"
+      ]
+    }
+  ]
+}

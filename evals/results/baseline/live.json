@@ -12,6 +12,7 @@
       "keyFactAccuracy": 1,
       "abstentionAccuracy": 1,
       "sessionDocumentPass": true,
+      "incompleteAnswers": 0,
       "languageMatch": 1,
       "medianTotalMs": 10204,
       "medianTtftMs": 9039
@@ -32,6 +33,7 @@
       "id": "deadline-2025-advised",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -166,6 +168,7 @@
       "id": "deadline-2025-unadvised",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -281,6 +284,7 @@
       "id": "objection-period",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -415,6 +419,7 @@
       "id": "craftsman-cash",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -546,6 +551,7 @@
       "id": "late-filing-surcharge",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -663,6 +669,7 @@
       "id": "retention-receipts",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -779,6 +786,7 @@
       "id": "small-business-limits",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -897,6 +905,7 @@
       "id": "small-business-founder",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -1013,6 +1022,7 @@
       "id": "fee-income-tax-return",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -1137,6 +1147,7 @@
       "id": "firm-phone-guide",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -1278,6 +1289,7 @@
       "id": "firm-fee-objection",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -1425,6 +1437,7 @@
       "id": "english-late-fee",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -1518,6 +1531,7 @@
       "id": "follow-up-turn",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -1642,6 +1656,7 @@
       "id": "session-document",
       "scope": "in",
       "pass": true,
+      "incomplete": false,
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
@@ -1796,6 +1811,7 @@
       "id": "out-inheritance-allowance",
       "scope": "out",
       "pass": true,
+      "incomplete": false,
       "retrieved": null,
       "expectedCited": null,
       "citedNumbers": [],
@@ -1892,6 +1908,7 @@
       "id": "out-case-law",
       "scope": "out",
       "pass": true,
+      "incomplete": false,
       "retrieved": null,
       "expectedCited": null,
       "citedNumbers": [],
@@ -2044,6 +2061,7 @@
       "id": "out-nonexistent-norm",
       "scope": "out",
       "pass": true,
+      "incomplete": false,
       "retrieved": null,
       "expectedCited": null,
       "citedNumbers": [],

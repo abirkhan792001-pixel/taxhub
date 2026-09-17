@@ -67,7 +67,7 @@ add("E4", "Sent back", 1, manual.sentToCito.done ? 1 : 0, manual.sentToCito.evid
 const earned = round(items.reduce((s, x) => s + x.points, 0));
 const assessable = items.reduce((s, x) => s + x.max, 0);
 const share = earned / assessable;
-const band = share >= 0.9 ? "Ready to send" : share >= 0.75 ? "Send after fixing the named gaps" : "Not ready";
+const pointsBand = share >= 0.9 ? "Ready to send" : share >= 0.75 ? "Send after fixing the named gaps" : "Not ready";
 
 const loomReadiness = del.speech && {
   estimatedDuration: `${Math.floor(del.speech.estimatedDurationSec / 60)}:${String(del.speech.estimatedDurationSec % 60).padStart(2, "0")}`,
@@ -91,7 +91,7 @@ const scorecard = {
   earned,
   assessable,
   share,
-  band,
+  band: pointsBand,
   pending: { loom: 25, note: manual.loomRecorded.evidence },
   blocks: ["A", "B", "D", "E"].map((b) => ({ block: b, earned: round(items.filter((x) => x.id.startsWith(b)).reduce((s, x) => s + x.points, 0)), max: items.filter((x) => x.id.startsWith(b)).reduce((s, x) => s + x.max, 0) })),
   items,
@@ -127,12 +127,37 @@ const holdouts = [
     passed: `${h.data!.summary.ask.passed}/${h.data!.summary.ask.cases}`,
     failures: h.data!.ask.filter((x) => !x.pass).map((x) => `${x.id}${x.missingFacts.length ? ` (missing ${x.missingFacts.join(", ")})` : ""}${x.forbiddenFacts.length ? ` (forbidden ${x.forbiddenFacts.join(", ")})` : ""}`),
   }));
-// repeated runs of the case that exposed run-to-run retrieval variance
-const stabilityRuns = [1, 2, 3].map((n) => optional<AskOnly>(`evals/results/stability-followup-${n}.json`)).filter((r): r is AskOnly => !!r);
-const followUpInMain = live.ask.find((x) => x.id === "follow-up-turn");
-const stability = stabilityRuns.length
-  ? { case: "follow-up-turn", passed: stabilityRuns.filter((r) => r.ask[0]?.pass).length + (followUpInMain?.pass ? 1 : 0), runs: stabilityRuns.length + (followUpInMain ? 1 : 0) }
-  : null;
+// repeated runs (final deployment) of the cases that failed at least once: a single run hides variance
+type IntakeOnly = { intake: { id: string; pass: boolean }[] };
+const STABILITY_CASES: { id: string; prefix: string; kind: "ask" | "intake"; label: string }[] = [
+  { id: "deadline-2025-unadvised", prefix: "stability-unadvised", kind: "ask", label: "Filing deadline without advisor (headline date)" },
+  { id: "follow-up-turn", prefix: "stability-followup", kind: "ask", label: "Multi-turn follow-up" },
+  { id: "demir-voicemail", prefix: "stability-founder", kind: "intake", label: "Founder intake (25,000 euro founding-year limit)" },
+];
+const stability = STABILITY_CASES.map((sc) => {
+  const extra = [1, 2, 3].map((n) => optional<AskOnly & IntakeOnly>(`evals/results/${sc.prefix}-${n}.json`)).filter((r): r is AskOnly & IntakeOnly => !!r);
+  const passes = [
+    sc.kind === "ask" ? live.ask.find((x) => x.id === sc.id)?.pass : live.intake.find((x) => x.id === sc.id)?.pass,
+    ...extra.map((r) => (sc.kind === "ask" ? r.ask[0]?.pass : r.intake[0]?.pass)),
+  ].filter((x): x is boolean => x !== undefined);
+  const extraPasses = extra.filter((r) => (sc.kind === "ask" ? r.ask[0]?.pass : r.intake[0]?.pass)).length;
+  return { ...sc, passed: passes.filter(Boolean).length, runs: passes.length, extraRuns: extra.length, extraPasses };
+}).filter((x) => x.runs > 1);
+// critical-error gate: in tax, one wrong date or assessment outweighs any number of points
+const criticalFailures = [
+  ...live.ask.filter((x) => x.scope === "in" && !x.pass && (x.missingFacts.length > 0 || x.forbiddenFacts.length > 0)).map((x) => `ask/${x.id}: wrong or missing key fact`),
+  ...live.ask.filter((x) => x.scope === "out" && x.forbiddenFacts.length > 0).map((x) => `ask/${x.id}: stated a fact the sources do not contain`),
+  ...live.intake.filter((x) => !x.pass && (!x.deadlineCorrect || x.missingFacts.length > 0)).map((x) => `intake/${x.id}: wrong deadline or assessment`),
+];
+const unstable = stability.filter((x) => x.passed < x.runs).map((x) => `${x.id}: ${x.passed} of ${x.runs} runs`);
+const gated = criticalFailures.length > 0 || unstable.length > 0;
+const band = gated && pointsBand === "Ready to send" ? "Send after fixing the named gaps" : pointsBand;
+const reliability = {
+  runs: live.ask.length + live.intake.length + stability.reduce((n, x) => n + x.extraRuns, 0),
+  passed: live.ask.filter((x) => x.pass).length + live.intake.filter((x) => x.pass).length + stability.reduce((n, x) => n + x.extraPasses, 0),
+};
+Object.assign(scorecard, { band, pointsBand, gate: { criticalFailures, unstable }, reliability });
+
 Object.assign(scorecard, { baseline: baseline && { earned: baseline.earned, assessable: baseline.assessable, ask: baseline.productMetrics.askCasesPassed, intake: baseline.productMetrics.intakeCasesPassed }, holdouts, stability });
 
 writeFileSync("evals/results/scorecard.json", JSON.stringify(scorecard, null, 2));
@@ -140,7 +165,7 @@ writeFileSync("evals/results/scorecard.json", JSON.stringify(scorecard, null, 2)
 const md = [
   `# TaxHub Case Readiness Score`,
   ``,
-  `**${earned} / ${assessable} assessable points (${pct(share)}) · ${band}.** The Loom (25 points) is pending: ${manual.loomRecorded.evidence.toLowerCase()}.`,
+  `**${earned} / ${assessable} assessable points (${pct(share)}) · ${band}.**${gated ? ` Points alone would read “${pointsBand}”; the critical-error gate applies (see below).` : ""} The Loom (25 points) is pending: ${manual.loomRecorded.evidence.toLowerCase()}.`,
   ``,
   `Scored ${scorecard.scoredAt.slice(0, 16).replace("T", " ")} UTC against the live deployment. Metric definition: [rubric.md](../rubric.md).`,
   ``,
@@ -156,6 +181,17 @@ const md = [
   `## Product metrics`,
   ``,
   ...Object.entries(scorecard.productMetrics).map(([k, v]) => `- ${k}: **${v}**`),
+  ``,
+  `## Critical-error gate`,
+  ``,
+  ...(gated
+    ? [
+        ...criticalFailures.map((f) => `- ✗ ${f}`),
+        ...unstable.map((u) => `- ✗ unstable across repeated runs: ${u}`),
+      ]
+    : ["- ✓ no wrong key facts and no unstable cases"]),
+  ``,
+  `Reliability on the final deployment: **${reliability.passed} of ${reliability.runs}** case runs passed (${pct(reliability.passed / reliability.runs)}), counting repeated runs of unstable cases.`,
   ``,
   `## Failed cases`,
   ``,
@@ -179,7 +215,7 @@ const md = [
   `## Holdout questions (generalisation, no points)`,
   ``,
   ...holdouts.map((h) => `- **${h.label}: ${h.passed}**${h.failures.length ? ` — failed: ${h.failures.join("; ")}` : ""}`),
-  ...(stability ? [``, `Stability: the multi-turn case \`${stability.case}\` passed **${stability.passed} of ${stability.runs}** runs on the final deployment.`] : []),
+  ...(stability.length ? [``, `Repeated runs on the final deployment (cases that failed at least once):`, ``, ...stability.map((x) => `- ${x.label} (\`${x.id}\`): **${x.passed} of ${x.runs}** runs passed`)] : []),
   ``,
   `## Limits of this metric`,
   ``,
