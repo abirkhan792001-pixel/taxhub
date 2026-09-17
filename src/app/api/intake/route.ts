@@ -4,7 +4,7 @@ import { ANSWER_MODEL, LAWS, PLANNER_MODEL, PLANNER_OPTIONS, formatSources, plan
 import { einspruchsfrist } from "@/lib/deadlines";
 import { retrieve } from "@/lib/search";
 
-export const maxDuration = 60;
+export const maxDuration = 120; // free-tier models can be slow under load; a cut-off stream is worse than a slow answer
 
 const extractionSchema = z.object({
   kategorie: z.enum(["BESCHEID", "UNTERLAGEN", "STATUS", "NEUMANDAT", "LOHN", "SONSTIGES"]),

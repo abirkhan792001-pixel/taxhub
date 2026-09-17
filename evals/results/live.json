@@ -1,20 +1,20 @@
 {
   "summary": {
     "base": "https://taxhub-sqrlane.vercel.app",
-    "ranAt": "2026-09-17T08:10:54.963Z",
+    "ranAt": "2026-09-17T08:23:25.555Z",
     "ask": {
       "cases": 17,
-      "passed": 16,
+      "passed": 15,
       "retrievalRecall": 1,
-      "expectedSourceCited": 0.9285714285714286,
-      "citationCoverage": 0.9714285714285714,
+      "expectedSourceCited": 0.8571428571428571,
+      "citationCoverage": 0.8367346938775511,
       "answersWithoutInvalidCitations": 1,
-      "keyFactAccuracy": 0.9285714285714286,
+      "keyFactAccuracy": 0.8571428571428571,
       "abstentionAccuracy": 1,
       "sessionDocumentPass": true,
       "languageMatch": 1,
-      "medianTotalMs": 6523,
-      "medianTtftMs": 5479
+      "medianTotalMs": 4481,
+      "medianTtftMs": 3883
     },
     "intake": {
       "cases": 7,
@@ -23,8 +23,8 @@
       "deadlineAccuracy": 1,
       "datedDeadlineAccuracy": 1,
       "draftQuality": 1,
-      "checklistCitationCoverage": 1,
-      "medianTotalMs": 8741
+      "checklistCitationCoverage": 0.7142857142857143,
+      "medianTotalMs": 4327
     }
   },
   "ask": [
@@ -36,14 +36,12 @@
       "expectedCited": true,
       "citedNumbers": [
         1,
-        4,
         8,
-        12,
-        5,
-        7
+        10,
+        9
       ],
       "invalidCitations": [],
-      "factualSentences": 6,
+      "factualSentences": 5,
       "citationCoverage": 1,
       "keyFactsCorrect": true,
       "missingFacts": [],
@@ -52,8 +50,8 @@
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 1,
-      "ttftMs": 2948,
-      "totalMs": 4560,
+      "ttftMs": 37468,
+      "totalMs": 38120,
       "errors": [],
       "sources": [
         {
@@ -66,14 +64,6 @@
         },
         {
           "n": 2,
-          "id": "AO-150-1",
-          "ref": "§ 150 Abs. 1–4 AO",
-          "title": "Form und Inhalt der Steuererklärungen",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 3,
           "id": "AO-149-1",
           "ref": "§ 149 Abs. 1–2 AO",
           "title": "Abgabe der Steuererklärungen",
@@ -81,15 +71,15 @@
           "kind": "law"
         },
         {
-          "n": 4,
-          "id": "AO-149-3",
-          "ref": "§ 149 Abs. 3, Teil 2/2 AO",
+          "n": 3,
+          "id": "AO-149-5",
+          "ref": "§ 149 Abs. 4–5 AO",
           "title": "Abgabe der Steuererklärungen",
           "sourceName": "Abgabenordnung",
           "kind": "law"
         },
         {
-          "n": 5,
+          "n": 4,
           "id": "AO-149-4",
           "ref": "§ 149 Abs. 4 AO",
           "title": "Abgabe der Steuererklärungen",
@@ -97,17 +87,25 @@
           "kind": "law"
         },
         {
+          "n": 5,
+          "id": "AO-150-1",
+          "ref": "§ 150 Abs. 1–4 AO",
+          "title": "Form und Inhalt der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
           "n": 6,
-          "id": "AO-149-6",
-          "ref": "§ 149 Abs. 6 AO",
+          "id": "AO-149-3",
+          "ref": "§ 149 Abs. 3, Teil 2/2 AO",
           "title": "Abgabe der Steuererklärungen",
           "sourceName": "Abgabenordnung",
           "kind": "law"
         },
         {
           "n": 7,
-          "id": "AO-149-5",
-          "ref": "§ 149 Abs. 4–5 AO",
+          "id": "AO-149-6",
+          "ref": "§ 149 Abs. 6 AO",
           "title": "Abgabe der Steuererklärungen",
           "sourceName": "Abgabenordnung",
           "kind": "law"
@@ -122,6 +120,38 @@
         },
         {
           "n": 9,
+          "id": "KB-01-fristenmanagement-erklärungsfristen",
+          "ref": "Kanzlei-Handbuch – Fristenmanagement › Erklärungsfristen",
+          "title": "Erklärungsfristen",
+          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
+          "kind": "firm"
+        },
+        {
+          "n": 10,
+          "id": "EGAO-Art_97_36-2",
+          "ref": "Art. 97 § 36 Abs. 3, Teil 1/3 EGAO",
+          "title": "Sonderregelungen auf Grund der Corona-Pandemie",
+          "sourceName": "Einführungsgesetz zur Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 11,
+          "id": "AO-150-3",
+          "ref": "§ 150 Abs. 7 AO",
+          "title": "Form und Inhalt der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 12,
+          "id": "AO-109-1",
+          "ref": "§ 109 Abs. 1–3 AO",
+          "title": "Verlängerung von Fristen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 13,
           "id": "KB-03-honorar-und-auftrag-mandate-die-wir-nicht-annehmen",
           "ref": "Honorarrichtlinie und Auftragsannahme › Mandate, die wir nicht annehmen",
           "title": "Mandate, die wir nicht annehmen",
@@ -129,31 +159,31 @@
           "kind": "firm"
         },
         {
-          "n": 10,
-          "id": "KB-02-mandanten-faq-belege-wie-reichen-sie-unterlagen-ein",
-          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wie reichen Sie Unterlagen ein?",
-          "title": "Wie reichen Sie Unterlagen ein?",
-          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
-          "kind": "firm"
+          "n": 14,
+          "id": "EGAO-Art_97_8-1",
+          "ref": "Art. 97 § 8 Abs. 1–3 EGAO",
+          "title": "Verspätungszuschlag",
+          "sourceName": "Einführungsgesetz zur Abgabenordnung",
+          "kind": "law"
         },
         {
-          "n": 11,
-          "id": "KB-02-mandanten-faq-belege-checkliste-einkommensteuer-vermietung",
-          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Checkliste Einkommensteuer (Vermietung)",
-          "title": "Checkliste Einkommensteuer (Vermietung)",
-          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
-          "kind": "firm"
-        },
-        {
-          "n": 12,
+          "n": 15,
           "id": "KB-02-mandanten-faq-belege-bis-wann-brauchen-wir-ihre-unterlagen",
           "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Bis wann brauchen wir Ihre Unterlagen?",
           "title": "Bis wann brauchen wir Ihre Unterlagen?",
           "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
           "kind": "firm"
+        },
+        {
+          "n": 16,
+          "id": "KB-01-fristenmanagement-einspruchsfrist-bei-bescheiden-vier-augen-prinzip",
+          "ref": "Kanzlei-Handbuch – Fristenmanagement › Einspruchsfrist bei Bescheiden (Vier-Augen-Prinzip)",
+          "title": "Einspruchsfrist bei Bescheiden (Vier-Augen-Prinzip)",
+          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
+          "kind": "firm"
         }
       ],
-      "answer": "Gesetzlich muss die Einkommensteuererklärung 2025 bei Erstellung durch unsere Kanzlei (Angehörige der steuerberatenden Berufe) spätestens bis zum **01. März 2027** abgegeben werden [1][4][8]. Unsere Kanzleiregel sieht jedoch vor, dass Mandanten ihre Unterlagen bereits bis spätestens **31. März 2026** einreichen müssen [12].\n\n**Details:**\n* **Gesetzliche Regelung:** Die Abgabefrist für beratene Fälle endet grundsätzlich am letzten Tag des Monats Februar des zweiten auf den Besteuerungszeitraum folgenden Kalenderjahres [1][4]. Da der 28. Februar 2027 auf einen Sonntag fällt, verschiebt sich das Fristende gemäß § 108 Abs. 3 AO auf den nächsten Werktag, den **01. März 2027** [8].\n* **Kanzlei-Richtlinie:** Damit eine rechtzeitige Bearbeitung vor dem gesetzlichen Fristende garantiert werden kann, bitten wir unsere Mandanten laut interner Richtlinie, die Unterlagen für das Vorjahr bis zum **31. März 2026** vorzulegen [12].\n* **Vorzeitige Anforderung:** Das Finanzamt kann die Erklärung durch eine vorzeitige Anforderung nach § 149 Abs. 4 AO (z. B. bei Nachzahlungen oder Zufallsauswahl) mit einer Frist von vier Monaten nach Bekanntgabe früher anfordern [5][7]."
+      "answer": "Gesetzlich gilt: Die Einkommensteuererklärung 2025 ist für beratene Mandanten grundsätzlich bis zum **1. März 2027** abzugeben, da der reguläre Stichtag (28. Februar 2027) auf einen Sonntag fällt [1][8].\n\n* **Gesetzliche Frist:** Nach § 149 Abs. 3 AO endet die Frist für beratene Mandanten grundsätzlich am letzten Tag des Monats Februar des zweiten auf den Besteuerungszeitraum folgenden Kalenderjahres (2027) [1]. Da der 28. Februar 2027 ein Sonntag ist, verschiebt sich das Fristende gemäß § 108 Abs. 3 AO auf den nächsten Werktag, den 1. März 2027 [8]. (Die Corona-Sonderregelungen nach Art. 97 § 36 EGAO enden nach den Quellen beim Besteuerungszeitraum 2024) [10].\n* **Unsere Kanzleiregel:** Die Kanzlei plant intern mit einer Abgabe spätestens zwei Monate vor dem gesetzlichen Fristende [9]."
     },
     {
       "id": "deadline-2025-unadvised",
@@ -162,14 +192,11 @@
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
-        5,
-        8,
-        1,
-        3,
-        11
+        2,
+        8
       ],
       "invalidCitations": [],
-      "factualSentences": 6,
+      "factualSentences": 4,
       "citationCoverage": 1,
       "keyFactsCorrect": true,
       "missingFacts": [],
@@ -178,8 +205,8 @@
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 1,
-      "ttftMs": 10708,
-      "totalMs": 12077,
+      "ttftMs": 16740,
+      "totalMs": 17439,
       "errors": [],
       "sources": [
         {
@@ -192,30 +219,6 @@
         },
         {
           "n": 2,
-          "id": "AO-150-1",
-          "ref": "§ 150 Abs. 1–4 AO",
-          "title": "Form und Inhalt der Steuererklärungen",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 3,
-          "id": "AO-149-3",
-          "ref": "§ 149 Abs. 3, Teil 2/2 AO",
-          "title": "Abgabe der Steuererklärungen",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 4,
-          "id": "AO-149-4",
-          "ref": "§ 149 Abs. 4 AO",
-          "title": "Abgabe der Steuererklärungen",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 5,
           "id": "AO-149-1",
           "ref": "§ 149 Abs. 1–2 AO",
           "title": "Abgabe der Steuererklärungen",
@@ -223,17 +226,41 @@
           "kind": "law"
         },
         {
+          "n": 3,
+          "id": "AO-149-4",
+          "ref": "§ 149 Abs. 4 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 4,
+          "id": "AO-150-1",
+          "ref": "§ 150 Abs. 1–4 AO",
+          "title": "Form und Inhalt der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 5,
+          "id": "AO-149-3",
+          "ref": "§ 149 Abs. 3, Teil 2/2 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
           "n": 6,
-          "id": "AO-149-6",
-          "ref": "§ 149 Abs. 6 AO",
+          "id": "AO-149-5",
+          "ref": "§ 149 Abs. 4–5 AO",
           "title": "Abgabe der Steuererklärungen",
           "sourceName": "Abgabenordnung",
           "kind": "law"
         },
         {
           "n": 7,
-          "id": "AO-149-5",
-          "ref": "§ 149 Abs. 4–5 AO",
+          "id": "AO-149-6",
+          "ref": "§ 149 Abs. 6 AO",
           "title": "Abgabe der Steuererklärungen",
           "sourceName": "Abgabenordnung",
           "kind": "law"
@@ -248,14 +275,30 @@
         },
         {
           "n": 9,
-          "id": "KB-03-honorar-und-auftrag-mandate-die-wir-nicht-annehmen",
-          "ref": "Honorarrichtlinie und Auftragsannahme › Mandate, die wir nicht annehmen",
-          "title": "Mandate, die wir nicht annehmen",
-          "sourceName": "Honorarrichtlinie und Auftragsannahme",
-          "kind": "firm"
+          "id": "StBerG-86e-1",
+          "ref": "§ 86e Abs. 1–4 StBerG",
+          "title": "Besonderes elektronisches Steuerberaterpostfach für Berufsausübungsgesellschaften",
+          "sourceName": "Steuerberatungsgesetz",
+          "kind": "law"
         },
         {
           "n": 10,
+          "id": "StBerG-86d-1",
+          "ref": "§ 86d Abs. 1–2 StBerG",
+          "title": "Besonderes elektronisches Steuerberaterpostfach",
+          "sourceName": "Steuerberatungsgesetz",
+          "kind": "law"
+        },
+        {
+          "n": 11,
+          "id": "StBerG-86d-3",
+          "ref": "§ 86d Abs. 6–7 StBerG",
+          "title": "Besonderes elektronisches Steuerberaterpostfach",
+          "sourceName": "Steuerberatungsgesetz",
+          "kind": "law"
+        },
+        {
+          "n": 12,
           "id": "KB-02-mandanten-faq-belege-wie-reichen-sie-unterlagen-ein",
           "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wie reichen Sie Unterlagen ein?",
           "title": "Wie reichen Sie Unterlagen ein?",
@@ -263,7 +306,15 @@
           "kind": "firm"
         },
         {
-          "n": 11,
+          "n": 13,
+          "id": "KB-01-fristenmanagement-mandantenanrufe-zu-bescheiden",
+          "ref": "Kanzlei-Handbuch – Fristenmanagement › Mandantenanrufe zu Bescheiden",
+          "title": "Mandantenanrufe zu Bescheiden",
+          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
+          "kind": "firm"
+        },
+        {
+          "n": 14,
           "id": "KB-02-mandanten-faq-belege-bis-wann-brauchen-wir-ihre-unterlagen",
           "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Bis wann brauchen wir Ihre Unterlagen?",
           "title": "Bis wann brauchen wir Ihre Unterlagen?",
@@ -271,7 +322,7 @@
           "kind": "firm"
         },
         {
-          "n": 12,
+          "n": 15,
           "id": "KB-02-mandanten-faq-belege-wann-kommt-mein-steuerbescheid",
           "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wann kommt mein Steuerbescheid?",
           "title": "Wann kommt mein Steuerbescheid?",
@@ -279,34 +330,30 @@
           "kind": "firm"
         }
       ],
-      "answer": "Gesetzlich muss ein Steuerpflichtiger ohne Steuerberater seine Einkommensteuererklärung für das Kalenderjahr 2025 bis spätestens **31. Juli 2026** beim Finanzamt einreichen [5]. Der 31. Juli 2026 ist ein Freitag, sodass keine Verschiebung wegen eines Wochenendes oder Feiertags gemäß § 108 Abs. 3 AO erfolgt [8].\n\n**Details:**\n* **Grundregel:** Soweit gesetzlich nichts anderes bestimmt ist, sind Steuererklärungen für ein Kalenderjahr spätestens sieben Monate nach Ablauf des Kalenderjahres einzureichen [5].\n* **Ausnahme Land- und Forstwirtschaft:** Bei einem abweichenden Wirtschaftsjahr endet die Frist nicht vor Ablauf des siebten Monats, der auf den Schluss des im Kalenderjahr begonnenen Wirtschaftsjahres folgt [5].\n\n*Hinweis:* Bei Erstellung durch einen Steuerberater gelten abweichende Fristen nach § 149 Abs. 3 AO [1][3]. Unsere Kanzleiregel sieht vor, dass Mandanten ihre Unterlagen für das Vorjahr bis spätestens 31. März einreichen sollen [11]."
+      "answer": "Ein Mandant ohne Steuerberater muss seine Einkommensteuererklärung für das Kalenderjahr 2025 spätestens bis zum **31. Juli 2026** abgeben [2]. \n\n* **Gesetzliche Frist**: Soweit die Steuergesetze nichts anderes bestimmen, müssen Steuererklärungen, die sich auf ein Kalenderjahr beziehen, spätestens sieben Monate nach Ablauf des Kalenderjahres eingereicht werden [2]. Für das Kalenderjahr 2025 endet diese Frist am Freitag, dem 31. Juli 2026 [2][8].\n* **Ausnahme für Land- und Forstwirtschaft**: Ermittelt der Steuerpflichtige seinen Gewinn aus Land- und Forstwirtschaft nach einem abweichenden Wirtschaftsjahr, endet die Frist nicht vor Ablauf des siebten Monats, der auf den Schluss des im Kalenderjahr begonnenen Wirtschaftsjahres folgt [2]."
     },
     {
       "id": "objection-period",
       "scope": "in",
-      "pass": true,
+      "pass": false,
       "retrieved": true,
-      "expectedCited": true,
-      "citedNumbers": [
-        1,
-        9,
-        4,
-        7,
-        2,
-        10
-      ],
+      "expectedCited": false,
+      "citedNumbers": [],
       "invalidCitations": [],
-      "factualSentences": 8,
-      "citationCoverage": 1,
-      "keyFactsCorrect": true,
-      "missingFacts": [],
+      "factualSentences": 1,
+      "citationCoverage": 0,
+      "keyFactsCorrect": false,
+      "missingFacts": [
+        "/eine[nm]?\\s+Monat/i",
+        "/viert(en|e)\\s+Tag|vier\\s+Tage/i"
+      ],
       "forbiddenFacts": [],
       "abstained": false,
       "language": "de",
       "expectedLanguage": "de",
-      "toolCalls": 0,
-      "ttftMs": 8622,
-      "totalMs": 10346,
+      "toolCalls": 1,
+      "ttftMs": 33276,
+      "totalMs": 53934,
       "errors": [],
       "sources": [
         {
@@ -319,54 +366,6 @@
         },
         {
           "n": 2,
-          "id": "AO-108",
-          "ref": "§ 108 AO",
-          "title": "Fristen und Termine",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 3,
-          "id": "AO-122-2",
-          "ref": "§ 122 Abs. 4–6 AO",
-          "title": "Bekanntgabe des Verwaltungsakts",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 4,
-          "id": "AO-122-1",
-          "ref": "§ 122 Abs. 1–3 AO",
-          "title": "Bekanntgabe des Verwaltungsakts",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 5,
-          "id": "AO-122-3",
-          "ref": "§ 122 Abs. 7 AO",
-          "title": "Bekanntgabe des Verwaltungsakts",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 6,
-          "id": "AO-121",
-          "ref": "§ 121 AO",
-          "title": "Begründung des Verwaltungsakts",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 7,
-          "id": "KB-01-fristenmanagement-einspruchsfrist-bei-bescheiden-vier-augen-prinzip",
-          "ref": "Kanzlei-Handbuch – Fristenmanagement › Einspruchsfrist bei Bescheiden (Vier-Augen-Prinzip)",
-          "title": "Einspruchsfrist bei Bescheiden (Vier-Augen-Prinzip)",
-          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
-          "kind": "firm"
-        },
-        {
-          "n": 8,
           "id": "AO-354",
           "ref": "§ 354 AO",
           "title": "Einspruchsverzicht",
@@ -374,12 +373,60 @@
           "kind": "law"
         },
         {
-          "n": 9,
+          "n": 3,
           "id": "AO-356",
           "ref": "§ 356 AO",
           "title": "Rechtsbehelfsbelehrung",
           "sourceName": "Abgabenordnung",
           "kind": "law"
+        },
+        {
+          "n": 4,
+          "id": "AO-122-2",
+          "ref": "§ 122 Abs. 4–6 AO",
+          "title": "Bekanntgabe des Verwaltungsakts",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 5,
+          "id": "AO-122-1",
+          "ref": "§ 122 Abs. 1–3 AO",
+          "title": "Bekanntgabe des Verwaltungsakts",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 6,
+          "id": "AO-122-3",
+          "ref": "§ 122 Abs. 7 AO",
+          "title": "Bekanntgabe des Verwaltungsakts",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 7,
+          "id": "AO-108",
+          "ref": "§ 108 AO",
+          "title": "Fristen und Termine",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 8,
+          "id": "AO-121",
+          "ref": "§ 121 AO",
+          "title": "Begründung des Verwaltungsakts",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 9,
+          "id": "KB-01-fristenmanagement-einspruchsfrist-bei-bescheiden-vier-augen-prinzip",
+          "ref": "Kanzlei-Handbuch – Fristenmanagement › Einspruchsfrist bei Bescheiden (Vier-Augen-Prinzip)",
+          "title": "Einspruchsfrist bei Bescheiden (Vier-Augen-Prinzip)",
+          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
+          "kind": "firm"
         },
         {
           "n": 10,
@@ -391,17 +438,17 @@
         },
         {
           "n": 11,
-          "id": "AO-172-1",
-          "ref": "§ 172 Abs. 1–2 AO",
-          "title": "Aufhebung und Änderung von Steuerbescheiden",
+          "id": "AO-353",
+          "ref": "§ 353 AO",
+          "title": "Einspruchsbefugnis des Rechtsnachfolgers",
           "sourceName": "Abgabenordnung",
           "kind": "law"
         },
         {
           "n": 12,
-          "id": "AO-107",
-          "ref": "§ 107 AO",
-          "title": "Entschädigung der Auskunftspflichtigen und der Sachverständigen",
+          "id": "AO-172-1",
+          "ref": "§ 172 Abs. 1–2 AO",
+          "title": "Aufhebung und Änderung von Steuerbescheiden",
           "sourceName": "Abgabenordnung",
           "kind": "law"
         },
@@ -415,22 +462,22 @@
         },
         {
           "n": 14,
-          "id": "KB-01-fristenmanagement-erklärungsfristen",
-          "ref": "Kanzlei-Handbuch – Fristenmanagement › Erklärungsfristen",
-          "title": "Erklärungsfristen",
-          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
+          "id": "KB-03-honorar-und-auftrag-vergütung",
+          "ref": "Honorarrichtlinie und Auftragsannahme › Vergütung",
+          "title": "Vergütung",
+          "sourceName": "Honorarrichtlinie und Auftragsannahme",
           "kind": "firm"
         },
         {
           "n": 15,
-          "id": "KB-01-fristenmanagement-mandantenanrufe-zu-bescheiden",
-          "ref": "Kanzlei-Handbuch – Fristenmanagement › Mandantenanrufe zu Bescheiden",
-          "title": "Mandantenanrufe zu Bescheiden",
-          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
+          "id": "KB-02-mandanten-faq-belege-wann-kommt-mein-steuerbescheid",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wann kommt mein Steuerbescheid?",
+          "title": "Wann kommt mein Steuerbescheid?",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
           "kind": "firm"
         }
       ],
-      "answer": "Gesetzlich beträgt die Frist zur Einlegung eines Einspruchs **einen Monat** und beginnt mit der Bekanntgabe des Bescheids [1]. Fehlt die Rechtsbehelfsbelehrung oder ist sie unrichtig erteilt, verlängert sich die Frist auf **ein Jahr** ab Bekanntgabe [9].\n\n**Details zur Berechnung und den Regelungen:**\n\n* **Fristbeginn (Bekanntgabe):** \n  * Gesetzlich gilt ein schriftlicher Bescheid bei Postübermittlung im Inland sowie ein elektronisch übermittelter Bescheid am **vierten Tag** nach der Aufgabe zur Post bzw. der Absendung als bekannt gegeben [4].\n  * *Unsere Kanzleiregel:* Fällt dieser vierte Tag auf einen Samstag, Sonntag oder Feiertag, setzen wir in der Fristenkontrolle nach BFH-Rechtsprechung den **nächsten Werktag** als Bekanntgabetag an [7].\n* **Fristende & Verschiebung:** \n  * Die Frist endet einen Monat nach dem Bekanntgabetag [1][7].\n  * Fällt das Fristende auf einen Sonnabend, Sonntag oder gesetzlichen Feiertag, verschiebt sich der Ablauf auf den nächstfolgenden Werktag (§ 108 Abs. 3 AO) [2][7].\n  * *Unsere Kanzleiregel:* In der Kanzlei wird zusätzlich eine Vorfrist von 7 Kalendertagen vor dem Fristende eingetragen, und Haupt- sowie Vorfrist werden nach dem Vier-Augen-Prinzip gegengezeichnet [7]. Das Kanzlei-Eingangsdatum ist dabei ausdrücklich nicht der Bekanntgabetag [10]."
+      "answer": "Die gesetzliche Einspruchsfrist beträgt **"
     },
     {
       "id": "craftsman-cash",
@@ -439,8 +486,8 @@
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
-        1,
-        3
+        2,
+        5
       ],
       "invalidCitations": [],
       "factualSentences": 3,
@@ -452,20 +499,12 @@
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 0,
-      "ttftMs": 3160,
-      "totalMs": 3752,
+      "ttftMs": 2941,
+      "totalMs": 3224,
       "errors": [],
       "sources": [
         {
           "n": 1,
-          "id": "EStG-35a-2",
-          "ref": "§ 35a Abs. 4–5 EStG",
-          "title": "Steuerermäßigung bei Aufwendungen für haushaltsnahe Beschäftigungsverhältnisse, haushaltsnahe Dienstleistungen und Handwerkerleistungen",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 2,
           "id": "EStG-35a-1",
           "ref": "§ 35a Abs. 1–3 EStG",
           "title": "Steuerermäßigung bei Aufwendungen für haushaltsnahe Beschäftigungsverhältnisse, haushaltsnahe Dienstleistungen und Handwerkerleistungen",
@@ -473,15 +512,15 @@
           "kind": "law"
         },
         {
-          "n": 3,
-          "id": "KB-02-mandanten-faq-belege-checkliste-einkommensteuer-angestellte",
-          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Checkliste Einkommensteuer (Angestellte)",
-          "title": "Checkliste Einkommensteuer (Angestellte)",
-          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
-          "kind": "firm"
+          "n": 2,
+          "id": "EStG-35a-2",
+          "ref": "§ 35a Abs. 4–5 EStG",
+          "title": "Steuerermäßigung bei Aufwendungen für haushaltsnahe Beschäftigungsverhältnisse, haushaltsnahe Dienstleistungen und Handwerkerleistungen",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
         },
         {
-          "n": 4,
+          "n": 3,
           "id": "EStG-35c-3",
           "ref": "§ 35c Abs. 2–5 EStG",
           "title": "Steuerermäßigung für energetische Maßnahmen bei zu eigenen Wohnzwecken genutzten Gebäuden",
@@ -489,12 +528,20 @@
           "kind": "law"
         },
         {
-          "n": 5,
+          "n": 4,
           "id": "EStG-35-1",
           "ref": "§ 35 Abs. 1, Teil 1/2 EStG",
           "title": "",
           "sourceName": "Einkommensteuergesetz",
           "kind": "law"
+        },
+        {
+          "n": 5,
+          "id": "KB-02-mandanten-faq-belege-checkliste-einkommensteuer-angestellte",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Checkliste Einkommensteuer (Angestellte)",
+          "title": "Checkliste Einkommensteuer (Angestellte)",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
         },
         {
           "n": 6,
@@ -561,7 +608,7 @@
           "kind": "firm"
         }
       ],
-      "answer": "Nein, bei einer Barzahlung gibt es die Steuerermäßigung **nicht** [1][3]. \n\n* **Gesetzliche Regelung:** Voraussetzung für die Inanspruchnahme der Steuerermäßigung für Handwerkerleistungen ist nach § 35a Abs. 5 Satz 3 EStG, dass eine Rechnung vorliegt und die Zahlung auf das Konto des Leistungserbringers erfolgt ist [1]. \n* **Kanzlei-Richtlinie:** In unseren Vorgaben wird explizit darauf hingewiesen, dass eine Barzahlung nicht anerkannt wird und stets ein Nachweis über eine Banküberweisung erforderlich ist [3]."
+      "answer": "Nein, bei einer Barzahlung gibt es **keine Steuerermäßigung** für Handwerkerleistungen [2][5].\n\n* **Gesetzlich gilt:** Voraussetzung für die Inanspruchnahme der Steuerermäßigung ist unter anderem, dass die Zahlung auf das Konto des Erbringers der Leistung erfolgt ist (§ 35a Abs. 5 Satz 3 EStG) [2].\n* **Unsere Kanzleiregel:** Barzahlung wird nicht anerkannt; für Handwerkerleistungen und haushaltsnahe Dienstleistungen ist zwingend eine Rechnung sowie ein Zahlungsnachweis per Überweisung erforderlich [5]."
     },
     {
       "id": "late-filing-surcharge",
@@ -570,13 +617,13 @@
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
-        3,
+        2,
+        5,
         1,
-        4,
-        8
+        3
       ],
       "invalidCitations": [],
-      "factualSentences": 5,
+      "factualSentences": 4,
       "citationCoverage": 1,
       "keyFactsCorrect": true,
       "missingFacts": [],
@@ -585,20 +632,12 @@
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 0,
-      "ttftMs": 5479,
-      "totalMs": 6978,
+      "ttftMs": 3759,
+      "totalMs": 4481,
       "errors": [],
       "sources": [
         {
           "n": 1,
-          "id": "AO-152-4",
-          "ref": "§ 152 Abs. 7–10 AO",
-          "title": "Verspätungszuschlag",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 2,
           "id": "AO-152-1",
           "ref": "§ 152 Abs. 1–2 AO",
           "title": "Verspätungszuschlag",
@@ -606,7 +645,7 @@
           "kind": "law"
         },
         {
-          "n": 3,
+          "n": 2,
           "id": "AO-152-3",
           "ref": "§ 152 Abs. 5–6 AO",
           "title": "Verspätungszuschlag",
@@ -614,7 +653,7 @@
           "kind": "law"
         },
         {
-          "n": 4,
+          "n": 3,
           "id": "AO-152-2",
           "ref": "§ 152 Abs. 3–4 AO",
           "title": "Verspätungszuschlag",
@@ -622,9 +661,17 @@
           "kind": "law"
         },
         {
-          "n": 5,
+          "n": 4,
           "id": "AO-152-5",
           "ref": "§ 152 Abs. 11–13 AO",
+          "title": "Verspätungszuschlag",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 5,
+          "id": "AO-152-4",
+          "ref": "§ 152 Abs. 7–10 AO",
           "title": "Verspätungszuschlag",
           "sourceName": "Abgabenordnung",
           "kind": "law"
@@ -639,14 +686,22 @@
         },
         {
           "n": 7,
-          "id": "EGAO-Art_97_8-2",
-          "ref": "Art. 97 § 8 Abs. 4–5 EGAO",
+          "id": "GewStG-14b",
+          "ref": "§ 14b GewStG",
+          "title": "Verspätungszuschlag",
+          "sourceName": "Gewerbesteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 8,
+          "id": "EGAO-Art_97_8-3",
+          "ref": "Art. 97 § 8 Abs. 6 EGAO",
           "title": "Verspätungszuschlag",
           "sourceName": "Einführungsgesetz zur Abgabenordnung",
           "kind": "law"
         },
         {
-          "n": 8,
+          "n": 9,
           "id": "KB-02-mandanten-faq-belege-bis-wann-brauchen-wir-ihre-unterlagen",
           "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Bis wann brauchen wir Ihre Unterlagen?",
           "title": "Bis wann brauchen wir Ihre Unterlagen?",
@@ -654,7 +709,7 @@
           "kind": "firm"
         },
         {
-          "n": 9,
+          "n": 10,
           "id": "KB-02-mandanten-faq-belege-wann-kommt-mein-steuerbescheid",
           "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wann kommt mein Steuerbescheid?",
           "title": "Wann kommt mein Steuerbescheid?",
@@ -662,7 +717,7 @@
           "kind": "firm"
         },
         {
-          "n": 10,
+          "n": 11,
           "id": "KB-02-mandanten-faq-belege-wie-reichen-sie-unterlagen-ein",
           "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wie reichen Sie Unterlagen ein?",
           "title": "Wie reichen Sie Unterlagen ein?",
@@ -670,7 +725,7 @@
           "kind": "firm"
         },
         {
-          "n": 11,
+          "n": 12,
           "id": "KB-02-mandanten-faq-belege-checkliste-einkommensteuer-vermietung",
           "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Checkliste Einkommensteuer (Vermietung)",
           "title": "Checkliste Einkommensteuer (Vermietung)",
@@ -678,7 +733,7 @@
           "kind": "firm"
         }
       ],
-      "answer": "Für eine Einkommensteuererklärung beträgt der Verspätungszuschlag für jeden angefangenen Monat der Verspätung **0,25 Prozent der festgesetzten Steuer (abzüglich Vorauszahlungen und anzurechnender Steuerabzugsbeträge), mindestens jedoch 25 Euro pro angefangenem Monat** [3].\n\n**Gesetzliche Details (§ 152 AO):**\n* **Höchstbetrag & Abrundung:** Der Betrag wird auf volle Euro abgerundet und darf höchstens **25.000 Euro** betragen [1].\n* **Ausnahmen von der Pflichtfestsetzung:** Ein Verspätungszuschlag wird nach § 152 Abs. 2 AO u. a. dann nicht festgesetzt, wenn die Steuer auf 0 Euro oder einen negativen Betrag festgesetzt wird oder die festgesetzte Steuer die Vorauszahlungen und anzurechnenden Steuerabzugsbeträge nicht übersteigt [4].\n* **Erstmalige Aufforderung:** Wurde der Steuerpflichtige nach Ablauf der gesetzlichen Erklärungsfrist erstmals unter Fristsetzung zur Abgabe aufgefordert und durfte er bis dahin vom Nichtbestehen der Erklärungspflicht ausgehen, wird der Zuschlag erst für Monate berechnet, die nach Ablauf dieser neuen Frist begonnen haben [3].\n\n**Kanzlei-Richtlinie:**\nUnsere Kanzleiregel sieht vor, dass Unterlagen für die Einkommensteuererklärung des Vorjahres bis spätestens **31. März** eingereicht werden sollen, damit eine Bearbeitung vor Ablauf gesetzlicher Fristen gewährleistet werden kann [8]."
+      "answer": "Der Verspätungszuschlag für eine verspätete Einkommensteuererklärung beträgt vorbehaltlich gesetzlicher Ausnahmen **0,25 Prozent der um Vorauszahlungen und Steuerabzugsbeträge verminderten festgesetzten Steuer** für jeden angefangenen Monat der Verspätung, **mindestens jedoch 25 Euro** für jeden angefangenen Monat [2].\n\n* **Höchstgrenze und Rundung:** Der Verspätungszuschlag ist auf volle Euro abzurunden und darf insgesamt höchstens 25.000 Euro betragen [5].\n* **Zwingende Festsetzung:** Nach Ablauf von 14 Monaten (bzw. 19 Monaten in bestimmten Beratungsfällen nach § 149 Abs. 2 Satz 2 AO) ist bei verspäteter Abgabe ein Verspätungszuschlag zwingend festzusetzen [1].\n* **Ausnahmen:** Von der Festsetzung ist abzusehen, wenn die Verspätung glaubhaft als entschuldbar dargelegt wird [1] oder wenn die Steuer auf null Euro bzw. einen negativen Betrag festgesetzt wird bzw. die festgesetzte Steuer die Vorauszahlungen und Steuerabzugsbeträge nicht übersteigt [3]."
     },
     {
       "id": "retention-receipts",
@@ -688,20 +743,20 @@
       "expectedCited": true,
       "citedNumbers": [
         2,
-        1
+        7
       ],
       "invalidCitations": [],
-      "factualSentences": 6,
+      "factualSentences": 4,
       "citationCoverage": 1,
       "keyFactsCorrect": true,
       "missingFacts": [],
       "forbiddenFacts": [],
-      "abstained": false,
+      "abstained": true,
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 0,
-      "ttftMs": 5323,
-      "totalMs": 6523,
+      "ttftMs": 22539,
+      "totalMs": 23300,
       "errors": [],
       "sources": [
         {
@@ -754,6 +809,14 @@
         },
         {
           "n": 7,
+          "id": "EGAO-Art_97_19a",
+          "ref": "Art. 97 § 19a EGAO",
+          "title": "Aufbewahrungsfristen",
+          "sourceName": "Einführungsgesetz zur Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 8,
           "id": "AO-379-1",
           "ref": "§ 379 Abs. 1 AO",
           "title": "Steuergefährdung",
@@ -761,47 +824,15 @@
           "kind": "law"
         },
         {
-          "n": 8,
-          "id": "UStG-26a-2",
-          "ref": "§ 26a Abs. 2 UStG",
-          "title": "Bußgeldvorschriften",
-          "sourceName": "Umsatzsteuergesetz",
-          "kind": "law"
-        },
-        {
           "n": 9,
-          "id": "KB-02-mandanten-faq-belege-checkliste-einkommensteuer-angestellte",
-          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Checkliste Einkommensteuer (Angestellte)",
-          "title": "Checkliste Einkommensteuer (Angestellte)",
-          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
-          "kind": "firm"
+          "id": "EStG-45a-2",
+          "ref": "§ 45a Abs. 2–2a EStG",
+          "title": "Anmeldung und Bescheinigung der Kapitalertragsteuer",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
         },
         {
           "n": 10,
-          "id": "KB-02-mandanten-faq-belege-checkliste-einkommensteuer-vermietung",
-          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Checkliste Einkommensteuer (Vermietung)",
-          "title": "Checkliste Einkommensteuer (Vermietung)",
-          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
-          "kind": "firm"
-        },
-        {
-          "n": 11,
-          "id": "EStG-35a-2",
-          "ref": "§ 35a Abs. 4–5 EStG",
-          "title": "Steuerermäßigung bei Aufwendungen für haushaltsnahe Beschäftigungsverhältnisse, haushaltsnahe Dienstleistungen und Handwerkerleistungen",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 12,
-          "id": "EStG-6-1",
-          "ref": "§ 6 Abs. 1, Teil 1/11 EStG",
-          "title": "Bewertung",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 13,
           "id": "KB-02-mandanten-faq-belege-bis-wann-brauchen-wir-ihre-unterlagen",
           "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Bis wann brauchen wir Ihre Unterlagen?",
           "title": "Bis wann brauchen wir Ihre Unterlagen?",
@@ -809,15 +840,31 @@
           "kind": "firm"
         },
         {
-          "n": 14,
+          "n": 11,
           "id": "KB-02-mandanten-faq-belege-wie-reichen-sie-unterlagen-ein",
           "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wie reichen Sie Unterlagen ein?",
           "title": "Wie reichen Sie Unterlagen ein?",
           "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
           "kind": "firm"
+        },
+        {
+          "n": 12,
+          "id": "KB-02-mandanten-faq-belege-wann-kommt-mein-steuerbescheid",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wann kommt mein Steuerbescheid?",
+          "title": "Wann kommt mein Steuerbescheid?",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 13,
+          "id": "KB-02-mandanten-faq-belege-checkliste-einkommensteuer-vermietung",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Checkliste Einkommensteuer (Vermietung)",
+          "title": "Checkliste Einkommensteuer (Vermietung)",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
         }
       ],
-      "answer": "Gesetzlich müssen Buchungsbelege **acht Jahre** lang aufbewahrt werden [2].\n\n**Details zur Aufbewahrungsfrist:**\n- **Gesetzliche Grundlage:** Buchungsbelege fallen unter § 147 Abs. 1 Nr. 4 AO [1]. Die Frist für diese Unterlagen beträgt acht Jahre (§ 147 Abs. 3 Satz 1 AO) [2].\n- **Fristbeginn:** Die Aufbewahrungsfrist beginnt mit dem Schluss des Kalenderjahres, in dem der Buchungsbeleg entstanden ist (§ 147 Abs. 4 AO) [2].\n- **Ablaufsperre:** Die Frist läuft jedoch nicht ab, soweit und solange die Unterlagen für Steuern von Bedeutung sind, für welche die Festsetzungsfrist noch nicht abgelaufen ist (§ 147 Abs. 3 Satz 5 AO) [2].\n- **Form der Aufbewahrung:** Buchungsbelege dürfen auch als Wiedergabe auf einem Bild- oder Datenträger aufbewahrt werden, sofern dies den Grundsätzen ordnungsmäßiger Buchführung entspricht und die bildliche Ubereinstimmung sowie die Lesbarkeit/Verfügbarkeit sichergestellt sind (§ 147 Abs. 2 AO) [1]."
+      "answer": "Buchungsbelege müssen grundsätzlich **acht Jahre** lang aufbewahrt werden [2].\n\n**Details zur Aufbewahrung:**\n* **Fristbeginn:** Die achtjährige Aufbewahrungsfrist beginnt mit dem Schluss des Kalenderjahrs, in dem der Buchungsbeleg entstanden ist [2].\n* **Ablaufhemmung:** Die Frist läuft jedoch nicht ab, solange die Unterlagen für Steuern von Bedeutung sind, für welche die Festsetzungsfrist noch nicht abgelaufen ist [2].\n* **Sonderregelung für Finanzdienstleister:** Für Institute im Sinne des Kreditwesengesetzes, unter Versicherungsaufsicht stehende Unternehmen sowie Wertpapierinstitute gilt abweichend die am 31. Dezember 2024 geltende Fassung des § 147 Abs. 3 Satz 1 AO [7]. \n\n*Hinweis:* Welcher konkrete Zeitraum für die genannten Finanz- und Versicherungsinstitute nach der alten Fassung gilt, ist den vorliegenden Quellen nicht zu entnehmen."
     },
     {
       "id": "small-business-limits",
@@ -826,13 +873,12 @@
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
-        1,
+        2,
         5,
-        6,
-        2
+        7
       ],
       "invalidCitations": [],
-      "factualSentences": 6,
+      "factualSentences": 3,
       "citationCoverage": 1,
       "keyFactsCorrect": true,
       "missingFacts": [],
@@ -841,22 +887,22 @@
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 0,
-      "ttftMs": 6271,
-      "totalMs": 8699,
+      "ttftMs": 2764,
+      "totalMs": 3260,
       "errors": [],
       "sources": [
         {
           "n": 1,
-          "id": "UStG-19-1",
-          "ref": "§ 19 Abs. 1–2 UStG",
+          "id": "UStG-19-2",
+          "ref": "§ 19 Abs. 3–4 UStG",
           "title": "Besteuerung der Kleinunternehmer",
           "sourceName": "Umsatzsteuergesetz",
           "kind": "law"
         },
         {
           "n": 2,
-          "id": "UStG-19-2",
-          "ref": "§ 19 Abs. 3–4 UStG",
+          "id": "UStG-19-1",
+          "ref": "§ 19 Abs. 1–2 UStG",
           "title": "Besteuerung der Kleinunternehmer",
           "sourceName": "Umsatzsteuergesetz",
           "kind": "law"
@@ -887,17 +933,17 @@
         },
         {
           "n": 6,
-          "id": "KB-05-merkblatt-kleinunternehmer-gründungsjahr-grenze-25-000-euro-verwaltungsauffassung",
-          "ref": "Merkblatt Kleinunternehmerregelung und Existenzgründer › Gründungsjahr: Grenze 25.000 Euro (Verwaltungsauffassung)",
-          "title": "Gründungsjahr: Grenze 25.000 Euro (Verwaltungsauffassung)",
+          "id": "KB-05-merkblatt-kleinunternehmer-verzicht-auf-die-kleinunternehmerregelung",
+          "ref": "Merkblatt Kleinunternehmerregelung und Existenzgründer › Verzicht auf die Kleinunternehmerregelung",
+          "title": "Verzicht auf die Kleinunternehmerregelung",
           "sourceName": "Merkblatt Kleinunternehmerregelung und Existenzgründer",
           "kind": "firm"
         },
         {
           "n": 7,
-          "id": "KB-05-merkblatt-kleinunternehmer-verzicht-auf-die-kleinunternehmerregelung",
-          "ref": "Merkblatt Kleinunternehmerregelung und Existenzgründer › Verzicht auf die Kleinunternehmerregelung",
-          "title": "Verzicht auf die Kleinunternehmerregelung",
+          "id": "KB-05-merkblatt-kleinunternehmer-gründungsjahr-grenze-25-000-euro-verwaltungsauffassung",
+          "ref": "Merkblatt Kleinunternehmerregelung und Existenzgründer › Gründungsjahr: Grenze 25.000 Euro (Verwaltungsauffassung)",
+          "title": "Gründungsjahr: Grenze 25.000 Euro (Verwaltungsauffassung)",
           "sourceName": "Merkblatt Kleinunternehmerregelung und Existenzgründer",
           "kind": "firm"
         },
@@ -911,38 +957,38 @@
         },
         {
           "n": 9,
-          "id": "UStG-27a-1",
-          "ref": "§ 27a Abs. 1–1a UStG",
-          "title": "Umsatzsteuer-Identifikationsnummer",
-          "sourceName": "Umsatzsteuergesetz",
+          "id": "EStG-39-5",
+          "ref": "§ 39 Abs. 4a EStG",
+          "title": "Lohnsteuerabzugsmerkmale",
+          "sourceName": "Einkommensteuergesetz",
           "kind": "law"
         },
         {
           "n": 10,
-          "id": "UStG-25f",
-          "ref": "§ 25f UStG",
-          "title": "Versagung des Vorsteuerabzugs und der Steuerbefreiung bei Beteiligung an einer Steuerhinterziehung",
-          "sourceName": "Umsatzsteuergesetz",
+          "id": "EStG-3a-3",
+          "ref": "§ 3a Abs. 3, Teil 2/2 EStG",
+          "title": "Sanierungserträge",
+          "sourceName": "Einkommensteuergesetz",
           "kind": "law"
         },
         {
           "n": 11,
-          "id": "UStG-27a-2",
-          "ref": "§ 27a Abs. 2, Teil 1/2 UStG",
-          "title": "Umsatzsteuer-Identifikationsnummer",
+          "id": "UStG-18-3",
+          "ref": "§ 18 Abs. 2–2a UStG",
+          "title": "Besteuerungsverfahren",
           "sourceName": "Umsatzsteuergesetz",
           "kind": "law"
         },
         {
           "n": 12,
-          "id": "UStG-12-1",
-          "ref": "§ 12 Abs. 1 UStG",
-          "title": "Steuersätze",
-          "sourceName": "Umsatzsteuergesetz",
+          "id": "EStG-4d-6",
+          "ref": "§ 4d Abs. 1, Teil 6/6 EStG",
+          "title": "Zuwendungen an Unterstützungskassen",
+          "sourceName": "Einkommensteuergesetz",
           "kind": "law"
         }
       ],
-      "answer": "Gesetzlich und nach der Kanzlei-Richtlinie gilt für im Inland ansässige Unternehmer, dass Umsätze steuerfrei sind, wenn der Gesamtumsatz im **vorangegangenen Kalenderjahr 25.000 Euro** nicht überschritten hat und im **laufenden Kalenderjahr 100.000 Euro** nicht überschreitet [1][5]. Im **Gründungsjahr** gilt nach der Verwaltungsauffassung ausschließlich die Grenze von **25.000 Euro** [6].\n\n**Details zu den Grenzen:**\n\n* **Regelfall (Bestehende Unternehmen):** Vorjahr maximal **25.000 Euro** und laufendes Kalenderjahr maximal **100.000 Euro** [1][5].\n* **Gründungsjahr (Verwaltungsauffassung / BMF-Schreiben):** Im Jahr der Betriebsgründung gilt ausschließlich die Grenze von **25.000 Euro**; eine Hochrechnung auf ein volles Kalenderjahr erfolgt nicht [6]. Der Umsatz, mit dem die Grenze von **25.000 Euro** im Gründungsjahr überschritten wird, beendet die Kleinunternehmerregelung sofort und unterliegt der Regelbesteuerung [6].\n* **Im übrigen Gemeinschaftsgebiet ansässige Unternehmer:** Für diese gilt die Regelung, wenn der Jahresumsatz im Gemeinschaftsgebiet im vorangegangenen und im laufenden Kalenderjahr jeweils **100.000 Euro** nicht überschreitet und eine gültige Kleinunternehmer-Identifikationsnummer vorliegt [2]."
+      "answer": "Für die Anwendung der Kleinunternehmerregelung gilt ein Gesamtumsatz von höchstens **25.000 Euro** im vorangegangenen Kalenderjahr und höchstens **100.000 Euro** im laufenden Kalenderjahr [2][5]. \n\n* **Gesetzliche Grundlagen:** Maßgeblich ist die Summe der vereinnahmten steuerbaren Umsätze nach Abzug bestimmter steuerfreier Umsätze (§ 19 Abs. 1 und 2 UStG) [2].\n* **Gründungsjahr (Verwaltungsauffassung):** Im Jahr der Gründung gilt ebenfalls die Grenze von 25.000 Euro; es erfolgt keine Hochrechnung auf ein volles Jahr, und ein Überschreiten beendet die Kleinunternehmerregelung sofort [7]."
     },
     {
       "id": "small-business-founder",
@@ -951,12 +997,11 @@
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
-        6,
-        1
+        5
       ],
       "invalidCitations": [],
-      "factualSentences": 5,
-      "citationCoverage": 0.8,
+      "factualSentences": 7,
+      "citationCoverage": 0.7142857142857143,
       "keyFactsCorrect": true,
       "missingFacts": [],
       "forbiddenFacts": [],
@@ -964,8 +1009,8 @@
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 0,
-      "ttftMs": 7435,
-      "totalMs": 8695,
+      "ttftMs": 12348,
+      "totalMs": 13420,
       "errors": [],
       "sources": [
         {
@@ -1002,17 +1047,17 @@
         },
         {
           "n": 5,
-          "id": "KB-05-merkblatt-kleinunternehmer-umsatzgrenzen-nach-19-ustg-seit-2025",
-          "ref": "Merkblatt Kleinunternehmerregelung und Existenzgründer › Umsatzgrenzen nach § 19 UStG (seit 2025)",
-          "title": "Umsatzgrenzen nach § 19 UStG (seit 2025)",
+          "id": "KB-05-merkblatt-kleinunternehmer-gründungsjahr-grenze-25-000-euro-verwaltungsauffassung",
+          "ref": "Merkblatt Kleinunternehmerregelung und Existenzgründer › Gründungsjahr: Grenze 25.000 Euro (Verwaltungsauffassung)",
+          "title": "Gründungsjahr: Grenze 25.000 Euro (Verwaltungsauffassung)",
           "sourceName": "Merkblatt Kleinunternehmerregelung und Existenzgründer",
           "kind": "firm"
         },
         {
           "n": 6,
-          "id": "KB-05-merkblatt-kleinunternehmer-gründungsjahr-grenze-25-000-euro-verwaltungsauffassung",
-          "ref": "Merkblatt Kleinunternehmerregelung und Existenzgründer › Gründungsjahr: Grenze 25.000 Euro (Verwaltungsauffassung)",
-          "title": "Gründungsjahr: Grenze 25.000 Euro (Verwaltungsauffassung)",
+          "id": "KB-05-merkblatt-kleinunternehmer-umsatzgrenzen-nach-19-ustg-seit-2025",
+          "ref": "Merkblatt Kleinunternehmerregelung und Existenzgründer › Umsatzgrenzen nach § 19 UStG (seit 2025)",
+          "title": "Umsatzgrenzen nach § 19 UStG (seit 2025)",
           "sourceName": "Merkblatt Kleinunternehmerregelung und Existenzgründer",
           "kind": "firm"
         },
@@ -1034,38 +1079,38 @@
         },
         {
           "n": 9,
-          "id": "UStG-27a-2",
-          "ref": "§ 27a Abs. 2, Teil 1/2 UStG",
-          "title": "Umsatzsteuer-Identifikationsnummer",
+          "id": "UStG-25b-3",
+          "ref": "§ 25b Abs. 6 UStG",
+          "title": "Innergemeinschaftliche Dreiecksgeschäfte",
           "sourceName": "Umsatzsteuergesetz",
           "kind": "law"
         },
         {
           "n": 10,
-          "id": "UStG-19a-2",
-          "ref": "§ 19a Abs. 2–4 UStG",
-          "title": "Besonderes Meldeverfahren für die Anwendung der Steuerbefreiung in einem anderen Mitgliedstaat",
+          "id": "UStG-27a-1",
+          "ref": "§ 27a Abs. 1–1a UStG",
+          "title": "Umsatzsteuer-Identifikationsnummer",
           "sourceName": "Umsatzsteuergesetz",
           "kind": "law"
         },
         {
           "n": 11,
-          "id": "UStG-28-2",
-          "ref": "§ 28 Abs. 6 UStG",
-          "title": "Zeitlich begrenzte Fassungen einzelner Gesetzesvorschriften",
+          "id": "UStG-22-7",
+          "ref": "§ 22 Abs. 4f, Teil 1/2 UStG",
+          "title": "Aufzeichnungspflichten",
           "sourceName": "Umsatzsteuergesetz",
           "kind": "law"
         },
         {
           "n": 12,
-          "id": "KStG-1a-2",
-          "ref": "§ 1a Abs. 1, Teil 2/2 KStG",
-          "title": "Option zur Körperschaftsbesteuerung",
-          "sourceName": "Körperschaftsteuergesetz",
+          "id": "UStG-27a-2",
+          "ref": "§ 27a Abs. 2, Teil 1/2 UStG",
+          "title": "Umsatzsteuer-Identifikationsnummer",
+          "sourceName": "Umsatzsteuergesetz",
           "kind": "law"
         }
       ],
-      "answer": "Nein, bei einem erwarteten Umsatz von 28.000 Euro im Gründungsjahr kann sie nicht durchgehend als Kleinunternehmerin behandelt werden. Nach der maßgeblichen Verwaltungsauffassung gilt im Gründungsjahr eine Umsatzgrenze von **25.000 Euro**, und der Umsatz, mit dem diese Grenze überschritten wird, beendet die Kleinunternehmerregelung sofort und unterliegt der Regelbesteuerung [6].\n\n**Details und Kanzleivorgabe:**\n* **Gesetz und Verwaltung:** Gesetzlich beträgt die Grenze im laufenden Kalenderjahr zwar grundsätzlich 100.000 Euro [1]. Nach der Verwaltungsauffassung (BMF-Schreiben vom 18.03.2025) gilt im Jahr der Gründung jedoch ausschließlich die Grenze von 25.000 Euro (ohne Hochrechnung) [6].\n* **Kanzleiregel:** Liegt der erwartete Umsatz im Gründungsjahr – wie hier – über 25.000 Euro, beraten wir die Mandantin zur Regelbesteuerung (Ausstellung von Rechnungen mit Umsatzsteuer, Abgabe von Voranmeldungen) und prüfen den Vorsteuerabzug aus ihren Anschaffungen [6]."
+      "answer": "Nein, die Mandantin kann für ihr gesamtes erstes Jahr keine Kleinunternehmerin sein, da im Gründungsjahr eine Grenze von **25.000 Euro** gilt [5]. \n\n**Details zur Rechtslage und Kanzleipraxis:**\n* **Umsatzgrenze im Gründungsjahr:** Im Jahr der Gründung gilt die Grenze von 25.000 Euro (nicht die unterjährige 100.000-Euro-Grenze) [5]. Eine Hochrechnung des Umsatzes auf ein volles Kalenderjahr findet nicht statt; maßgeblich ist allein der tatsächliche Gesamtumsatz [5].\n* **Sofortiges Ende der Steuerbefreiung:** Sobald die Mandantin im laufenden Jahr die Grenze von 25.000 Euro überschreitet, endet die Kleinunternehmerregelung sofort. Der Umsatz, mit dem die Grenze überschritten wird, unterliegt bereits der Regelbesteuerung [5].\n* **Kanzleiregel:** Da der erwartete Umsatz mit 28.000 Euro über der Grenze von 25.000 Euro liegt, ist die Mandantin zur Regelbesteuerung (Erstellung von Rechnungen mit Umsatzsteuer, Übermittlung von Voranmeldungen) zu beraten. Dabei sollte auch der Vorsteuerabzug aus ihren Anschaffungen geprüft werden [5]."
     },
     {
       "id": "fee-income-tax-return",
@@ -1078,8 +1123,8 @@
         8
       ],
       "invalidCitations": [],
-      "factualSentences": 5,
-      "citationCoverage": 0.8,
+      "factualSentences": 3,
+      "citationCoverage": 1,
       "keyFactsCorrect": true,
       "missingFacts": [],
       "forbiddenFacts": [],
@@ -1087,8 +1132,8 @@
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 0,
-      "ttftMs": 6368,
-      "totalMs": 7620,
+      "ttftMs": 3211,
+      "totalMs": 3481,
       "errors": [],
       "sources": [
         {
@@ -1117,24 +1162,24 @@
         },
         {
           "n": 4,
-          "id": "StBVV-21",
-          "ref": "§ 21 StBVV",
-          "title": "Rat, Auskunft, Erstberatung",
+          "id": "StBVV-11",
+          "ref": "§ 11 StBVV",
+          "title": "Rahmengebühren",
           "sourceName": "Steuerberatervergütungsverordnung",
           "kind": "law"
         },
         {
           "n": 5,
-          "id": "StBVV-24-4",
-          "ref": "§ 24 Abs. 1, Teil 4/4 StBVV",
+          "id": "StBVV-24-2",
+          "ref": "§ 24 Abs. 1, Teil 2/4 StBVV",
           "title": "Steuererklärungen",
           "sourceName": "Steuerberatervergütungsverordnung",
           "kind": "law"
         },
         {
           "n": 6,
-          "id": "StBVV-24-2",
-          "ref": "§ 24 Abs. 1, Teil 2/4 StBVV",
+          "id": "StBVV-24-4",
+          "ref": "§ 24 Abs. 1, Teil 4/4 StBVV",
           "title": "Steuererklärungen",
           "sourceName": "Steuerberatervergütungsverordnung",
           "kind": "law"
@@ -1186,9 +1231,33 @@
           "title": "Vergütungsvereinbarung",
           "sourceName": "Steuerberatervergütungsverordnung",
           "kind": "law"
+        },
+        {
+          "n": 13,
+          "id": "StBVV-27",
+          "ref": "§ 27 StBVV",
+          "title": "Ermittlung des Überschusses der Einnahmen über die Werbungskosten",
+          "sourceName": "Steuerberatervergütungsverordnung",
+          "kind": "law"
+        },
+        {
+          "n": 14,
+          "id": "StBVV-26",
+          "ref": "§ 26 StBVV",
+          "title": "Ermittlung des Gewinns aus Land- und Forstwirtschaft nach\nDurchschnittsätzen",
+          "sourceName": "Steuerberatervergütungsverordnung",
+          "kind": "law"
+        },
+        {
+          "n": 15,
+          "id": "AO-149-2",
+          "ref": "§ 149 Abs. 3, Teil 1/2 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
         }
       ],
-      "answer": "Gesetzlich gilt für die Anfertigung einer Einkommensteuererklärung ohne Ermittlung der einzelnen Einkünfte ein Gebührenrahmen von **1/10 bis 6/10 einer vollen Gebühr nach Tabelle A** mit einem Gegenstandswert aus der Summe der positiven Einkünfte (mindestens jedoch **8.000 Euro**) [1]. Unsere Kanzleiregel sieht für Angestellte ohne Vermietung als Richtwert in der Regel die **Mittelgebühr** vor [8].\n\n**Details:**\n* **Gesetzliche Vorgabe:** § 24 Abs. 1 Nr. 1 StBVV sieht 1/10 bis 6/10 einer vollen Gebühr nach Tabelle A (Anlage 1) vor. Der Gegenstandswert bildet die Summe der positiven Einkünfte, mindestens aber 8.000 Euro [1].\n* **Kanzlei-Richtlinie:** Für Einkommensteuererklärungen von Angestellten ohne Vermietung kalkulieren wir intern in der Regel mit der Mittelgebühr (Richtwert, keine automatische Zusage an Mandanten ohne Rücksprache) [8]."
+      "answer": "Gesetzlich erhalten Sie für die Anfertigung der Einkommensteuererklärung ohne Ermittlung der einzelnen Einkünfte eine Gebühr von **1/10 bis 6/10 einer vollen Gebühr nach Tabelle A (Anlage 1)** [1]. Der Gegenstandswert ist die Summe der positiven Einkünfte, jedoch mindestens **8 000 Euro** [1].\n\nUnsere Kanzleiregel:\n- Für Angestellte ohne Vermietung berechnen wir in der Regel die Mittelgebühr nach § 24 Abs. 1 Nr. 1 StBVV [8]."
     },
     {
       "id": "firm-phone-guide",
@@ -1197,13 +1266,12 @@
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
-        2,
+        3,
         9,
-        10,
-        11
+        10
       ],
       "invalidCitations": [],
-      "factualSentences": 4,
+      "factualSentences": 5,
       "citationCoverage": 1,
       "keyFactsCorrect": true,
       "missingFacts": [],
@@ -1212,8 +1280,8 @@
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 0,
-      "ttftMs": 11200,
-      "totalMs": 11201,
+      "ttftMs": 13813,
+      "totalMs": 14623,
       "errors": [],
       "sources": [
         {
@@ -1226,14 +1294,6 @@
         },
         {
           "n": 2,
-          "id": "KB-04-telefonleitfaden-sekretariat-kategorien",
-          "ref": "Telefonleitfaden Sekretariat › Kategorien",
-          "title": "Kategorien",
-          "sourceName": "Telefonleitfaden Sekretariat",
-          "kind": "firm"
-        },
-        {
-          "n": 3,
           "id": "KStG-38-4",
           "ref": "§ 38 Abs. 6 KStG",
           "title": "Körperschaftsteuererhöhung",
@@ -1241,15 +1301,15 @@
           "kind": "law"
         },
         {
-          "n": 4,
-          "id": "EStG-90-3",
-          "ref": "§ 90 Abs. 3, Teil 2/2 EStG",
-          "title": "Verfahren",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
+          "n": 3,
+          "id": "KB-04-telefonleitfaden-sekretariat-kategorien",
+          "ref": "Telefonleitfaden Sekretariat › Kategorien",
+          "title": "Kategorien",
+          "sourceName": "Telefonleitfaden Sekretariat",
+          "kind": "firm"
         },
         {
-          "n": 5,
+          "n": 4,
           "id": "KStG-37-5",
           "ref": "§ 37 Abs. 5 KStG",
           "title": "Körperschaftsteuerguthaben und Körperschaftsteuerminderung",
@@ -1257,11 +1317,19 @@
           "kind": "law"
         },
         {
-          "n": 6,
+          "n": 5,
           "id": "GrStG-36",
           "ref": "§ 36 GrStG",
           "title": "Sondervorschriften für die Hauptveranlagung 2025",
           "sourceName": "Grundsteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 6,
+          "id": "EStG-90-3",
+          "ref": "§ 90 Abs. 3, Teil 2/2 EStG",
+          "title": "Verfahren",
+          "sourceName": "Einkommensteuergesetz",
           "kind": "law"
         },
         {
@@ -1274,9 +1342,9 @@
         },
         {
           "n": 8,
-          "id": "AO-191-1",
-          "ref": "§ 191 Abs. 1–2 AO",
-          "title": "Haftungsbescheide, Duldungsbescheide",
+          "id": "AO-412",
+          "ref": "§ 412 AO",
+          "title": "Zustellung, Vollstreckung, Kosten",
           "sourceName": "Abgabenordnung",
           "kind": "law"
         },
@@ -1298,10 +1366,10 @@
         },
         {
           "n": 11,
-          "id": "KB-04-telefonleitfaden-sekretariat-ziel",
-          "ref": "Telefonleitfaden Sekretariat › Ziel",
-          "title": "Ziel",
-          "sourceName": "Telefonleitfaden Sekretariat",
+          "id": "KB-01-fristenmanagement-einspruchsfrist-bei-bescheiden-vier-augen-prinzip",
+          "ref": "Kanzlei-Handbuch – Fristenmanagement › Einspruchsfrist bei Bescheiden (Vier-Augen-Prinzip)",
+          "title": "Einspruchsfrist bei Bescheiden (Vier-Augen-Prinzip)",
+          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
           "kind": "firm"
         },
         {
@@ -1322,22 +1390,14 @@
         },
         {
           "n": 14,
-          "id": "EStG-90-2",
-          "ref": "§ 90 Abs. 3, Teil 1/2 EStG",
-          "title": "Verfahren",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 15,
-          "id": "EStG-90-4",
-          "ref": "§ 90 Abs. 3a EStG",
-          "title": "Verfahren",
-          "sourceName": "Einkommensteuergesetz",
+          "id": "KStG-37-4",
+          "ref": "§ 37 Abs. 4 KStG",
+          "title": "Körperschaftsteuerguthaben und Körperschaftsteuerminderung",
+          "sourceName": "Körperschaftsteuergesetz",
           "kind": "law"
         }
       ],
-      "answer": "Bei einem Anruf eines Mandanten zu einem Bescheid muss das Sekretariat laut Kanzlei-Richtlinie **das Bescheiddatum, die Steuerart sowie das Jahr erfragen, einen Scan oder ein Foto anfordern (Upload via Mandantenportal)** und **darf keine inhaltliche Beurteilung am Telefon abgeben** [2][9]. \n\n**Details zur Vorgehensweise:**\n* **Rückrufzusage:** Es ist ein Rückruf durch den zuständigen Sachbearbeiter innerhalb von **24 Stunden** zuzusagen [9] (in Stoßzeiten von Februar bis Juli sowie zwei Wochen nach großen Bescheid-Wellen verlängert auf **48 Stunden** [10]).\n* **Eilfälle:** Liegt das Fristende weniger als 5 Werktage entfernt, ist sofort ein Berufsträger unter dem Stichwort „Eilt – Frist“ zu informieren [9].\n* **Gesprächsabschluss:** Jeder Anruf muss mit einer erfassten Ticket-Anfrage, einer klaren Zusage an den Mandanten (wer meldet sich bis wann) und einem Eintrag in der Fristenkontrolle enden [11]."
+      "answer": "Bei einem Anruf wegen eines Bescheids muss das Sekretariat das **Bescheiddatum, die Steuerart und das Jahr erfragen**, einen **Scan oder ein Foto des Bescheids anfordern** (Upload über das Mandantenportal), die **Frist berechnen lassen** sowie einen **Rückruf des zuständigen Sachbearbeiters zusagen** [3][9]. Eine inhaltliche Beurteilung am Telefon ist strikt zu unterlassen [9].\n\n**Details zum Ablauf:**\n*   **Rückruf-Zusage:** Standardmäßig ist dem Mandanten ein Rückruf innerhalb von 24 Stunden zuzusagen [9]. In Stoßzeiten (Februar bis Juli sowie in den zwei Wochen nach großen Bescheid-Wellen) wird diese Zusage auf 48 Stunden verlängert [10].\n*   **Sofortige Eskalation:** Liegt das Fristende weniger als 5 Werktage entfernt, muss das Sekretariat sofort einen Berufsträger unter dem Stichwort „Eilt – Frist“ informieren [9]."
     },
     {
       "id": "firm-fee-objection",
@@ -1347,10 +1407,10 @@
       "expectedCited": true,
       "citedNumbers": [
         1,
-        6
+        9
       ],
       "invalidCitations": [],
-      "factualSentences": 4,
+      "factualSentences": 5,
       "citationCoverage": 1,
       "keyFactsCorrect": true,
       "missingFacts": [],
@@ -1359,8 +1419,8 @@
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 0,
-      "ttftMs": 5038,
-      "totalMs": 5719,
+      "ttftMs": 2103,
+      "totalMs": 2693,
       "errors": [],
       "sources": [
         {
@@ -1405,38 +1465,6 @@
         },
         {
           "n": 6,
-          "id": "KB-03-honorar-und-auftrag-vergütung",
-          "ref": "Honorarrichtlinie und Auftragsannahme › Vergütung",
-          "title": "Vergütung",
-          "sourceName": "Honorarrichtlinie und Auftragsannahme",
-          "kind": "firm"
-        },
-        {
-          "n": 7,
-          "id": "StBVV-4",
-          "ref": "§ 4 StBVV",
-          "title": "Vergütungsvereinbarung",
-          "sourceName": "Steuerberatervergütungsverordnung",
-          "kind": "law"
-        },
-        {
-          "n": 8,
-          "id": "StBVV-24-1",
-          "ref": "§ 24 Abs. 1, Teil 1/4 StBVV",
-          "title": "Steuererklärungen",
-          "sourceName": "Steuerberatervergütungsverordnung",
-          "kind": "law"
-        },
-        {
-          "n": 9,
-          "id": "AO-348",
-          "ref": "§ 348 AO",
-          "title": "Ausschluss des Einspruchs",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 10,
           "id": "AO-363-1",
           "ref": "§ 363 Abs. 1–2 AO",
           "title": "Aussetzung und Ruhen des Verfahrens",
@@ -1444,11 +1472,43 @@
           "kind": "law"
         },
         {
-          "n": 11,
+          "n": 7,
           "id": "AO-132",
           "ref": "§ 132 AO",
           "title": "Rücknahme, Widerruf, Aufhebung und Änderung im Rechtsbehelfsverfahren",
           "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 8,
+          "id": "AO-348",
+          "ref": "§ 348 AO",
+          "title": "Ausschluss des Einspruchs",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 9,
+          "id": "KB-03-honorar-und-auftrag-vergütung",
+          "ref": "Honorarrichtlinie und Auftragsannahme › Vergütung",
+          "title": "Vergütung",
+          "sourceName": "Honorarrichtlinie und Auftragsannahme",
+          "kind": "firm"
+        },
+        {
+          "n": 10,
+          "id": "StBVV-4",
+          "ref": "§ 4 StBVV",
+          "title": "Vergütungsvereinbarung",
+          "sourceName": "Steuerberatervergütungsverordnung",
+          "kind": "law"
+        },
+        {
+          "n": 11,
+          "id": "StBVV-24-4",
+          "ref": "§ 24 Abs. 1, Teil 4/4 StBVV",
+          "title": "Steuererklärungen",
+          "sourceName": "Steuerberatervergütungsverordnung",
           "kind": "law"
         },
         {
@@ -1461,14 +1521,6 @@
         },
         {
           "n": 13,
-          "id": "KB-01-fristenmanagement-mandantenanrufe-zu-bescheiden",
-          "ref": "Kanzlei-Handbuch – Fristenmanagement › Mandantenanrufe zu Bescheiden",
-          "title": "Mandantenanrufe zu Bescheiden",
-          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
-          "kind": "firm"
-        },
-        {
-          "n": 14,
           "id": "KB-01-fristenmanagement-grundsatz",
           "ref": "Kanzlei-Handbuch – Fristenmanagement › Grundsatz",
           "title": "Grundsatz",
@@ -1476,15 +1528,23 @@
           "kind": "firm"
         },
         {
-          "n": 15,
-          "id": "AO-122-1",
-          "ref": "§ 122 Abs. 1–3 AO",
+          "n": 14,
+          "id": "AO-122-2",
+          "ref": "§ 122 Abs. 4–6 AO",
           "title": "Bekanntgabe des Verwaltungsakts",
           "sourceName": "Abgabenordnung",
           "kind": "law"
+        },
+        {
+          "n": 15,
+          "id": "KB-03-honorar-und-auftrag-auftragsannahme-neumandate",
+          "ref": "Honorarrichtlinie und Auftragsannahme › Auftragsannahme (Neumandate)",
+          "title": "Auftragsannahme (Neumandate)",
+          "sourceName": "Honorarrichtlinie und Auftragsannahme",
+          "kind": "firm"
         }
       ],
-      "answer": "Gesetzlich wird ein Einspruch gegen einen Bescheid als außergerichtliches Rechtsbehelfsverfahren nach den Vorschriften des **Rechtsanwaltsvergütungsgesetzes (RVG)** abgerechnet [1]. Nach unserer Kanzleiregel werden einfache Einsprüche aufgrund offensichtlicher Fehler des Finanzamts im Rahmen eines bestehenden Mandats jedoch **nicht gesondert berechnet** [6].\n\n* **Gesetzliche Regelung:** Für die Vertretung in außergerichtlichen Rechtsbehelfsverfahren finden gemäß § 40 StBVV die Vorschriften des Rechtsanwaltsvergütungsgesetzes (RVG) sinngemäß Anwendung [1].\n* **Kanzlei-Richtlinie:** Bei bestehenden Mandaten berechnen wir einfache Einsprüche, die auf offensichtlichen Fehlern des Finanzamts beruhen, nicht gesondert [6]."
+      "answer": "Für die Abrechnung eines Einspruchs gegen einen Bescheid gilt unsere Kanzleiregel: Die Vergütung richtet sich nach dem Rechtsanwaltsvergütungsgesetz gemäß § 40 StBVV [1][9]. Einfache Einsprüche aufgrund offensichtlicher Fehler des Finanzamts werden im Rahmen eines bestehenden Mandats jedoch nicht gesondert berechnet [9].\n\n* **Gesetzliche Grundlage:** Für die Vertretung in außergerichtlichen Rechtsbehelfsverfahren vor den Verwaltungsbehörden finden die Vorschriften des Rechtsanwaltsvergütungsgesetzes sinngemäße Anwendung [§ 40 StBVV] [1].\n* **Kanzleiregel:** \n  * Abrechnung nach dem Rechtsanwaltsvergütungsgesetz (§ 40 StBVV) [9].\n  * **Ausnahme:** Einfache Einsprüche aufgrund offensichtlicher Fehler des Finanzamts im Rahmen eines bestehenden Mandats sind für den Mandanten nicht gesondert zu berechnen [9]."
     },
     {
       "id": "english-late-fee",
@@ -1493,14 +1553,13 @@
       "retrieved": true,
       "expectedCited": true,
       "citedNumbers": [
-        1,
-        2,
-        4,
         3,
-        5
+        5,
+        1,
+        14
       ],
       "invalidCitations": [],
-      "factualSentences": 13,
+      "factualSentences": 9,
       "citationCoverage": 1,
       "keyFactsCorrect": true,
       "missingFacts": [],
@@ -1509,8 +1568,8 @@
       "language": "en",
       "expectedLanguage": "en",
       "toolCalls": 0,
-      "ttftMs": 2153,
-      "totalMs": 5111,
+      "ttftMs": 4550,
+      "totalMs": 5863,
       "errors": [],
       "sources": [
         {
@@ -1539,16 +1598,16 @@
         },
         {
           "n": 4,
-          "id": "AO-152-3",
-          "ref": "§ 152 Abs. 5–6 AO",
+          "id": "AO-152-5",
+          "ref": "§ 152 Abs. 11–13 AO",
           "title": "Verspätungszuschlag",
           "sourceName": "Abgabenordnung",
           "kind": "law"
         },
         {
           "n": 5,
-          "id": "AO-152-5",
-          "ref": "§ 152 Abs. 11–13 AO",
+          "id": "AO-152-3",
+          "ref": "§ 152 Abs. 5–6 AO",
           "title": "Verspätungszuschlag",
           "sourceName": "Abgabenordnung",
           "kind": "law"
@@ -1568,9 +1627,65 @@
           "title": "Verspätungszuschlag",
           "sourceName": "Gewerbesteuergesetz",
           "kind": "law"
+        },
+        {
+          "n": 8,
+          "id": "EGAO-Art_97_8-3",
+          "ref": "Art. 97 § 8 Abs. 6 EGAO",
+          "title": "Verspätungszuschlag",
+          "sourceName": "Einführungsgesetz zur Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 9,
+          "id": "KB-01-fristenmanagement-erklärungsfristen",
+          "ref": "Kanzlei-Handbuch – Fristenmanagement › Erklärungsfristen",
+          "title": "Erklärungsfristen",
+          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
+          "kind": "firm"
+        },
+        {
+          "n": 10,
+          "id": "KB-01-fristenmanagement-mandantenanrufe-zu-bescheiden",
+          "ref": "Kanzlei-Handbuch – Fristenmanagement › Mandantenanrufe zu Bescheiden",
+          "title": "Mandantenanrufe zu Bescheiden",
+          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
+          "kind": "firm"
+        },
+        {
+          "n": 11,
+          "id": "KB-01-fristenmanagement-einspruchsfrist-bei-bescheiden-vier-augen-prinzip",
+          "ref": "Kanzlei-Handbuch – Fristenmanagement › Einspruchsfrist bei Bescheiden (Vier-Augen-Prinzip)",
+          "title": "Einspruchsfrist bei Bescheiden (Vier-Augen-Prinzip)",
+          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
+          "kind": "firm"
+        },
+        {
+          "n": 12,
+          "id": "KB-04-telefonleitfaden-sekretariat-ziel",
+          "ref": "Telefonleitfaden Sekretariat › Ziel",
+          "title": "Ziel",
+          "sourceName": "Telefonleitfaden Sekretariat",
+          "kind": "firm"
+        },
+        {
+          "n": 13,
+          "id": "AO-149-1",
+          "ref": "§ 149 Abs. 1–2 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 14,
+          "id": "EGAO-Art_97_36-3",
+          "ref": "Art. 97 § 36 Abs. 3, Teil 2/3 EGAO",
+          "title": "Sonderregelungen auf Grund der Corona-Pandemie",
+          "sourceName": "Einführungsgesetz zur Abgabenordnung",
+          "kind": "law"
         }
       ],
-      "answer": "Under German tax law, a late-filing surcharge (*Verspätungszuschlag*) is generally mandatory if a tax return relating to a calendar year or a specific statutory date is not submitted within **14 months** after the end of the calendar year/taxation date (or **19 months** in tax advisor-prepared cases under § 149(2) sentence 2 AO, or by the specific deadline set under § 149(4) AO) [1]. \n\nKey rules regarding mandatory assessment and calculation:\n\n* **Mandatory Assessment Exceptions:** The late-filing surcharge is **not** mandatorily assessed under § 152(2) AO if [2]:\n  * The tax authority extended the filing deadline under § 109 AO (including retroactive extensions) [2].\n  * The tax is set at **0 euros** or a negative amount [2].\n  * The assessed tax does not exceed the sum of assessed prepayments and creditable tax deductions [2].\n  * The return is among specific annual filings listed in § 152(3) No. 4 AO (e.g., annual wage tax declarations) [2].\n* **Calculation for Annual Tax Returns:** \n  * The surcharge is **0.25 percent** of the assessed tax reduced by prepayments and creditable tax deductions for each commenced month of delay [4].\n  * It is subject to a minimum of **25 euros per commenced month** of delay [4].\n* **Calculations for Other Specific Declarations:**\n  * **Binding separate determinations of income (*gesonderte Feststellung*):** **0.0625 percent** of the positive sum of determined income per commenced month, minimum **25 euros per month** [3].\n  * **Trade tax base, division, or general tax base determinations:** **25 euros** for each commenced month of delay [4].\n  * **General rule for non-annual returns:** **0.25 percent** of the assessed tax per commenced month, minimum **10 euros per month** [4].\n* **Maximum Limit & Rounding:** The surcharge is rounded down to full euros and capped at a maximum of **25,000 euros** [3].\n\n*Note: If the non-filing persists, the calculation runs until the effective date of the initial tax assessment [3]. Surcharge assessments are automatically cancelled or adjusted if the underlying tax assessment is cancelled, amended, or corrected [5].*"
+      "answer": "The late-filing surcharge (**Verspätungszuschlag**) generally amounts to **0.25% of the assessed tax (reduced by prepayments and tax deductions), at least 25 euros per started month** of delay, up to a maximum of **25,000 euros** [3, 5]. It is mandatory (zwingend festzusetzen) if annual tax returns are not submitted within **14 months** (or 19 months for advised cases under § 149 Abs. 2 Satz 2 AO) after the end of the calendar year, subject to specific transitional rules for certain assessment periods [1, 14].\n\n* **Discretionary vs. Mandatory (Ermessen vs. zwingende Festsetzung):**\n  * **Discretionary (§ 152 Abs. 1 AO):** The tax office may impose a surcharge if a tax return is not submitted on time, unless the delay is excusable [1].\n  * **Mandatory (§ 152 Abs. 2 AO):** Surcharges must be imposed if annual returns or returns for a statutory date are not submitted within 14 months (or 19 months for advised cases) [1]. For specific assessment periods (e.g., 2020 to 2024), extended deadlines apply under transitional law (Art. 97 § 36 EGAO) [14].\n\n* **Amounts and Calculation (§ 152 Abs. 5–7, 10 AO):**\n  * **Standard rate:** 0.25% per started month of delay, with a minimum of **25 euros** per started month for annual returns (otherwise at least 10 euros) [5].\n  * **Separate determination of income/corporate tax (§ 152 Abs. 7 AO):** 0.0625% of the positive sum of determined income per started month, minimum **25 euros** per started month [3].\n  * **Trade tax / other determinations (§ 152 Abs. 6 AO):** A fixed rate of **25 euros** per started month [5].\n  * **Maximum limit:** The total surcharge is capped at **25,000 euros** [3]."
     },
     {
       "id": "follow-up-turn",
@@ -1578,12 +1693,10 @@
       "pass": false,
       "retrieved": true,
       "expectedCited": false,
-      "citedNumbers": [
-        13
-      ],
+      "citedNumbers": [],
       "invalidCitations": [],
       "factualSentences": 1,
-      "citationCoverage": 1,
+      "citationCoverage": 0,
       "keyFactsCorrect": false,
       "missingFacts": [
         "/31\\.\\s*Juli\\s*2026|31\\.07\\.2026/"
@@ -1593,20 +1706,12 @@
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 0,
-      "ttftMs": 5676,
-      "totalMs": 6215,
+      "ttftMs": 5503,
+      "totalMs": 5667,
       "errors": [],
       "sources": [
         {
           "n": 1,
-          "id": "AO-109-1",
-          "ref": "§ 109 Abs. 1–3 AO",
-          "title": "Verlängerung von Fristen",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 2,
           "id": "AO-109-2",
           "ref": "§ 109 Abs. 4 AO",
           "title": "Verlängerung von Fristen",
@@ -1614,23 +1719,15 @@
           "kind": "law"
         },
         {
+          "n": 2,
+          "id": "AO-109-1",
+          "ref": "§ 109 Abs. 1–3 AO",
+          "title": "Verlängerung von Fristen",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
           "n": 3,
-          "id": "EStG-25",
-          "ref": "§ 25 EStG",
-          "title": "Veranlagungszeitraum, Steuererklärungspflicht",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 4,
-          "id": "EStG-26-1",
-          "ref": "§ 26 Abs. 1 EStG",
-          "title": "Veranlagung von Ehegatten",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 5,
           "id": "KB-03-honorar-und-auftrag-mandate-die-wir-nicht-annehmen",
           "ref": "Honorarrichtlinie und Auftragsannahme › Mandate, die wir nicht annehmen",
           "title": "Mandate, die wir nicht annehmen",
@@ -1638,23 +1735,15 @@
           "kind": "firm"
         },
         {
-          "n": 6,
-          "id": "AO-149-2",
-          "ref": "§ 149 Abs. 3, Teil 1/2 AO",
-          "title": "Abgabe der Steuererklärungen",
-          "sourceName": "Abgabenordnung",
+          "n": 4,
+          "id": "EStG-25",
+          "ref": "§ 25 EStG",
+          "title": "Veranlagungszeitraum, Steuererklärungspflicht",
+          "sourceName": "Einkommensteuergesetz",
           "kind": "law"
         },
         {
-          "n": 7,
-          "id": "AO-149-4",
-          "ref": "§ 149 Abs. 4 AO",
-          "title": "Abgabe der Steuererklärungen",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 8,
+          "n": 5,
           "id": "EStG-111-2",
           "ref": "§ 111 Abs. 4–7 EStG",
           "title": "Vorläufiger Verlustrücktrag für 2020 und 2021",
@@ -1662,23 +1751,23 @@
           "kind": "law"
         },
         {
-          "n": 9,
-          "id": "AO-149-3",
-          "ref": "§ 149 Abs. 3, Teil 2/2 AO",
-          "title": "Abgabe der Steuererklärungen",
-          "sourceName": "Abgabenordnung",
+          "n": 6,
+          "id": "EStG-32d-4",
+          "ref": "§ 32d Abs. 2, Teil 3/3 EStG",
+          "title": "Gesonderter Steuertarif für Einkünfte aus Kapitalvermögen",
+          "sourceName": "Einkommensteuergesetz",
           "kind": "law"
         },
         {
-          "n": 10,
-          "id": "KB-01-fristenmanagement-erklärungsfristen",
-          "ref": "Kanzlei-Handbuch – Fristenmanagement › Erklärungsfristen",
-          "title": "Erklärungsfristen",
-          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
-          "kind": "firm"
+          "n": 7,
+          "id": "EStG-26-1",
+          "ref": "§ 26 Abs. 1 EStG",
+          "title": "Veranlagung von Ehegatten",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
         },
         {
-          "n": 11,
+          "n": 8,
           "id": "KB-02-mandanten-faq-belege-wie-reichen-sie-unterlagen-ein",
           "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wie reichen Sie Unterlagen ein?",
           "title": "Wie reichen Sie Unterlagen ein?",
@@ -1686,31 +1775,47 @@
           "kind": "firm"
         },
         {
-          "n": 12,
-          "id": "EStG-24",
-          "ref": "§ 24 EStG",
+          "n": 9,
+          "id": "EStG-10-4",
+          "ref": "§ 10 Abs. 1, Teil 4/7 EStG",
           "title": "",
           "sourceName": "Einkommensteuergesetz",
           "kind": "law"
         },
         {
-          "n": 13,
-          "id": "EGAO-Art_97_36-2",
-          "ref": "Art. 97 § 36 Abs. 3, Teil 1/3 EGAO",
-          "title": "Sonderregelungen auf Grund der Corona-Pandemie",
-          "sourceName": "Einführungsgesetz zur Abgabenordnung",
+          "n": 10,
+          "id": "AO-149-2",
+          "ref": "§ 149 Abs. 3, Teil 1/2 AO",
+          "title": "Abgabe der Steuererklärungen",
+          "sourceName": "Abgabenordnung",
           "kind": "law"
         },
         {
-          "n": 14,
+          "n": 11,
           "id": "KB-02-mandanten-faq-belege-bis-wann-brauchen-wir-ihre-unterlagen",
           "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Bis wann brauchen wir Ihre Unterlagen?",
           "title": "Bis wann brauchen wir Ihre Unterlagen?",
           "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
           "kind": "firm"
+        },
+        {
+          "n": 12,
+          "id": "KB-02-mandanten-faq-belege-wann-kommt-mein-steuerbescheid",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wann kommt mein Steuerbescheid?",
+          "title": "Wann kommt mein Steuerbescheid?",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 13,
+          "id": "EStG-24",
+          "ref": "§ 24 EStG",
+          "title": "",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
         }
       ],
-      "answer": "Dazu enthalten die Quellen **keine Angaben**. \n\nUm die Abgabefrist für nicht beratene Steuerpflichtige für den Veranlagungszeitraum 2025 zu bestimmen, fehlt in den zur Verfügung gestellten Texten der Gesetzestext von **§ 149 Abs. 2 AO** (sowie ggf. spätere Übergangsregelungen im EGAO für das Jahr 2025, da Art. 97 § 36 EGAO [13] nur die Besteuerungszeiträume bis 2024 regelt)."
+      "answer": "Dazu enthalten die Quellen nichts. \n\nUm das Fristende für die selbstständige Abgabe durch den Mandanten zu bestimmen, fehlt in den vorliegenden Unterlagen die entsprechende gesetzliche Regelung (insbesondere § 149 Abs. 1 der Abgabenordnung)."
     },
     {
       "id": "session-document",
@@ -1722,7 +1827,7 @@
         1
       ],
       "invalidCitations": [],
-      "factualSentences": 3,
+      "factualSentences": 2,
       "citationCoverage": 1,
       "keyFactsCorrect": true,
       "missingFacts": [],
@@ -1731,8 +1836,8 @@
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 0,
-      "ttftMs": 6664,
-      "totalMs": 6664,
+      "ttftMs": 1775,
+      "totalMs": 2027,
       "errors": [],
       "sources": [
         {
@@ -1745,14 +1850,6 @@
         },
         {
           "n": 2,
-          "id": "KB-02-mandanten-faq-belege-wie-reichen-sie-unterlagen-ein",
-          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wie reichen Sie Unterlagen ein?",
-          "title": "Wie reichen Sie Unterlagen ein?",
-          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
-          "kind": "firm"
-        },
-        {
-          "n": 3,
           "id": "KB-01-fristenmanagement-mandantenanrufe-zu-bescheiden",
           "ref": "Kanzlei-Handbuch – Fristenmanagement › Mandantenanrufe zu Bescheiden",
           "title": "Mandantenanrufe zu Bescheiden",
@@ -1760,39 +1857,15 @@
           "kind": "firm"
         },
         {
-          "n": 4,
-          "id": "StBerG-64",
-          "ref": "§ 64 StBerG",
-          "title": "Gebührenordnung",
-          "sourceName": "Steuerberatungsgesetz",
-          "kind": "law"
-        },
-        {
-          "n": 5,
-          "id": "KB-02-mandanten-faq-belege-wann-kommt-mein-steuerbescheid",
-          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wann kommt mein Steuerbescheid?",
-          "title": "Wann kommt mein Steuerbescheid?",
+          "n": 3,
+          "id": "KB-02-mandanten-faq-belege-wie-reichen-sie-unterlagen-ein",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Wie reichen Sie Unterlagen ein?",
+          "title": "Wie reichen Sie Unterlagen ein?",
           "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
           "kind": "firm"
         },
         {
-          "n": 6,
-          "id": "StBerG-62a-2",
-          "ref": "§ 62a Abs. 4–8 StBerG",
-          "title": "Inanspruchnahme von Dienstleistungen",
-          "sourceName": "Steuerberatungsgesetz",
-          "kind": "law"
-        },
-        {
-          "n": 7,
-          "id": "StBerG-154-1",
-          "ref": "§ 154 Abs. 1 StBerG",
-          "title": "Bestehende Gesellschaften",
-          "sourceName": "Steuerberatungsgesetz",
-          "kind": "law"
-        },
-        {
-          "n": 8,
+          "n": 4,
           "id": "AO-89a-6",
           "ref": "§ 89a Abs. 6 AO",
           "title": "Vorabverständigungsverfahren",
@@ -1800,15 +1873,23 @@
           "kind": "law"
         },
         {
-          "n": 9,
-          "id": "AO-146a-3",
-          "ref": "§ 146a Abs. 3 AO",
-          "title": "Ordnungsvorschrift für die Buchführung und für Aufzeichnungen mittels elektronischer Aufzeichnungssysteme; Verordnungsermächtigung",
-          "sourceName": "Abgabenordnung",
+          "n": 5,
+          "id": "StBVV-37",
+          "ref": "§ 37 StBVV",
+          "title": "Vermögensstatus, Finanzstatus für steuerliche Zwecke",
+          "sourceName": "Steuerberatervergütungsverordnung",
           "kind": "law"
         },
         {
-          "n": 10,
+          "n": 6,
+          "id": "AO-EN-53-2",
+          "ref": "Section 53 Fiscal Code (AO)",
+          "title": "Charitable purposes",
+          "sourceName": "Fiscal Code of Germany – official translation",
+          "kind": "law"
+        },
+        {
+          "n": 7,
           "id": "StBerG-39-1",
           "ref": "§ 39 Abs. 1–3 StBerG",
           "title": "Gebühren für Zulassung, Prüfung, Befreiung und verbindliche Auskunft, Kostenerstattung",
@@ -1816,55 +1897,87 @@
           "kind": "law"
         },
         {
-          "n": 11,
-          "id": "AO-244-1",
-          "ref": "§ 244 Abs. 1 AO",
-          "title": "Taugliche Steuerbürgen",
+          "n": 8,
+          "id": "AO-173a",
+          "ref": "§ 173a AO",
+          "title": "Schreib- oder Rechenfehler bei Erstellung einer Steuererklärung",
           "sourceName": "Abgabenordnung",
           "kind": "law"
         },
         {
+          "n": 9,
+          "id": "AO-EN-55-1",
+          "ref": "Section 55(1) Fiscal Code (AO)",
+          "title": "Altruistic activity",
+          "sourceName": "Fiscal Code of Germany – official translation",
+          "kind": "law"
+        },
+        {
+          "n": 10,
+          "id": "AO-364b",
+          "ref": "§ 364b AO",
+          "title": "Fristsetzung",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 11,
+          "id": "KB-01-fristenmanagement-grundsatz",
+          "ref": "Kanzlei-Handbuch – Fristenmanagement › Grundsatz",
+          "title": "Grundsatz",
+          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
+          "kind": "firm"
+        },
+        {
           "n": 12,
-          "id": "KB-02-mandanten-faq-belege-bis-wann-brauchen-wir-ihre-unterlagen",
-          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Bis wann brauchen wir Ihre Unterlagen?",
-          "title": "Bis wann brauchen wir Ihre Unterlagen?",
-          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "id": "KB-01-fristenmanagement-erklärungsfristen",
+          "ref": "Kanzlei-Handbuch – Fristenmanagement › Erklärungsfristen",
+          "title": "Erklärungsfristen",
+          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
           "kind": "firm"
         },
         {
           "n": 13,
-          "id": "StBerG-63",
-          "ref": "§ 63 StBerG",
-          "title": "Mitteilung der Ablehnung eines Auftrags",
-          "sourceName": "Steuerberatungsgesetz",
+          "id": "StBVV-36",
+          "ref": "§ 36 StBVV",
+          "title": "Steuerliches Revisionswesen",
+          "sourceName": "Steuerberatervergütungsverordnung",
           "kind": "law"
         },
         {
           "n": 14,
-          "id": "StBerG-65",
-          "ref": "§ 65 StBerG",
-          "title": "Pflicht zur Übernahme einer Prozessvertretung",
-          "sourceName": "Steuerberatungsgesetz",
+          "id": "AO-89a-5",
+          "ref": "§ 89a Abs. 4–5 AO",
+          "title": "Vorabverständigungsverfahren",
+          "sourceName": "Abgabenordnung",
           "kind": "law"
         },
         {
           "n": 15,
-          "id": "StBerG-62a-1",
-          "ref": "§ 62a Abs. 1–3 StBerG",
-          "title": "Inanspruchnahme von Dienstleistungen",
-          "sourceName": "Steuerberatungsgesetz",
+          "id": "AO-89a-7",
+          "ref": "§ 89a Abs. 7 AO",
+          "title": "Vorabverständigungsverfahren",
+          "sourceName": "Abgabenordnung",
           "kind": "law"
         },
         {
           "n": 16,
-          "id": "StBerG-154-2",
-          "ref": "§ 154 Abs. 2 StBerG",
-          "title": "Bestehende Gesellschaften",
-          "sourceName": "Steuerberatungsgesetz",
+          "id": "StBVV-38",
+          "ref": "§ 38 StBVV",
+          "title": "Erteilung von Bescheinigungen",
+          "sourceName": "Steuerberatervergütungsverordnung",
+          "kind": "law"
+        },
+        {
+          "n": 17,
+          "id": "AO-EN-53-1",
+          "ref": "Section 53 Fiscal Code (AO)",
+          "title": "Charitable purposes",
+          "sourceName": "Fiscal Code of Germany – official translation",
           "kind": "law"
         }
       ],
-      "answer": "Eine Passwort-Rücksetzung erfolgt **nicht direkt per E-Mail, sondern ausschließlich über einen telefonischen Rückruf** auf die im Mandantenstammblatt hinterlegte Telefonnummer [1]. \n\n* **Kanzlei-Richtlinie:** E-Mail-Anfragen werden mit einem Rückruf beantwortet [1].\n* **Zuständigkeit:** Zuständig für die Bearbeitung ist **Frau Okafor (Durchwahl 214)** [1]."
+      "answer": "Passwort-Rücksetzungen erfolgen ausschließlich nach telefonischem Rückruf auf die im Stammblatt hinterlegte Nummer; E-Mail-Anfragen werden nicht direkt bearbeitet, sondern mit einem Rückruf beantwortet [1].\n\n* **Zuständigkeit:** Frau Okafor (Durchwahl 214) [1]."
     },
     {
       "id": "out-inheritance-allowance",
@@ -1883,76 +1996,12 @@
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 0,
-      "ttftMs": 3748,
-      "totalMs": 3749,
+      "ttftMs": 3073,
+      "totalMs": 3196,
       "errors": [],
       "sources": [
         {
           "n": 1,
-          "id": "EStG-16-1",
-          "ref": "§ 16 Abs. 1–2 EStG",
-          "title": "Veräußerung des Betriebs",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 2,
-          "id": "EStG-16-2",
-          "ref": "§ 16 Abs. 3 EStG",
-          "title": "Veräußerung des Betriebs",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 3,
-          "id": "EStG-16-3",
-          "ref": "§ 16 Abs. 3–3a EStG",
-          "title": "Veräußerung des Betriebs",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 4,
-          "id": "EStG-16-4",
-          "ref": "§ 16 Abs. 3b–4 EStG",
-          "title": "Veräußerung des Betriebs",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 5,
-          "id": "EStG-16-5",
-          "ref": "§ 16 Abs. 5 EStG",
-          "title": "Veräußerung des Betriebs",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 6,
-          "id": "EStG-15-1",
-          "ref": "§ 15 Abs. 1 EStG",
-          "title": "Einkünfte aus Gewerbebetrieb",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 7,
-          "id": "EStG-17-1",
-          "ref": "§ 17 Abs. 1 EStG",
-          "title": "Veräußerung von Anteilen an Kapitalgesellschaften",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 8,
-          "id": "EStG-32-5",
-          "ref": "§ 32 Abs. 6, Teil 1/3 EStG",
-          "title": "Kinder, Freibeträge für Kinder",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 9,
           "id": "EStG-32-7",
           "ref": "§ 32 Abs. 6, Teil 3/3 EStG",
           "title": "Kinder, Freibeträge für Kinder",
@@ -1960,7 +2009,55 @@
           "kind": "law"
         },
         {
-          "n": 10,
+          "n": 2,
+          "id": "EStG-32-5",
+          "ref": "§ 32 Abs. 6, Teil 1/3 EStG",
+          "title": "Kinder, Freibeträge für Kinder",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 3,
+          "id": "EStG-35b",
+          "ref": "§ 35b EStG",
+          "title": "Steuerermäßigung bei Belastung mit Erbschaftsteuer",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 4,
+          "id": "EStG-32-6",
+          "ref": "§ 32 Abs. 6, Teil 2/3 EStG",
+          "title": "Kinder, Freibeträge für Kinder",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 5,
+          "id": "EStG-39a-2",
+          "ref": "§ 39a Abs. 1, Teil 2/4 EStG",
+          "title": "Freibetrag und Hinzurechnungsbetrag",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 6,
+          "id": "EStG-32-1",
+          "ref": "§ 32 Abs. 1–3 EStG",
+          "title": "Kinder, Freibeträge für Kinder",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 7,
+          "id": "StBVV-24-6",
+          "ref": "§ 24 Abs. 4–5 StBVV",
+          "title": "Steuererklärungen",
+          "sourceName": "Steuerberatervergütungsverordnung",
+          "kind": "law"
+        },
+        {
+          "n": 8,
           "id": "KB-02-mandanten-faq-belege-checkliste-einkommensteuer-angestellte",
           "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Checkliste Einkommensteuer (Angestellte)",
           "title": "Checkliste Einkommensteuer (Angestellte)",
@@ -1968,15 +2065,23 @@
           "kind": "firm"
         },
         {
-          "n": 11,
+          "n": 9,
           "id": "EStG-35a-1",
           "ref": "§ 35a Abs. 1–3 EStG",
           "title": "Steuerermäßigung bei Aufwendungen für haushaltsnahe Beschäftigungsverhältnisse, haushaltsnahe Dienstleistungen und Handwerkerleistungen",
           "sourceName": "Einkommensteuergesetz",
           "kind": "law"
+        },
+        {
+          "n": 10,
+          "id": "EStG-32-4",
+          "ref": "§ 32 Abs. 5 EStG",
+          "title": "Kinder, Freibeträge für Kinder",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
         }
       ],
-      "answer": "Dazu enthalten die bereitgestellten Quellen **keine Angaben**. \n\nFür eine Beantwortung fehlen Auszüge aus dem Erbschaftsteuer- und Schenkungsteuergesetz (ErbStG), insbesondere **§ 16 ErbStG** (Freibeträge)."
+      "answer": "Dazu enthalten die Quellen nichts. \n\nUm die Höhe des persönlichen Freibetrags für Kinder bei der Erbschaftsteuer zu nennen, fehlt in den vorliegenden Unterlagen die entsprechende Norm des **Erbschaftsteuer- und Schenkungsteuergesetzes (insbesondere § 16 ErbStG)**."
     },
     {
       "id": "out-case-law",
@@ -1995,8 +2100,8 @@
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 0,
-      "ttftMs": 4032,
-      "totalMs": 4357,
+      "ttftMs": 3883,
+      "totalMs": 4028,
       "errors": [],
       "sources": [
         {
@@ -2017,30 +2122,6 @@
         },
         {
           "n": 3,
-          "id": "EStG-9-3",
-          "ref": "§ 9 Abs. 1, Teil 3/5 EStG",
-          "title": "Werbungskosten",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 4,
-          "id": "EStG-9-5",
-          "ref": "§ 9 Abs. 1, Teil 5/5 EStG",
-          "title": "Werbungskosten",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 5,
-          "id": "EStG-9-11",
-          "ref": "§ 9 Abs. 4a–5 EStG",
-          "title": "Werbungskosten",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 6,
           "id": "EStG-4-1",
           "ref": "§ 4 Abs. 1, Teil 1/2 EStG",
           "title": "Gewinnbegriff im Allgemeinen",
@@ -2048,7 +2129,7 @@
           "kind": "law"
         },
         {
-          "n": 7,
+          "n": 4,
           "id": "EStG-4-2",
           "ref": "§ 4 Abs. 1, Teil 2/2 EStG",
           "title": "Gewinnbegriff im Allgemeinen",
@@ -2056,28 +2137,52 @@
           "kind": "law"
         },
         {
+          "n": 5,
+          "id": "EStG-4-3",
+          "ref": "§ 4 Abs. 2 EStG",
+          "title": "Gewinnbegriff im Allgemeinen",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 6,
+          "id": "EStG-9-1",
+          "ref": "§ 9 Abs. 1, Teil 1/5 EStG",
+          "title": "Werbungskosten",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 7,
+          "id": "EStG-4-4",
+          "ref": "§ 4 Abs. 3–4 EStG",
+          "title": "Gewinnbegriff im Allgemeinen",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
           "n": 8,
-          "id": "KB-02-mandanten-faq-belege-checkliste-einkommensteuer-angestellte",
-          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Checkliste Einkommensteuer (Angestellte)",
-          "title": "Checkliste Einkommensteuer (Angestellte)",
-          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
-          "kind": "firm"
+          "id": "EStG-9-2",
+          "ref": "§ 9 Abs. 1, Teil 2/5 EStG",
+          "title": "Werbungskosten",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
         },
         {
           "n": 9,
-          "id": "KB-03-honorar-und-auftrag-vergütung",
-          "ref": "Honorarrichtlinie und Auftragsannahme › Vergütung",
-          "title": "Vergütung",
-          "sourceName": "Honorarrichtlinie und Auftragsannahme",
-          "kind": "firm"
+          "id": "EStG-4-5",
+          "ref": "§ 4 Abs. 4a EStG",
+          "title": "Gewinnbegriff im Allgemeinen",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
         },
         {
           "n": 10,
-          "id": "KB-01-fristenmanagement-einspruchsfrist-bei-bescheiden-vier-augen-prinzip",
-          "ref": "Kanzlei-Handbuch – Fristenmanagement › Einspruchsfrist bei Bescheiden (Vier-Augen-Prinzip)",
-          "title": "Einspruchsfrist bei Bescheiden (Vier-Augen-Prinzip)",
-          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
-          "kind": "firm"
+          "id": "EStG-4-6",
+          "ref": "§ 4 Abs. 5, Teil 1/5 EStG",
+          "title": "Gewinnbegriff im Allgemeinen",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
         },
         {
           "n": 11,
@@ -2089,30 +2194,6 @@
         },
         {
           "n": 12,
-          "id": "EStG-35a-2",
-          "ref": "§ 35a Abs. 4–5 EStG",
-          "title": "Steuerermäßigung bei Aufwendungen für haushaltsnahe Beschäftigungsverhältnisse, haushaltsnahe Dienstleistungen und Handwerkerleistungen",
-          "sourceName": "Einkommensteuergesetz",
-          "kind": "law"
-        },
-        {
-          "n": 13,
-          "id": "StBVV-4",
-          "ref": "§ 4 StBVV",
-          "title": "Vergütungsvereinbarung",
-          "sourceName": "Steuerberatervergütungsverordnung",
-          "kind": "law"
-        },
-        {
-          "n": 14,
-          "id": "StBVV-24-1",
-          "ref": "§ 24 Abs. 1, Teil 1/4 StBVV",
-          "title": "Steuererklärungen",
-          "sourceName": "Steuerberatervergütungsverordnung",
-          "kind": "law"
-        },
-        {
-          "n": 15,
           "id": "EStG-4-10",
           "ref": "§ 4 Abs. 5, Teil 5/5 EStG",
           "title": "Gewinnbegriff im Allgemeinen",
@@ -2120,31 +2201,63 @@
           "kind": "law"
         },
         {
+          "n": 13,
+          "id": "KB-03-honorar-und-auftrag-vergütung",
+          "ref": "Honorarrichtlinie und Auftragsannahme › Vergütung",
+          "title": "Vergütung",
+          "sourceName": "Honorarrichtlinie und Auftragsannahme",
+          "kind": "firm"
+        },
+        {
+          "n": 14,
+          "id": "KB-02-mandanten-faq-belege-checkliste-einkommensteuer-angestellte",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Checkliste Einkommensteuer (Angestellte)",
+          "title": "Checkliste Einkommensteuer (Angestellte)",
+          "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
+          "kind": "firm"
+        },
+        {
+          "n": 15,
+          "id": "KB-01-fristenmanagement-einspruchsfrist-bei-bescheiden-vier-augen-prinzip",
+          "ref": "Kanzlei-Handbuch – Fristenmanagement › Einspruchsfrist bei Bescheiden (Vier-Augen-Prinzip)",
+          "title": "Einspruchsfrist bei Bescheiden (Vier-Augen-Prinzip)",
+          "sourceName": "Kanzlei-Handbuch – Fristenmanagement",
+          "kind": "firm"
+        },
+        {
           "n": 16,
-          "id": "EStG-9-2",
-          "ref": "§ 9 Abs. 1, Teil 2/5 EStG",
-          "title": "Werbungskosten",
-          "sourceName": "Einkommensteuergesetz",
+          "id": "StBVV-4",
+          "ref": "§ 4 StBVV",
+          "title": "Vergütungsvereinbarung",
+          "sourceName": "Steuerberatervergütungsverordnung",
           "kind": "law"
         },
         {
           "n": 17,
-          "id": "EStG-9-4",
-          "ref": "§ 9 Abs. 1, Teil 4/5 EStG",
-          "title": "Werbungskosten",
-          "sourceName": "Einkommensteuergesetz",
+          "id": "StBVV-24-1",
+          "ref": "§ 24 Abs. 1, Teil 1/4 StBVV",
+          "title": "Steuererklärungen",
+          "sourceName": "Steuerberatervergütungsverordnung",
           "kind": "law"
         },
         {
           "n": 18,
-          "id": "KB-02-mandanten-faq-belege-checkliste-einkommensteuer-vermietung",
-          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Checkliste Einkommensteuer (Vermietung)",
-          "title": "Checkliste Einkommensteuer (Vermietung)",
+          "id": "EStG-35a-1",
+          "ref": "§ 35a Abs. 1–3 EStG",
+          "title": "Steuerermäßigung bei Aufwendungen für haushaltsnahe Beschäftigungsverhältnisse, haushaltsnahe Dienstleistungen und Handwerkerleistungen",
+          "sourceName": "Einkommensteuergesetz",
+          "kind": "law"
+        },
+        {
+          "n": 19,
+          "id": "KB-02-mandanten-faq-belege-bis-wann-brauchen-wir-ihre-unterlagen",
+          "ref": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung › Bis wann brauchen wir Ihre Unterlagen?",
+          "title": "Bis wann brauchen wir Ihre Unterlagen?",
           "sourceName": "Mandanten-FAQ – Unterlagen für die Einkommensteuererklärung",
           "kind": "firm"
         }
       ],
-      "answer": "Dazu enthalten die bereitgestellten Quellen **keine Angaben**. In den vorliegenden Unterlagen ist kein BFH-Urteil und kein Aktenzeichen zur Homeoffice-Pauschale bei gemischt genutzten Räumen enthalten.\n\nHierfür würde das entsprechende Urteil der Finanzgerichtsbarkeit bzw. des Bundesfinanzhofs (BFH) oder ein passendes BMF-Schreiben als Unterlage fehlen."
+      "answer": "Dazu enthalten die Quellen nichts. \n\nEs ist kein BFH-Urteil oder Aktenzeichen zur Homeoffice-Pauschale bei gemischt genutzten Räumen in den vorliegenden Unterlagen verzeichnet. Hierfür würden entsprechende Dokumente zur Rechtsprechung oder Urteilsübersichten fehlen."
     },
     {
       "id": "out-nonexistent-norm",
@@ -2152,13 +2265,10 @@
       "pass": true,
       "retrieved": null,
       "expectedCited": null,
-      "citedNumbers": [
-        1,
-        12
-      ],
+      "citedNumbers": [],
       "invalidCitations": [],
-      "factualSentences": 1,
-      "citationCoverage": 1,
+      "factualSentences": 0,
+      "citationCoverage": null,
       "keyFactsCorrect": true,
       "missingFacts": [],
       "forbiddenFacts": [],
@@ -2166,28 +2276,12 @@
       "language": "de",
       "expectedLanguage": "de",
       "toolCalls": 0,
-      "ttftMs": 1604,
-      "totalMs": 2107,
+      "ttftMs": 2114,
+      "totalMs": 2114,
       "errors": [],
       "sources": [
         {
           "n": 1,
-          "id": "AO-370-4",
-          "ref": "§ 370 Abs. 7 AO",
-          "title": "Steuerhinterziehung",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 2,
-          "id": "AO-371-1",
-          "ref": "§ 371 Abs. 1 AO",
-          "title": "Selbstanzeige bei Steuerhinterziehung",
-          "sourceName": "Abgabenordnung",
-          "kind": "law"
-        },
-        {
-          "n": 3,
           "id": "AO-4",
           "ref": "§ 4 AO",
           "title": "Gesetz",
@@ -2195,7 +2289,7 @@
           "kind": "law"
         },
         {
-          "n": 4,
+          "n": 2,
           "id": "AO-10",
           "ref": "§ 10 AO",
           "title": "Geschäftsleitung",
@@ -2203,7 +2297,7 @@
           "kind": "law"
         },
         {
-          "n": 5,
+          "n": 3,
           "id": "AO-253",
           "ref": "§ 253 AO",
           "title": "Vollstreckungsschuldner",
@@ -2211,7 +2305,7 @@
           "kind": "law"
         },
         {
-          "n": 6,
+          "n": 4,
           "id": "AO-248",
           "ref": "§ 248 AO",
           "title": "Nachschusspflicht",
@@ -2219,7 +2313,7 @@
           "kind": "law"
         },
         {
-          "n": 7,
+          "n": 5,
           "id": "AO-329",
           "ref": "§ 329 AO",
           "title": "Zwangsgeld",
@@ -2227,7 +2321,7 @@
           "kind": "law"
         },
         {
-          "n": 8,
+          "n": 6,
           "id": "AO-56",
           "ref": "§ 56 AO",
           "title": "Ausschließlichkeit",
@@ -2235,15 +2329,23 @@
           "kind": "law"
         },
         {
-          "n": 9,
-          "id": "AO-370-3",
-          "ref": "§ 370 Abs. 4–6 AO",
-          "title": "Steuerhinterziehung",
+          "n": 7,
+          "id": "AO-91-2",
+          "ref": "§ 91 Abs. 3 AO",
+          "title": "Anhörung Beteiligter",
           "sourceName": "Abgabenordnung",
           "kind": "law"
         },
         {
-          "n": 10,
+          "n": 8,
+          "id": "AO-254",
+          "ref": "§ 254 AO",
+          "title": "Voraussetzungen für den Beginn der Vollstreckung",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
+        },
+        {
+          "n": 9,
           "id": "AO-5",
           "ref": "§ 5 AO",
           "title": "Ermessen",
@@ -2251,7 +2353,7 @@
           "kind": "law"
         },
         {
-          "n": 11,
+          "n": 10,
           "id": "AO-9",
           "ref": "§ 9 AO",
           "title": "Gewöhnlicher Aufenthalt",
@@ -2259,15 +2361,23 @@
           "kind": "law"
         },
         {
-          "n": 12,
+          "n": 11,
           "id": "AO-11",
           "ref": "§ 11 AO",
           "title": "Sitz",
           "sourceName": "Abgabenordnung",
           "kind": "law"
+        },
+        {
+          "n": 12,
+          "id": "AO-252",
+          "ref": "§ 252 AO",
+          "title": "Vollstreckungsgläubiger",
+          "sourceName": "Abgabenordnung",
+          "kind": "law"
         }
       ],
-      "answer": "Dazu enthalten die Quellen nichts. In den zur Verfügung gestellten Quellen sind lediglich ausgewählte Paragrafen der Abgabenordnung (unter anderem §§ 4, 5, 9, 10, 11, 56, 248, 253, 329, 370, 371 AO) enthalten, eine Vorschrift mit der Bezeichnung § 999 AO ist nicht aufgeführt [1]–[12]."
+      "answer": "Dazu enthalten die Quellen nichts; es fehlt die Norm des § 999 AO."
     }
   ],
   "intake": [
@@ -2294,9 +2404,9 @@
       "checklistCoverage": 1,
       "missingFacts": [],
       "urgency": "mittel",
-      "totalMs": 7563,
-      "summary": "Mandant Thomas Brandt bittet um Einspruch gegen den Einkommensteuerbescheid 2025 vom 03.09.2026 wegen Nichtanerkennung von Fahrtkosten und Aufwendungen für ein häusliches Arbeitszimmer [1][3][12]. Vorläufige fachliche Einordnung für den Berufsträger: Die Einspruchsfrist endet nach vorläufiger Berechnungslogik am 07.10.2026 [1][7]. Sollte die Klärung bezüglich der Werbungskosten bis zum Urlaubsantritt des Mandanten am 21.09.2026 nicht abschließend möglich sein, kann zur Fristwahrung vorsorglich ein unbegründeter Einspruch eingelegt werden [7][12].",
-      "draft": "Ihr Einkommensteuerbescheid 2025 – Vorbereitung des Einspruchs / Mandantennr. 10427\nSehr geehrter Herr Brandt,\n\nvielen Dank für Ihre Nachricht. Wir haben den Eingang Ihrer E-Mail erfasst.\n\nGerne unterstützen wir Sie bei der Prüfung und Einlegung eines Einspruchs gegen Ihren Einkommensteuerbescheid 2025. Die Einspruchsfrist für den Bescheid vom 03.09.2026 haben wir vorläufig berechnet; diese endet voraussichtlich am 07.10.2026 und wird von uns nochmals genau geprüft.\n\nDamit wir den Fall vor Ihrem Urlaubsantritt am 21.09.2026 bearbeiten können, bitten wir Sie, uns folgende Unterlagen zukommen zu lassen (gerne als Scan oder Foto über unser Mandantenportal):\n\n- Den vollständigen Einkommensteuerbescheid 2025\n- Ihre Aufstellungen und Nachweise zu den Fahrtkosten\n- Unterlagen und Nachweise zum häuslichen Arbeitszimmer\n\nSobald uns die Dokumente vorliegen, stimmen wir das weitere Vorgehen umgehend mit Ihnen ab.\n\nMit freundlichen Grüßen\n\nIhr Team der Kanzlei Muster"
+      "totalMs": 4546,
+      "summary": "Der Mandant wünscht einen Einspruch gegen den Einkommensteuerbescheid 2025 wegen der Nichtanerkennung von Fahrtkosten und häuslichem Arbeitszimmer. Vorläufige fachliche Einordnung für den Berufsträger: Die Einspruchsfrist endet am 07.10.2026 (Bekanntgabe am 07.09.2026 nach § 122 Abs. 2 AO) [1][14]. Die materiell-rechtliche Prüfung bezüglich Fahrtkosten (Entfernungspauschale) und Arbeitszimmer richtet sich nach § 9 EStG [3][4][6][12].",
+      "draft": "Ihr Einkommensteuerbescheid 2025\nSehr geehrter Herr Brandt,\n\nvielen Dank für Ihre Nachricht zu Ihrem Einkommensteuerbescheid 2025 vom 3. September 2026. Den Eingang Ihrer Anfrage bestätigen wir Ihnen hiermit.\n\nDamit wir die Nichtanerkennung der Fahrtkosten und des häuslichen Arbeitszimmers prüfen und den Einspruch vorbereiten können, bitten wir Sie, uns den Einkommensteuerbescheid als Kopie oder über unser Mandantenportal zukommen zu lassen.\n\nDie Einspruchsfrist endet nach unserer vorläufigen Berechnung am 7. Oktober 2026; dies wird von uns noch final geprüft. Wir wünschen Ihnen einen angenehmen Urlaub ab dem 21. September.\n\nIhr Team der Kanzlei Muster"
     },
     {
       "id": "weekend-notice",
@@ -2321,9 +2431,9 @@
       "checklistCoverage": 1,
       "missingFacts": [],
       "urgency": "mittel",
-      "totalMs": 13537,
-      "summary": "Die Mandantin hat ihren Einkommensteuerbescheid 2024 vom 08.09.2026 erhalten und bemängelt eine zu geringe Erstattung. Vorläufige fachliche Einordnung für den Berufsträger: Die Einspruchsfrist endet nach dem vorliegenden Fristberechnungsschema am 14.10.2026 [1][4][7]. Da die genauen Gründe für die Abweichung und die Mandantennummer fehlen, müssen diese zur sachgerechten Prüfung angefordert werden [3][11].",
-      "draft": "Ihr Einkommensteuerbescheid 2024\nGuten Tag Frau Roth, wir bestätigen den Eingang Ihrer Nachricht zu Ihrem Einkommensteuerbescheid 2024 vom 8. September 2026. Um Ihr Anliegen prüfen zu können, bitten wir Sie, uns noch Ihre Mandantennummer sowie den Steuerbescheid mitsamt dem dazugehörigen Berechnungsbogen zukommen zu lassen. Bitte teilen Sie uns zudem kurz mit, welche Punkte aus Ihrer Sicht zu der zu niedrigen Erstattung geführt haben. Die Einspruchsfrist gegen Ihren Bescheid endet nach unserer ersten vorläufigen Berechnung am 14. Oktober 2026; dies wird von uns im Rahmen unserer Prüfung nochmals genau verifiziert. Für den Upload der Unterlagen können Sie gerne unser Mandantenportal nutzen. Ihr Team der Kanzlei Muster"
+      "totalMs": 4327,
+      "summary": "Die Mandantin Sabine Roth beanstandet den Einkommensteuerbescheid 2024 vom 08.09.2026 wegen einer zu geringen Erstattung. Als vorläufige fachliche Einordnung für den Berufsträger ist festzuhalten, dass die Einspruchsfrist nach § 355 Abs. 1 AO i. V. m. § 122 Abs. 2 AO und § 108 Abs. 3 AO am 14.10.2026 endet [1][3][6]. Der Bescheid muss von der Kanzlei in vollem Umfang erneut geprüft werden (§ 367 Abs. 2 AO) [9].",
+      "draft": "Ihre Anfrage zum Einkommensteuerbescheid 2024\nGuten Tag Frau Roth, wir bestätigen den Eingang Ihrer Nachricht. Für eine Prüfung Ihres Anliegens benötigen wir noch Ihre Mandantennummer sowie den Einkommensteuerbescheid 2024 als Scan oder Foto, den Sie bequem über unser Mandantenportal hochladen können. Bitte teilen Sie uns zudem mit, welche Punkte aus Ihrer Sicht zu der zu niedrigen Erstattung geführt haben. Die Einspruchsfrist gegen Ihren Bescheid vom 8. September 2026 ist von uns vorläufig auf den 14. Oktober 2026 berechnet worden; dieser Termin wird von uns im Rahmen der Bearbeitung genau geprüft. Wir melden uns zeitnah telefonisch bei Ihnen. Mit freundlichen Grüßen, Ihr Team der Kanzlei Muster"
     },
     {
       "id": "undated-notice",
@@ -2341,10 +2451,10 @@
       "invalidCitations": [],
       "checklistCoverage": 1,
       "missingFacts": [],
-      "urgency": "niedrig",
-      "totalMs": 5449,
-      "summary": "Der Mandant Jonas Berg hat einen Steuerbescheid erhalten, dessen Datum und Details unklar sind, und fragt nach möglichem Handlungsbedarf. Als vorläufige fachliche Einordnung ist zu beachten, dass Einspruchsfristen grundsätzlich einen Monat nach Bekanntgabe eines schriftlichen Verwaltungsakts beginnen [1], sofern eine ordnungsgemäße Rechtsbehelfsbelehrung vorliegt [10]. Das Sekretariat hat nach den Kanzleivorgaben keine inhaltliche Beurteilung vorgenommen [4].",
-      "draft": "Ihre Anfrage zum Steuerbescheid\nSehr geehrter Herr Berg, vielen Dank für Ihre Nachricht. Wir haben Ihren Eingang registriert. Damit wir prüfen können, ob Sie handeln müssen und ob Fristen zu beachten sind, benötigen wir von Ihnen den genauen Steuerbescheid inklusive des Bescheiddatums sowie die Angabe zur Steuerart. Bitte laden Sie den Bescheid als Scan oder Foto über unser Mandantenportal hoch oder senden Sie uns die fehlenden Angaben zu. Sobald uns die Unterlagen vorliegen, werden wir Ihr Anliegen prüfen. Ihr Team der Kanzlei Muster"
+      "urgency": "mittel",
+      "totalMs": 4245,
+      "summary": "Der Mandant Jonas Berg hat einen Steuerbescheid erhalten, aber das genaue Bescheiddatum sowie Steuerart und Veranlagungszeitraum nicht mitgeteilt. Vorläufige fachliche Einordnung für den Berufsträger: Sobald das Bescheiddatum vorliegt, beginnt die einmonatige Einspruchsfrist grundsätzlich am vierten Tag nach Aufgabe zur Post oder Absendung (§ 122 Abs. 2 und 2a AO, § 355 Abs. 1 AO) [1], [5], [8].",
+      "draft": "Ihr eingegangener Steuerbescheid\nSehr geehrter Herr Berg, vielen Dank für Ihre Nachricht. Wir bestätigen den Eingang Ihrer Anfrage zu Ihrem Steuerbescheid. Damit wir prüfen können, ob Sie gegen den Bescheid vorgehen müssen und wie die Einspruchsfrist lautet, benötigen wir noch den Bescheid selbst. Bitte senden Sie uns den vollständigen Bescheid (inklusive des Datums) als Scan oder Foto zu. Sobald uns die Unterlagen vorliegen, prüfen wir den Bescheid gerne für Sie. Ihr Team der Kanzlei Muster"
     },
     {
       "id": "demir-voicemail",
@@ -2362,10 +2472,10 @@
       "invalidCitations": [],
       "checklistCoverage": 1,
       "missingFacts": [],
-      "urgency": "mittel",
-      "totalMs": 40096,
-      "summary": "Die Mandantin hat sich im März 2026 als Grafikdesignerin selbstständig gemacht und schätzt ihren Umsatz im laufenden Gründungsjahr auf ca. 28.000 Euro [Anfrage]. Vorläufige fachliche Einordnung für den Berufsträger: Da es sich um das Gründungsjahr handelt, gilt nach der Verwaltungsauffassung die Umsatzgrenze von 25.000 Euro, die bei einem erwarteten Umsatz von ca. 28.000 Euro voraussichtlich überschritten wird [8]. Im Gründungsjahr erfolgt keine Hochrechnung, aber der Umsatz, der die 25.000-Euro-Grenze überschreitet, beendet die Kleinunternehmerregelung sofort und führt zur Regelbesteuerung [8]. Daher wird eine Beratung zur Regelbesteuerung und zum Vorsteuerabzug angeraten [8].",
-      "draft": "Ihre Anfrage zur steuerlichen Erfassung und Kleinunternehmerregelung\nGuten Tag Frau Demir, vielen Dank für Ihre Nachricht. Wir haben Ihren Anruf auf unserem Anrufbeantworter erhalten. Da Sie sich im März als Grafikdesignerin selbstständig gemacht haben und den Fragebogen zur steuerlichen Erfassung vom Finanzamt vorliegen haben, unterstützen wir Sie hierbei sehr gerne. Für die Bearbeitung und Vorbereitung des Fragebogens zur steuerlichen Erfassung über ELSTER benötigen wir noch einige Angaben von Ihnen: den genauen Beginn Ihrer Tätigkeit, eine konkrete Prognose für Umsätze und Gewinne für das Gründungs- und Folgejahr, Ihre Bankverbindung, Ihre Steuer-ID sowie Angaben zu geplanten Investitionen. Bitte teilen Sie uns diese Informationen kurz mit oder halten Sie diese für unseren telefonischen Rückruf bereit. Wir rufen Sie zeitnah zurück. Ihr Team der Kanzlei Muster"
+      "urgency": "hoch",
+      "totalMs": 4599,
+      "summary": "Die Mandantin hat sich im März 2026 als Grafikdesignerin selbstständig gemacht und erwartet für das laufende Gründungsjahr einen Umsatz von ca. 28.000 Euro [Anfrage]. Vorläufige fachliche Einordnung für den Berufsträger: Da im Jahr der Gründung die Umsatzgrenze von 25.000 Euro nach der Verwaltungsauffassung maßgeblich ist und keine Hochrechnung erfolgt [10], führt ein voraussichtlicher Umsatz von ca. 28.000 Euro dazu, dass die Kleinunternehmerregelung voraussichtlich nicht anwendbar ist und Regelbesteuerung greift [10]. Der Fragebogen zur steuerlichen Erfassung ist elektronisch zu übermitteln [5].",
+      "draft": "Ihre Existenzgründung und Fragebogen zur steuerlichen Erfassung\nSehr geehrte Frau Demir, wir haben Ihre Nachricht auf unserem Anrufbeantworter erhalten und melden uns kurzfristig telefonisch bei Ihnen, um Ihre Fragen zur Selbstständigkeit als Grafikdesignerin und zur Umsatzsteuer zu besprechen. Vielen Dank, dass Sie sich an uns gewandt haben. Um den Fragebogen zur steuerlichen Erfassung für Sie vorbereiten zu können, bitten wir Sie uns das Anschreiben des Finanzamts, Ihre Steuer-ID, Ihre Bankverbindung sowie Angaben zu den geplanten Umsätzen, Gewinnen und eventuellen Investitionen zukommen zu lassen. Sobald uns diese Angaben vorliegen, unterstützen wir Sie gerne bei der elektronischen Übermittlung an das Finanzamt. Ihr Team der Kanzlei Muster"
     },
     {
       "id": "schneider-documents",
@@ -2384,9 +2494,9 @@
       "checklistCoverage": 1,
       "missingFacts": [],
       "urgency": "mittel",
-      "totalMs": 6903,
-      "summary": "Familie Schneider fragt nach den benötigten Unterlagen für die Einkommensteuererklärung 2025 [anliegen]. Im Jahr 2025 haben sie eine Eigentumswohnung gekauft und vermieten diese seit Juli, zudem wurde eine neue Küche für die selbstgenutzte Wohnung angeschafft und bar bezahlt [anliegen]. Vorläufige fachliche Einordnung für den Berufsträger: Für die Handwerkerleistungen in der selbstgenutzten Wohnung ist zu prüfen, ob die Barzahlung zu einer Nichtanerkennung führt, da § 35a Abs. 5 EStG zwingend eine Überweisung voraussetzt [1][4]. Bei der vermieteten Eigentumswohnung sind Anschaffungskosten, Darlehensverträge und Mieteinnahmen zu erfassen [3][5], wobei eventuelle Anschaffungsnahe Herstellungskosten zu prüfen sind [5].",
-      "draft": "Ihre Einkommensteuererklärung 2025 - Benötigte Unterlagen\nSehr geehrte Familie Schneider, vielen Dank für Ihre Nachricht über unser Mandantenportal. Wir bestätigen den Eingang Ihrer Anfrage. Für die Erstellung Ihrer Einkommensteuererklärung 2025 benötigen wir für die neu vermietete Eigentumswohnung den Kaufvertrag, den Darlehensvertrag, die Nebenkostenabrechnung sowie Angaben zu den Mieteinnahmen. Bezüglich der Handwerkerleistungen für die neue Küche in Ihrer selbstgenutzten Wohnung weisen wir darauf hin, dass hierfür laut Gesetz zwingend ein Zahlungsnachweis per Überweisung erforderlich ist; Barzahlungen können steuerlich leider nicht anerkannt werden. Bitte reichen Sie uns die Unterlagen bevorzugt digital über unser Mandantenportal ein. Unsere Kanzleiregel sieht vor, dass die Unterlagen für das Vorjahr bis spätestens 31. März eingereicht werden sollten. Ihr Team der Kanzlei Muster"
+      "totalMs": 5011,
+      "summary": "Familie Schneider hat im Jahr 2025 eine Eigentumswohnung erworben und vermietet diese seit Juli 2025, weshalb hierfür entsprechende Nachweise zum Kauf, den Anschaffungskosten und den laufenden Einnahmen und Ausgaben benötigt werden [9]. Für die neue Küche in der selbstgenutzten Wohnung wurde eine Barzahlung getätigt, was nach der vorläufigen fachlichen Einordnung problematisch ist, da § 35a Abs. 5 EStG zwingend eine Zahlung auf das Konto des Erbringers für die Steuerermäßigung voraussetzt [1]. Die Unterlagen für das Vorjahr sollen nach Kanzleiregel spätestens bis zum 31. März eingereicht werden [5].",
+      "draft": "Ihre Anfrage zur Einkommensteuererklärung 2025: Benötigte Unterlagen\nSehr geehrte Familie Schneider,\n\nvielen Dank für Ihre Nachricht über unser Mandantenportal. Wir bestätigen den Eingang Ihrer Anfrage.\n\nFür die Erstellung Ihrer Einkommensteuererklärung 2025 benötigen wir für die neu hinzugekommene Vermietung der Eigentumswohnung den Kaufvertrag, Angaben zur Aufteilung von Grund und Boden sowie Gebäude, die Mieteinnahmen, Nebenkostenabrechnungen, Darlehenszinsen sowie Nachweise zu laufenden Kosten wie Grundsteuer und Versicherungen. Für die Handwerkerleistung bezüglich Ihrer neuen Küche in der selbstgenutzten Wohnung benötigen wir die Rechnung. Bitte beachten Sie hierbei, dass für die Steuerermäßigung nach den gesetzlichen Vorgaben eine Überweisung auf das Konto des Erbringers erforderlich ist und Barzahlungen leider nicht anerkannt werden können.\n\nBitte reichen Sie Ihre Unterlagen bevorzugt digital über unser Mandantenportal ein. Als Frist für die Einreichung der Unterlagen gilt unser allgemeiner Termin bis spätestens 31. März.\n\nIhr Team der Kanzlei Muster"
     },
     {
       "id": "status-inquiry",
@@ -2402,12 +2512,12 @@
       "draftForbidden": [],
       "draftQualityOk": true,
       "invalidCitations": [],
-      "checklistCoverage": 1,
+      "checklistCoverage": 0,
       "missingFacts": [],
-      "urgency": "mittel",
-      "totalMs": 8741,
-      "summary": "Mandantin Petra Lindner fragt nach dem Bearbeitungsstand ihrer Einkommensteuererklärung 2025, nachdem sie die Unterlagen im April hochgeladen hat. Nach einer vorläufigen fachlichen Einordnung bewegt sich die Bearbeitungsdauer im normalen Rahmen der Finanzverwaltung, wobei die Kanzlei hierauf keinen direkten Einfluss hat [7]. Es ist zu prüfen, ob die Bearbeitung im internen Auftragsmanagement bereits erfolgt ist oder ein Rückruf des Sachbearbeiters erforderlich wird [6].",
-      "draft": "Ihr Bearbeitungsstand Einkommensteuererklärung 2025\nGuten Tag Frau Lindner, vielen Dank für Ihre Nachricht. Wir haben diese erhalten und prüfen den Bearbeitungsstand Ihrer Einkommensteuererklärung 2025. Wir melden uns umgehend bei Ihnen, sobald uns nähere Informationen vorliegen. Ihr Team der Kanzlei Muster"
+      "urgency": "niedrig",
+      "totalMs": 3625,
+      "summary": "Die Mandantin Petra Lindner fragt nach dem Bearbeitungsstand ihrer im April hochgeladenen Einkommensteuererklärung 2025. Vorläufige fachliche Einordnung für den Berufsträger: Der Eingang der Unterlagen im April liegt im gesetzlichen Rahmen für die Veranlagung nach Ablauf des Kalenderjahres [1], wobei der konkrete Bearbeitungsstand im internen Auftragsmanagement zu prüfen ist [6].",
+      "draft": "Ihre Einkommensteuererklärung 2025\nGuten Tag Frau Lindner, vielen Dank für Ihre Nachricht. Wir bestätigen den Eingang Ihrer Anfrage. Den aktuellen Bearbeitungsstand Ihrer Einkommensteuererklärung 2025 prüfen wir derzeit im Haus und melden uns in Kürze unaufgefordert bei Ihnen. Bitte teilen Sie uns bei Gelegenheit noch Ihre Mandantennummer mit, damit wir Ihre Unterlagen noch schneller zuordnen können. Viele Grüße, Ihr Team der Kanzlei Muster"
     },
     {
       "id": "payroll-question",
@@ -2423,12 +2533,12 @@
       "draftForbidden": [],
       "draftQualityOk": true,
       "invalidCitations": [],
-      "checklistCoverage": 1,
+      "checklistCoverage": 0,
       "missingFacts": [],
       "urgency": "mittel",
-      "totalMs": 8941,
-      "summary": "Der Mandant Malerbetrieb Kowalski GmbH fragt nach den erforderlichen Unterlagen für die Lohnabrechnung einer neuen Mitarbeiterin ab dem 1. Oktober 2026. Vorläufige fachliche Einordnung für den Sachbearbeiter: Für die ordnungsgemäße Erstellung der Lohnabrechnung und Meldungen werden die Angaben des Personalfragebogens, der Sozialversicherungsausweis, die Steuer-ID sowie ggf. die Lohnsteuerbescheinigung des Vorarbeitgebers benötigt [3].",
-      "draft": "Unterlagen für die Lohnabrechnung ab 01.10.2026\nSehr geehrte Damen und Herren, vielen Dank für Ihre Nachricht. Wir bestätigen den Eingang Ihrer Anfrage zur Lohnabrechnung für Ihre neue Mitarbeiterin ab dem 1. Oktober 2026. Um die Lohnabrechnung ordnungsgemäß durchführen zu können, benötigen wir von Ihnen folgende Unterlagen und Angaben: den ausgefüllten Personalfragebogen, den Sozialversicherungsausweis, die Steuer-ID sowie die Lohnsteuerbescheinigung des Vorarbeitgebers. Bitte lassen Sie uns diese Unterlagen zeitnah zukommen. Ihr Team der Kanzlei Muster"
+      "totalMs": 4125,
+      "summary": "Der Mandant Malerbetrieb Kowalski GmbH benötigt Informationen und benennt Unterlagen für die Lohnabrechnung einer neuen Mitarbeiterin ab dem 1. Oktober 2026. Vorläufige fachliche Einordnung für den Sachbearbeiter: Es handelt sich um die Aufnahme eines neuen Beschäftigungsverhältnisses, für das zeitnah die arbeits- und lohnrelevanten Stammdaten sowie steuer- und sozialversicherungsspezifische Nachweise (wie SV-Nummer und Steuer-ID) benötigt werden, um eine korrekte Abrechnung und fristgerechte Meldungen sicherzustellen.",
+      "draft": "Ihre Anfrage zur Lohnabrechnung ab 1. Oktober 2026\nGuten Tag, vielen Dank für Ihre Nachricht. Wir haben Ihr Anliegen bezüglich der Lohnabrechnung für Ihre neue Mitarbeiterin erhalten. Um die Lohnabrechnung und die Meldungen für den Start zum 1. Oktober 2026 vorbereiten zu können, benötigen wir noch folgende Angaben und Unterlagen von Ihnen: Name der neuen Mitarbeiterin, SV-Nummer, Steuer-ID, Stundenlohn oder Gehalt sowie den Arbeitsvertrag. Bitte reichen Sie diese Unterlagen bevorzugt digital über unser Mandantenportal ein. Ihr Team der Kanzlei Muster"
     }
   ]
 }

@@ -13,7 +13,7 @@ import { pruefeFristende } from "@/lib/deadlines";
 import { retrieve, type NormRef } from "@/lib/search";
 import type { TaxHubMessage } from "@/lib/types";
 
-export const maxDuration = 60;
+export const maxDuration = 120; // free-tier models can be slow under load; a cut-off stream is worse than a slow answer
 
 // deadline questions always need the general computation rule, even if nobody names it
 const DEADLINE_QUESTION = /frist|bis wann|spätestens|abgabe|einspruch|deadline|due|file by|objection/i;
@@ -38,8 +38,13 @@ export async function POST(req: Request) {
 
       const plan = await planSearch(conversation, question);
       const norms: NormRef[] = [...planNorms(plan), ...(DEADLINE_QUESTION.test(question) ? [{ law: "AO", section: "108" }] : [])];
+      const earlierQuestions = recent
+        .filter((m) => m.role === "user" && m !== lastUser)
+        .slice(-2)
+        .map((m) => m.parts.map((p) => (p.type === "text" ? p.text : "")).join(" ").slice(0, 500));
       const chunks = retrieve({
         rawQuestion: question,
+        contextQuestions: earlierQuestions,
         queries: plan.searchQueries.filter((q) => q !== question),
         norms,
         extraChunks: sessionChunks(sessionDocs),

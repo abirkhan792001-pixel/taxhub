@@ -64,6 +64,7 @@ async function callAsk(c: AskCase) {
   let ttftMs: number | null = null;
   const errors: string[] = [];
   let toolCalls = 0;
+  let finished = false; // a stream that ends without "finish" was cut off (e.g. function timeout)
   for (;;) {
     const { done, value } = await reader.read();
     if (done) break;
@@ -85,9 +86,10 @@ async function callAsk(c: AskCase) {
       } else if (ev.type === "data-sources" && ev.data) sources = ev.data.sources;
       else if (ev.type === "error") errors.push(ev.errorText ?? "error");
       else if (ev.type === "tool-output-available") toolCalls++;
+      else if (ev.type === "finish") finished = true;
     }
   }
-  return { text, sources, ttftMs, totalMs: performance.now() - t0, errors, toolCalls };
+  return { text, sources, ttftMs, totalMs: performance.now() - t0, errors, toolCalls, finished };
 }
 
 function scoreAsk(c: AskCase, run: Awaited<ReturnType<typeof callAsk>>) {
@@ -105,14 +107,17 @@ function scoreAsk(c: AskCase, run: Awaited<ReturnType<typeof callAsk>>) {
   const abstained = ABSTAIN.test(run.text);
   const language = detectLanguage(run.text);
   const keyFactsCorrect = missingFacts.length === 0 && forbiddenFacts.length === 0 && run.text.length > 0;
+  const incomplete = !run.finished;
   const pass =
-    c.scope === "out"
+    !incomplete &&
+    (c.scope === "out"
       ? abstained && forbiddenFacts.length === 0
-      : !!retrieved && !!expectedCited && invalidCitations.length === 0 && keyFactsCorrect && (!c.language || c.language === language);
+      : !!retrieved && !!expectedCited && invalidCitations.length === 0 && keyFactsCorrect && (!c.language || c.language === language));
   return {
     id: c.id,
     scope: c.scope,
     pass,
+    incomplete,
     retrieved,
     expectedCited,
     citedNumbers: cited,
@@ -254,7 +259,7 @@ async function main() {
   const ask = [];
   for (const c of pick(SUITES[SUITE] ?? ASK_CASES)) {
     const attempt = await withRetry(c.id, () => callAsk(c), (r) => r.text.length > 0 && r.errors.length === 0);
-    const run = attempt instanceof Error ? { text: "", sources: [], ttftMs: null, totalMs: 0, errors: [String(attempt)], toolCalls: 0 } : attempt;
+    const run = attempt instanceof Error ? { text: "", sources: [], ttftMs: null, totalMs: 0, errors: [String(attempt)], toolCalls: 0, finished: false } : attempt;
     const r = scoreAsk(c, run);
     ask.push(r);
     console.log(`${r.pass ? "✓" : "✗"} ask    ${c.id.padEnd(28)} cov ${r.citationCoverage?.toFixed(2) ?? " –  "}  ${String(r.totalMs).padStart(6)} ms${r.missingFacts.length ? `  missing ${r.missingFacts.join(" ")}` : ""}${r.forbiddenFacts.length ? `  FORBIDDEN ${r.forbiddenFacts.join(" ")}` : ""}${r.invalidCitations.length ? `  invalid [${r.invalidCitations}]` : ""}`);
@@ -293,6 +298,7 @@ async function main() {
       keyFactAccuracy: share(inScope.map((a) => a.keyFactsCorrect)),
       abstentionAccuracy: share(outScope.map((a) => a.abstained && a.forbiddenFacts.length === 0)),
       sessionDocumentPass: ask.find((a) => a.id === "session-document")?.pass ?? null,
+      incompleteAnswers: ask.filter((a) => a.incomplete).length,
       languageMatch: share(ask.filter((a) => a.expectedLanguage === "en").map((a) => a.language === "en")),
       medianTotalMs: median(ask.map((a) => a.totalMs)),
       medianTtftMs: median(ask.map((a) => a.ttftMs ?? a.totalMs)),

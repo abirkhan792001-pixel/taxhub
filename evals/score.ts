@@ -117,7 +117,8 @@ const baseline = optional<{ earned: number; assessable: number; productMetrics: 
 const holdouts = [
   { label: "Holdout v1 (blind, before fixes)", file: "evals/results/holdout-v1-blind.json" },
   { label: "Holdout v1 re-run after fixes (not blind)", file: "evals/results/holdout-v1-postfix.json" },
-  { label: "Holdout v2 (blind, written after fixes)", file: "evals/results/holdout2.json" },
+  { label: "Holdout v2 (blind, written after the first fixes)", file: "evals/results/holdout2.json" },
+  { label: "Holdout v2 re-run on the final deployment", file: "evals/results/holdout2-final.json" },
 ]
   .map((h) => ({ ...h, data: optional<AskOnly>(h.file) }))
   .filter((h) => h.data)
@@ -126,7 +127,13 @@ const holdouts = [
     passed: `${h.data!.summary.ask.passed}/${h.data!.summary.ask.cases}`,
     failures: h.data!.ask.filter((x) => !x.pass).map((x) => `${x.id}${x.missingFacts.length ? ` (missing ${x.missingFacts.join(", ")})` : ""}${x.forbiddenFacts.length ? ` (forbidden ${x.forbiddenFacts.join(", ")})` : ""}`),
   }));
-Object.assign(scorecard, { baseline: baseline && { earned: baseline.earned, assessable: baseline.assessable, ask: baseline.productMetrics.askCasesPassed, intake: baseline.productMetrics.intakeCasesPassed }, holdouts });
+// repeated runs of the case that exposed run-to-run retrieval variance
+const stabilityRuns = [1, 2, 3].map((n) => optional<AskOnly>(`evals/results/stability-followup-${n}.json`)).filter((r): r is AskOnly => !!r);
+const followUpInMain = live.ask.find((x) => x.id === "follow-up-turn");
+const stability = stabilityRuns.length
+  ? { case: "follow-up-turn", passed: stabilityRuns.filter((r) => r.ask[0]?.pass).length + (followUpInMain?.pass ? 1 : 0), runs: stabilityRuns.length + (followUpInMain ? 1 : 0) }
+  : null;
+Object.assign(scorecard, { baseline: baseline && { earned: baseline.earned, assessable: baseline.assessable, ask: baseline.productMetrics.askCasesPassed, intake: baseline.productMetrics.intakeCasesPassed }, holdouts, stability });
 
 writeFileSync("evals/results/scorecard.json", JSON.stringify(scorecard, null, 2));
 
@@ -172,6 +179,7 @@ const md = [
   `## Holdout questions (generalisation, no points)`,
   ``,
   ...holdouts.map((h) => `- **${h.label}: ${h.passed}**${h.failures.length ? ` — failed: ${h.failures.join("; ")}` : ""}`),
+  ...(stability ? [``, `Stability: the multi-turn case \`${stability.case}\` passed **${stability.passed} of ${stability.runs}** runs on the final deployment.`] : []),
   ``,
   `## Limits of this metric`,
   ``,

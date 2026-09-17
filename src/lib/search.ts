@@ -179,15 +179,25 @@ export type RetrieveOptions = {
   extraChunks?: Chunk[]; // e.g. a document the user pasted for this session
 };
 
-export function retrieve({ queries, norms = [], maxLaw = 7, maxFirm = 4, extraChunks = [], rawQuestion }: RetrieveOptions & { rawQuestion?: string }): RetrievedChunk[] {
+export function retrieve({
+  queries,
+  norms = [],
+  maxLaw = 7,
+  maxFirm = 4,
+  extraChunks = [],
+  rawQuestion,
+  contextQuestions = [],
+}: RetrieveOptions & { rawQuestion?: string; contextQuestions?: string[] }): RetrievedChunk[] {
   const ix = getIndex();
   const fused = new Map<number, number>();
   const K = 60; // reciprocal rank fusion constant
 
-  // the user's own wording counts, but less than the planner's statutory keywords
+  // the user's own wording counts, but less than the planner's statutory keywords; earlier questions
+  // in the conversation keep a follow-up ("und ohne Berater?") anchored to its topic
   const weighted: [string, number][] = [
     ...(rawQuestion ? [[rawQuestion, queries.length ? 0.5 : 1] as [string, number]] : []),
     ...queries.filter(Boolean).map((q) => [q, 1] as [string, number]),
+    ...contextQuestions.filter(Boolean).map((q) => [q, 0.5] as [string, number]),
   ];
   for (const [q, w] of weighted) {
     bm25(ix, q, (c) => c.kind === "law")
