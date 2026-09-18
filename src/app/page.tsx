@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { AnnouncementBar } from "@/components/landing/AnnouncementBar";
 import { LegacyHashRedirect } from "@/components/landing/LegacyHashRedirect";
 import { LangProvider, LangToggle, useLang } from "@/components/landing/lang";
 
@@ -33,7 +32,7 @@ const COPY = {
     },
     hero: {
       title: ["Das KI-Sekretariat", "für Ihre Steuerkanzlei."],
-      lead: "TaxHub nimmt Mandantenanfragen entgegen, berechnet Fristen nachvollziehbar und beantwortet Fachfragen mit Fundstelle – aus dem amtlichen Gesetzestext und Ihrem Kanzlei-Handbuch.",
+      lead: "TaxHub nimmt Mandantenanfragen entgegen, berechnet Fristen nachvollziehbar und beantwortet Fachfragen mit Fundstelle.",
       ctaPrimary: "Live-Demo starten",
       ctaSecondary: "Posteingang ansehen",
       badges: ["Jede Aussage mit Fundstelle", "Fristen nach §§ 108, 122, 355 AO berechnet", "Freigabe immer durch Ihr Team"],
@@ -192,7 +191,7 @@ const COPY = {
     },
     hero: {
       title: ["The AI back office", "for your tax firm."],
-      lead: "TaxHub takes in client requests, computes deadlines you can trace step by step, and answers technical questions with a citation — from the official statute text and your firm's handbook.",
+      lead: "TaxHub takes in client requests, computes deadlines you can trace, and answers technical questions with a citation.",
       ctaPrimary: "Start live demo",
       ctaSecondary: "See the inbox",
       badges: ["Every statement carries a citation", "Deadlines computed per §§ 108, 122, 355 AO", "Your team always signs off"],
@@ -357,7 +356,6 @@ function LandingBody() {
   return (
     <div className="bg-sheet text-ink">
       <LegacyHashRedirect />
-      <AnnouncementBar />
       <SiteNav />
       <Hero />
       <Modules />
@@ -487,12 +485,12 @@ function Hero() {
 
       <div className="mx-auto flex w-full max-w-[1280px] flex-1 flex-col justify-center px-5 pb-16 pt-20 sm:px-10">
         <div className="max-w-[52rem]">
-          <h1 className="font-display text-[clamp(2.9rem,6.2vw,5.1rem)] font-medium leading-[1.02] tracking-[-0.015em]">
+          <h1 className="font-display text-[clamp(2.3rem,4.8vw,3.9rem)] font-medium leading-[1.04] tracking-[-0.015em]">
             {t.hero.title[0]}
             <br />
             {t.hero.title[1]}
           </h1>
-          <p className="mt-7 max-w-[38rem] text-[clamp(1.05rem,1.6vw,1.28rem)] leading-[1.6] text-white/85">{t.hero.lead}</p>
+          <p className="mt-6 max-w-[34rem] text-[clamp(0.98rem,1.3vw,1.12rem)] leading-[1.55] text-white/85">{t.hero.lead}</p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             {/* split-arrow CTA */}
             <Link href="/app" className="group inline-flex items-stretch overflow-hidden rounded-[8px] bg-pruef text-white shadow-[0_10px_30px_-12px_rgba(78,63,143,0.8)] transition-colors hover:bg-pruef-strong">
@@ -509,7 +507,7 @@ function Hero() {
           </div>
         </div>
 
-        <ul className="mt-14 flex flex-wrap gap-x-9 gap-y-3 font-mono text-[0.74rem] uppercase tracking-[0.08em] text-white/90">
+        <ul className="mt-12 flex max-w-[34rem] flex-col gap-2.5 font-mono text-[0.72rem] uppercase tracking-[0.08em] text-white/90">
           {t.hero.badges.map((b) => (
             <li key={b} className="flex items-center gap-2.5">
               <ShieldIcon />
